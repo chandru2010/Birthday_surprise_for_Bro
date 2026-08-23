@@ -1,107 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Vaathi ❤️</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Vaathi ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #080808;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ---------- GENERAL ---------- */
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    width: min(850px, 92%);
+    text-align: center;
+    z-index: 2;
+}
+
+.small {
+    font-family: Arial, sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(45px, 9vw, 90px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(32px, 6vw, 58px);
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: clamp(17px, 2.5vw, 22px);
+    line-height: 1.8;
+    color: #d6d6d6;
+}
+
+button {
+    border: 1px solid #777;
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    filter: blur(80px);
+}
+
+.glow.one {
+    top: -150px;
+    left: -150px;
+}
+
+.glow.two {
+    bottom: -180px;
+    right: -150px;
+}
+
+/* ---------- INTRO ---------- */
+
+#intro {
+    background:
+        radial-gradient(circle at center, #202020 0%, #080808 65%);
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    background: white;
+    margin: 25px auto;
+    animation: lineGrow 2s forwards;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 180px;
+    }
+}
+
+#intro h1 {
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.fade-text {
+    opacity: 0;
+    animation: fadeUp 1.5s 0.6s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- CHILDHOOD ---------- */
+
+#childhood {
+    background: linear-gradient(#101010, #161616);
+}
+
+.photo-frame {
+    width: min(380px, 90%);
+    margin: 0 auto 35px;
+    padding: 10px;
+    background: #171717;
+    border: 1px solid #444;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+}
+
+.photo-placeholder {
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #111;
+}
+
+/* ---------- YEARS ---------- */
+
+#years {
+    background: #0b0b0b;
+}
+
+.timeline {
+    margin: 45px auto;
+    width: min(650px, 90%);
+    text-align: left;
+}
+
+.timeline p {
+    padding: 20px 0;
+    border-bottom: 1px solid #292929;
+}
+
+/* ---------- MESSAGE ---------- */
+
+#message {
+    background:
+        radial-gradient(circle at center, #191919, #070707);
+}
+
+.message-box {
+    border-left: 2px solid #777;
+    padding: 10px 0 10px 25px;
+    text-align: left;
+    margin: 35px auto;
+    width: min(700px, 90%);
+}
+
+.message-box p {
+    margin-bottom: 22px;
+}
+
+/* ---------- TOPPER ---------- */
+
+#topper {
+    background: linear-gradient(#080808, #151515);
+}
+
+.topper-word {
+    font-size: clamp(45px, 10vw, 100px);
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 30px 0;
+}
+
+.highlight {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+}
+
+/* ---------- BIRTHDAY ---------- */
+
+#birthday {
+    background:
+        radial-gradient(circle at center, #292929 0%, #080808 70%);
+}
+
+.birthday {
+    font-size: clamp(40px, 9vw, 85px);
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.name {
+    font-size: clamp(35px, 8vw, 75px);
+    margin-top: 15px;
+}
+
+.cake {
+    font-size: 70px;
+    margin: 25px 0;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ---------- FINAL ---------- */
+
+#final {
+    background: #050505;
+}
+
+.final-message {
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.6;
+}
+
+.signature {
+    margin-top: 45px;
+    font-family: Arial, sans-serif;
+    color: #999;
+    letter-spacing: 3px;
+}
+
+/* ---------- SCROLL INDICATOR ---------- */
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.25;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 35px 15px;
+    }
+
+    .message-box {
+        padding-left: 18px;
+    }
+
+    button {
+        padding: 13px 27px;
+    }
+}
+</style>
 </head>
+
 <body>
-  <main id="app">
-    <section class="screen active" id="screen-1">
-      <div class="content">
-        <p class="eyebrow">A little something for you</p>
+
+<!-- ================= INTRO ================= -->
+
+<section id="intro">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="content">
+
+        <div class="small">A little something for you</div>
+
         <h1>Hey bro...</h1>
-        <p class="typing" id="introText"></p>
-        <button class="btn" data-next>Start</button>
-      </div>
-    </section>
 
-    <section class="screen" id="screen-2">
-      <div class="content photo-screen">
-        <div class="photo-frame placeholder" id="childhoodPhoto">Childhood photo goes here</div>
-        <p class="eyebrow">Before the birthday wish...</p>
+        <div class="intro-line"></div>
+
+        <p class="fade-text">
+            Don't skip this one.
+        </p>
+
+        <button onclick="goTo('childhood')">
+            Start
+        </button>
+
+    </div>
+
+    <div class="scroll">SCROLL</div>
+
+</section>
+
+
+<!-- ================= CHILDHOOD ================= -->
+
+<section id="childhood">
+
+    <div class="content">
+
+        <div class="small">Before everything</div>
+
+        <div class="photo-frame">
+
+            <!-- WE WILL ADD THE REAL PHOTO HERE LATER -->
+
+            <div class="photo-placeholder">
+                Childhood photo will appear here ❤️
+            </div>
+
+        </div>
+
         <h2>Look at this little guy.</h2>
-        <p>He had no idea how far he would come.</p>
-        <button class="btn" data-next>Continue</button>
-      </div>
-    </section>
 
-    <section class="screen" id="screen-3">
-      <div class="content">
-        <p class="eyebrow">Years passed...</p>
+        <p>
+            He had absolutely no idea<br>
+            how far life was going to take him.
+        </p>
+
+        <button onclick="goTo('years')">
+            Continue
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= YEARS ================= -->
+
+<section id="years">
+
+    <div class="content">
+
+        <div class="small">Years passed...</div>
+
         <h2>A lot changed.</h2>
-        <p>School. Memories. Fights. Laughs. Lessons.</p>
-        <p>And somehow, that little kid became the person you are today.</p>
-        <button class="btn" data-next>One more thing</button>
-      </div>
-    </section>
 
-    <section class="screen birthday" id="screen-4">
-      <div class="content">
-        <p class="eyebrow">Today is your day</p>
-        <h1>HAPPY BIRTHDAY<br /><span>VAATHI 🎂</span></h1>
-        <p>There is a reason I made this instead of buying you something.</p>
-        <button class="btn" data-next>Keep going</button>
-      </div>
-    </section>
+        <div class="timeline">
 
-    <section class="screen" id="screen-5">
-      <div class="content message">
-        <p class="eyebrow">From your bro</p>
-        <h2>Vaathi,</h2>
-        <p>We've been close for so many years. We've had our fights, laughs, and countless memories, and I've seen different versions of you over the years.</p>
-        <p>I don't always say these things out loud, so I wanted to put them here instead.</p>
-        <button class="btn" data-next>There's something I want to tell you</button>
-      </div>
-    </section>
+            <p>School memories.</p>
 
-    <section class="screen" id="screen-6">
-      <div class="content message">
-        <p class="eyebrow">Something serious</p>
-        <h2>The version of you I remember.</h2>
-        <p>Sometimes when you're angry, you don't care who's standing in front of you. Words come out before you think about how they'll affect someone.</p>
-        <p>And sometimes you look at life like it's always harder for you than everyone else.</p>
-        <p>But I know you can be better than that.</p>
-        <button class="btn" data-next>Remember this</button>
-      </div>
-    </section>
+            <p>Fights.</p>
 
-    <section class="screen" id="screen-7">
-      <div class="content message">
-        <p class="eyebrow">The topper version</p>
-        <h2>I've seen what you're capable of.</h2>
-        <p>There was a version of you who wasn't afraid of anyone in studies. You worked hard enough that even the toppers knew they had competition.</p>
-        <p><strong>That version of you is still there.</strong></p>
-        <button class="btn" data-next>My wish for you</button>
-      </div>
-    </section>
+            <p>Laughs.</p>
 
-    <section class="screen" id="screen-8">
-      <div class="content message">
-        <p class="eyebrow">This year</p>
-        <h2>Change the mindset.</h2>
-        <p>When you're angry, control your words. Not every fight needs to be fought. Not every thought needs to be spoken.</p>
-        <p>And when life feels unfair, don't let that thought convince you that you can't move forward.</p>
-        <p>I want to see that topper version of you again — not because of marks, but because of the determination that version of you had.</p>
-        <button class="btn" data-next>One last thing</button>
-      </div>
-    </section>
+            <p>Problems.</p>
 
-    <section class="screen final" id="screen-9">
-      <div class="content">
-        <div class="photo-frame placeholder" id="togetherPhoto">Our photo goes here</div>
-        <h2>Happy Birthday, bro. ❤️</h2>
-        <p>I know what you're capable of.</p>
-        <p><strong>Now I want you to see it too.</strong></p>
-        <p class="signature">— Your bro</p>
-        <button class="btn secondary" id="replay">Replay</button>
-      </div>
-    </section>
-  </main>
+            <p>Lessons.</p>
 
-  <script src="script.js"></script>
+        </div>
+
+        <p>
+            And somehow,<br>
+            that little kid became the person you are today.
+        </p>
+
+        <button onclick="goTo('message')">
+            One more thing
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section id="message">
+
+    <div class="content">
+
+        <div class="small">From your brother</div>
+
+        <h2>Bro, listen to this.</h2>
+
+        <div class="message-box">
+
+            <p>
+                I know sometimes you feel like life is hard only for you.
+            </p>
+
+            <p>
+                And when you're angry, you sometimes go into
+                full fight mode. You don't really care who's
+                standing in front of you, and words come out
+                before you think about them.
+            </p>
+
+            <p>
+                But bro... those things don't define who you are.
+            </p>
+
+            <p>
+                You have much more in you than that.
+            </p>
+
+        </div>
+
+        <button onclick="goTo('topper')">
+            Keep reading
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TOPPER ================= -->
+
+<section id="topper">
+
+    <div class="content">
+
+        <div class="small">And this is what I really want</div>
+
+        <div class="topper-word">
+            THE<br>
+            <span class="highlight">TOPPER</span>
+        </div>
+
+        <p>
+            Bro, I want that version of you back.
+        </p>
+
+        <br>
+
+        <p>
+            There was a time when you were a huge topper.
+            Even the toppers around you knew they had to
+            compete with you.
+        </p>
+
+        <br>
+
+        <p>
+            Your studies didn't suddenly become impossible.
+            Somewhere along the way, your mindset changed.
+        </p>
+
+        <br>
+
+        <p>
+            So change it again.
+        </p>
+
+        <br>
+
+        <p>
+            Control your anger.<br>
+            Think before you speak.<br>
+            Stop fighting every battle.
+        </p>
+
+        <br>
+
+        <p>
+            You don't need to prove yourself to everyone.
+            Just become the version of yourself
+            that you know you're capable of being.
+        </p>
+
+        <button onclick="goTo('birthday')">
+            Now... one last thing
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BIRTHDAY ================= -->
+
+<section id="birthday">
+
+    <div class="content">
+
+        <div class="small">Today is your day</div>
+
+        <div class="birthday">
+            HAPPY<br>
+            BIRTHDAY
+        </div>
+
+        <div class="name">
+            VAATHI ❤️
+        </div>
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <p>
+            Keep growing.<br>
+            Keep learning.<br>
+            And don't forget the person you want to become.
+        </p>
+
+        <button onclick="goTo('final')">
+            One final message
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section id="final">
+
+    <div class="content">
+
+        <div class="small">From your brother</div>
+
+        <div class="final-message">
+
+            Whatever happens,<br>
+            I'm still your brother.<br><br>
+
+            So fight less.<br>
+            Think more.<br>
+            Study hard.<br>
+            And bring that topper version of you back.
+            
+        </div>
+
+        <div class="signature">
+            HAPPY BIRTHDAY, BRO ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function goTo(sectionId) {
+
+    document.getElementById(sectionId).scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
 </body>
 </html>
-
-
