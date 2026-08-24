@@ -783,7 +783,7 @@ p {
         rgba(0,0,0,.65);
 
     transform:
-        rotate(2deg);
+        rotate(-2deg);
 
     transition:
         transform .5s ease;
@@ -799,23 +799,11 @@ p {
 
 
 .baby-photo-frame img {
-
     width: 100%;
-
     height: 300px;
-
     object-fit: cover;
-
     display: block;
-
-    /*
-        The uploaded baby photo is sideways.
-        This rotates it upright.
-    */
-
-    transform:
-        rotate(90deg)
-        scale(1.02);
+    transform: rotate(-90deg) scale(1.02);
 }
 
 
