@@ -15,8 +15,9 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -26,10 +27,10 @@ body {
         radial-gradient(circle at 80% 30%, #250b4d 0%, transparent 35%),
         linear-gradient(135deg, #05000d, #090018, #12002b);
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/* ---------------- BACKGROUND ---------------- */
+/* ================= BACKGROUND ================= */
 
 .stars {
     position: fixed;
@@ -53,119 +54,166 @@ body {
     }
 }
 
-/* ---------------- GENERAL ---------------- */
+/* ================= SCREEN SYSTEM ================= */
 
-section {
+.screen {
+    position: fixed;
+    inset: 0;
     min-height: 100vh;
-    padding: 80px 7%;
+    padding: 35px 7%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.03);
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease,
+        visibility .6s;
 }
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.content {
+    width: min(950px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= TEXT ================= */
 
 .small {
     color: #ffb7f4;
-    font-size: 15px;
-    letter-spacing: 2px;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
 }
 
 h1 {
     font-family: 'Cinzel', serif;
 }
 
-button {
-    border: none;
-    cursor: pointer;
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(34px, 6vw, 65px);
+}
+
+p {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+    margin: 15px 7px;
+    padding: 14px 26px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.3);
+    background: linear-gradient(
+        90deg,
+        rgba(138,43,226,.8),
+        rgba(255,20,147,.8)
+    );
+    color: white;
     font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow:
+        0 0 12px rgba(255,20,147,.4),
+        0 0 30px rgba(138,43,226,.25);
+    transition: .3s;
 }
 
-/* ---------------- CONFETTI ---------------- */
-
-.confetti {
-    position: fixed;
-    width: 8px;
-    height: 14px;
-    top: -20px;
-    z-index: 10;
-    animation: fall linear infinite;
+.btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow:
+        0 0 20px rgba(255,20,147,.7),
+        0 0 45px rgba(138,43,226,.4);
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
+/* ================= CAKE ================= */
+
+.cake {
+    font-size: 105px;
+    animation: float 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 25px #ff38b8);
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
     }
 }
 
-/* ---------------- BALLOONS ---------------- */
+/* ================= BALLOONS ================= */
 
 .balloon {
-    position: absolute;
-    width: 55px;
-    height: 70px;
+    position: fixed;
+    width: 48px;
+    height: 62px;
     border-radius: 50%;
-    animation: float 4s ease-in-out infinite;
-    opacity: .8;
+    opacity: .75;
+    z-index: -1;
+    animation: balloonFloat 4s ease-in-out infinite;
 }
 
 .balloon::after {
     content: "";
     position: absolute;
     width: 1px;
-    height: 100px;
+    height: 90px;
     background: #ddd;
     left: 50%;
-    top: 68px;
+    top: 60px;
 }
 
-.balloon1 {
-    background: #ff347f;
-    left: 5%;
+.b1 {
+    background: #ff3988;
+    left: 4%;
     top: 15%;
 }
 
-.balloon2 {
-    background: #7c4dff;
-    right: 6%;
+.b2 {
+    background: #7248ff;
+    right: 5%;
     top: 20%;
     animation-delay: 1s;
 }
 
-.balloon3 {
-    background: #ff9d2e;
-    right: 15%;
-    top: 65%;
+.b3 {
+    background: #ff9c2b;
+    right: 12%;
+    bottom: 15%;
     animation-delay: 2s;
 }
 
-@keyframes float {
+@keyframes balloonFloat {
     50% {
-        transform: translateY(-25px) rotate(5deg);
+        transform: translateY(-20px);
     }
 }
 
-/* ---------------- HERO ---------------- */
+/* ================= HERO ================= */
 
-.hero {
-    text-align: center;
-}
-
-.hero .cake {
-    font-size: 110px;
-    animation: cakeFloat 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 25px #ff43b5);
-}
-
-@keyframes cakeFloat {
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-.hero h1 {
-    font-size: clamp(45px, 8vw, 90px);
-    margin: 15px 0;
+.hero-title {
+    font-size: clamp(45px, 9vw, 95px);
+    margin: 10px 0;
     background: linear-gradient(
         90deg,
         #ff9a00,
@@ -173,10 +221,10 @@ button {
         #8c52ff,
         #00d4ff
     );
+    background-size: 300%;
     -webkit-background-clip: text;
     color: transparent;
     animation: gradientMove 4s linear infinite;
-    background-size: 300%;
 }
 
 @keyframes gradientMove {
@@ -185,247 +233,359 @@ button {
     }
 }
 
-.hero p {
-    color: #ddd;
+.hero-sub {
     font-size: 18px;
 }
 
-.glow-btn {
-    margin-top: 35px;
-    padding: 15px 35px;
-    border-radius: 50px;
-    color: white;
-    font-size: 17px;
-    font-weight: 600;
-    background: linear-gradient(90deg, #8a2be2, #ff1493, #ff8c00);
-    box-shadow:
-        0 0 15px #ff1493,
-        0 0 40px #8a2be2;
-    transition: .3s;
-}
+/* ================= BIRTH ================= */
 
-.glow-btn:hover {
-    transform: scale(1.08);
-}
-
-/* ---------------- BIRTH SECTION ---------------- */
-
-.birth {
-    text-align: center;
-}
-
-.birth h2 {
+.birth-date {
     font-family: 'Cinzel';
-    font-size: clamp(40px, 7vw, 75px);
-    background: linear-gradient(90deg, #ffd700, #ff4ecd, #8c52ff);
+    font-size: clamp(42px, 8vw, 80px);
+    background: linear-gradient(
+        90deg,
+        #ffd700,
+        #ff4ecd,
+        #8c52ff
+    );
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.year {
-    font-size: 30px;
-    color: #9ddcff;
-    margin-bottom: 30px;
+.birth-year {
+    font-size: 28px;
+    color: #8edcff;
+    margin-bottom: 20px;
 }
 
 .counter {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: min(1000px, 100%);
-    margin-top: 30px;
+    gap: 15px;
+    margin: 25px auto;
+    max-width: 850px;
 }
 
 .counter-box {
-    padding: 30px 15px;
+    padding: 22px 10px;
     border: 1px solid #ff38d1;
     border-radius: 20px;
-    background: rgba(15, 0, 40, .65);
-    box-shadow:
-        0 0 20px rgba(255, 0, 200, .3),
-        inset 0 0 20px rgba(120, 0, 255, .1);
+    background: rgba(15,0,40,.65);
+    box-shadow: inset 0 0 18px rgba(100,0,255,.12);
 }
 
 .counter-box span {
     display: block;
-    font-size: clamp(30px, 5vw, 55px);
+    font-family: Arial, sans-serif;
     font-weight: 700;
-    color: #ff65d9;
+    color: #ff72da;
+    font-size: clamp(27px, 5vw, 53px);
 }
 
 .counter-box label {
-    color: #ddd;
+    color: #aaa;
+    font-size: 11px;
     letter-spacing: 2px;
 }
 
-.birth-note {
-    margin-top: 25px;
-    color: #ffb9ec;
-}
+/* ================= COUNTDOWN ================= */
 
-/* ---------------- MEMORY ---------------- */
-
-.memory {
-    text-align: center;
-}
-
-.memory h2,
-.message h2,
-.topper h2 {
+.count-number {
     font-family: 'Cinzel';
-    font-size: clamp(35px, 6vw, 60px);
-    margin-bottom: 20px;
+    font-size: clamp(100px, 25vw, 220px);
+    line-height: .8;
+    background: linear-gradient(
+        90deg,
+        #ffdf00,
+        #ff3cae,
+        #7b4dff
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: countPulse .8s infinite alternate;
 }
 
-.photo-card {
-    max-width: 650px;
-    padding: 15px;
-    margin-top: 30px;
-    background: #f4e3bd;
-    transform: rotate(-1deg);
-    box-shadow: 0 15px 50px rgba(0,0,0,.6);
+@keyframes countPulse {
+    from {
+        transform: scale(.95);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
 
-.photo-card img {
-    display: block;
-    width: 100%;
-    max-height: 550px;
-    object-fit: cover;
-}
-
-.photo-caption {
-    color: #211323;
-    font-family: 'Pacifico', cursive;
+.count-message {
     font-size: 22px;
-    padding: 15px;
+    color: #ffd5f5;
 }
 
-/* ---------------- MESSAGE ---------------- */
+/* ================= BIRTHDAY ================= */
 
-.message {
-    text-align: center;
+.birthday-main {
+    font-size: clamp(48px, 10vw, 105px);
+    font-family: 'Cinzel';
+    background: linear-gradient(
+        90deg,
+        #ffd700,
+        #ff5ac8,
+        #8c52ff
+    );
+    -webkit-background-clip: text;
+    color: transparent;
 }
+
+.vaathi {
+    font-family: 'Pacifico';
+    font-size: clamp(45px, 9vw, 90px);
+    color: #ff4ebc;
+    text-shadow: 0 0 20px #ff1493;
+}
+
+.birthday-cake {
+    font-size: 100px;
+    animation: cakePulse 1.6s infinite;
+}
+
+@keyframes cakePulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* ================= MEMORIES ================= */
+
+.memory-photo {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #f2e1bd;
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+    transform: rotate(-1deg);
+}
+
+.memory-photo img {
+    width: 100%;
+    max-height: 62vh;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    color: #241527;
+    font-family: 'Pacifico';
+    padding: 12px;
+    font-size: 19px;
+}
+
+/* ================= MEMORY BUTTONS ================= */
+
+.memory-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.memory-btn {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,100,220,.4);
+    padding: 11px 18px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.memory-btn:hover {
+    background: rgba(255,50,180,.2);
+    transform: translateY(-2px);
+}
+
+/* ================= MESSAGE ================= */
 
 .message-box {
     max-width: 850px;
-    padding: 40px;
-    border-radius: 30px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 25px;
     border: 1px solid #ff3cda;
-    background: rgba(20, 0, 40, .75);
-    box-shadow: 0 0 40px rgba(255, 0, 200, .2);
-    line-height: 1.9;
-    font-size: 17px;
+    background: rgba(20,0,40,.72);
+    line-height: 1.8;
 }
 
 .message-box strong {
     color: #ff66d9;
 }
 
-/* ---------------- TOPPER ---------------- */
-
-.topper {
-    text-align: center;
-}
+/* ================= TOPPER ================= */
 
 .trophy {
-    font-size: 100px;
-    filter: drop-shadow(0 0 25px gold);
-    animation: trophy 2s infinite;
+    font-size: 95px;
+    animation: trophyFloat 2s infinite;
 }
 
-@keyframes trophy {
+@keyframes trophyFloat {
     50% {
         transform: translateY(-10px) rotate(3deg);
     }
 }
 
-.rules {
-    width: min(800px, 100%);
-    margin-top: 30px;
+.topper-title {
+    font-family: 'Cinzel';
+    font-size: clamp(42px, 8vw, 80px);
+    color: #ffd234;
+}
+
+.topper-points {
     display: grid;
-    gap: 15px;
+    gap: 12px;
+    max-width: 700px;
+    margin: 25px auto;
 }
 
-.rule {
-    padding: 18px;
-    border-radius: 15px;
-    border-left: 4px solid #ff42d0;
-    background: rgba(255,255,255,.05);
+.topper-point {
     text-align: left;
+    padding: 15px 18px;
+    border-radius: 15px;
+    background: rgba(255,255,255,.05);
+    border-left: 4px solid #ff40d4;
 }
 
-.rule b {
-    color: #ffd23f;
+.topper-point b {
+    color: #ffd34c;
 }
 
-/* ---------------- FINAL ---------------- */
+/* ================= GIFTS ================= */
 
-.final {
-    text-align: center;
+.gifts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.gift {
+    padding: 35px 15px;
+    border-radius: 25px;
     background:
-        radial-gradient(circle at center, #2d0757, transparent 60%);
+        linear-gradient(
+            145deg,
+            rgba(255,30,150,.18),
+            rgba(90,50,255,.16)
+        );
+    border: 1px solid rgba(255,100,220,.35);
+    cursor: pointer;
+    transition: .3s;
 }
 
-.final h1 {
-    font-size: clamp(40px, 8vw, 90px);
-    color: #ffd23f;
+.gift:hover {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 0 30px rgba(255,50,200,.3);
 }
 
-.final h2 {
+.gift-icon {
+    font-size: 50px;
+    margin-bottom: 12px;
+}
+
+.gift-title {
+    font-weight: 700;
+}
+
+.gift-text {
+    display: none;
+    color: #ffc7ef;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.gift.open .gift-text {
+    display: block;
+}
+
+/* ================= FINAL ================= */
+
+.final-title {
+    font-family: 'Cinzel';
+    font-size: clamp(45px, 10vw, 105px);
+    color: #ffd43c;
+}
+
+.final-vaathi {
     font-family: 'Pacifico';
-    font-size: clamp(35px, 7vw, 65px);
+    font-size: clamp(45px, 9vw, 90px);
     color: #ff4ebc;
-    margin: 10px;
+}
+
+.final-photo {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,.25);
+    box-shadow: 0 0 40px rgba(255,60,200,.25);
+}
+
+.final-photo img {
+    width: 100%;
+    display: block;
 }
 
 .wishes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
+    gap: 10px;
+    margin: 22px 0;
 }
 
 .wish {
-    padding: 15px 22px;
+    padding: 10px 16px;
     border-radius: 30px;
     background: rgba(255,255,255,.08);
-    border: 1px solid #803cff;
 }
 
-.final-cake {
-    font-size: 100px;
-    animation: cakeFloat 2s infinite;
+/* ================= CONFETTI ================= */
+
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 14px;
+    top: -20px;
+    z-index: 100;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
 }
 
-.signature {
-    margin-top: 40px;
-    color: #ffb2eb;
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px) {
-
-    section {
-        padding: 70px 5%;
-    }
 
     .counter {
         grid-template-columns: 1fr;
     }
 
-    .counter-box {
-        padding: 20px;
+    .gifts {
+        grid-template-columns: 1fr;
+        max-width: 350px;
     }
 
-    .message-box {
-        padding: 25px;
-        font-size: 15px;
+    .memory-photo img {
+        max-height: 52vh;
     }
 
-    .balloon {
-        transform: scale(.7);
+    .content {
+        max-height: 88vh;
     }
 }
 </style>
@@ -435,191 +595,134 @@ button {
 
 <div class="stars"></div>
 
-<div class="balloon balloon1"></div>
-<div class="balloon balloon2"></div>
-<div class="balloon balloon3"></div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="cake">🎂</div>
-
-    <p class="small">Psst... Hey bro! 👀</p>
-
-    <h1>HAPPY BIRTHDAY</h1>
-
-    <p>
-        Something special is waiting for you...
-    </p>
-
-    <button class="glow-btn"
-            onclick="document.getElementById('birth').scrollIntoView()">
-        OPEN YOUR SURPRISE 🎁
-    </button>
-
-</section>
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
 
 
-<!-- BIRTH -->
+<!-- ================= SCREEN 1 ================= -->
 
-<section class="birth" id="birth">
+<section class="screen active" id="screen1">
 
-    <p class="small">THE DAY A LEGEND WAS BORN 👑</p>
+    <div class="content">
 
-    <h2>28 AUGUST</h2>
+        <div class="cake">🎂</div>
 
-    <div class="year">2009 🎉</div>
-
-    <p>
-        Let's see how long you've been alive...
-        😏
-    </p>
-
-    <div class="counter">
-
-        <div class="counter-box">
-            <span id="hours">0</span>
-            <label>HOURS</label>
+        <div class="small">
+            Psst... Hey bro 👀
         </div>
 
-        <div class="counter-box">
-            <span id="minutes">0</span>
-            <label>MINUTES</label>
-        </div>
+        <h1 class="hero-title">
+            SOMETHING<br>SPECIAL
+        </h1>
 
-        <div class="counter-box">
-            <span id="seconds">0</span>
-            <label>SECONDS</label>
-        </div>
+        <p class="hero-sub">
+            This one is only for you.
+        </p>
 
-    </div>
-
-    <p class="birth-note">
-        Since 28 August 2009 — you've been making the world better. ❤️
-    </p>
-
-</section>
-
-
-<!-- MEMORY -->
-
-<section class="memory">
-
-    <p class="small">A TRIP DOWN MEMORY LANE... 🥹</p>
-
-    <h2>Look at this little guy! 👶</h2>
-
-    <div class="photo-card">
-
-        <!-- CHANGE THIS FILE NAME IF NEEDED -->
-        <img src="childhood.jpg" alt="Childhood memory">
-
-        <div class="photo-caption">
-            He had no idea how far he would come...
-            ❤️
-        </div>
+        <button class="btn" onclick="showScreen('screen2')">
+            OPEN YOUR SURPRISE 🎁
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- MESSAGE -->
+<!-- ================= SCREEN 2 ================= -->
 
-<section class="message">
+<section class="screen" id="screen2">
 
-    <p class="small">NOW SERIOUSLY... ❤️</p>
+    <div class="content">
 
-    <h2>From Your Brother</h2>
+        <div class="small">
+            One important date
+        </div>
 
-    <div class="message-box">
+        <div class="birth-date">
+            28 AUGUST
+        </div>
 
-        <p>
-            Bro, I know sometimes you get angry.
-            Sometimes you say things you don't mean.
-            Sometimes you feel like life is hard only for you.
-        </p>
-
-        <br>
-
-        <p>
-            And when you're angry, sometimes you don't care
-            who's standing in front of you.
-        </p>
-
-        <br>
+        <div class="birth-year">
+            2009 🎉
+        </div>
 
         <p>
-            I'm not saying this to lecture you.
-            I'm saying this because <strong>I believe in you.</strong>
+            The day everything started.
         </p>
 
-        <br>
-
-        <p>
-            You have already shown what you're capable of.
-            There was a time when you were the topper —
-            and even the other toppers were scared of you
-            when it came to studies. 🔥
-        </p>
-
-        <br>
-
-        <p>
-            So control your anger.
-            Think before you speak.
-            Don't let your words destroy your character.
-        </p>
-
-        <br>
-
-        <p>
-            Most importantly...
-        </p>
-
-        <br>
-
-        <strong>
-            I WANT THAT TOPPER VERSION OF YOU BACK. ❤️‍🔥
-        </strong>
+        <button class="btn" onclick="showScreen('screen3')">
+            Let's see what happened since then 👀
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- TOPPER -->
+<!-- ================= SCREEN 3 ================= -->
 
-<section class="topper">
+<section class="screen" id="screen3">
 
-    <div class="trophy">🏆</div>
+    <div class="content">
 
-    <p class="small">YOU WERE ONCE...</p>
-
-    <h2>THE TOPPER 🔥</h2>
-
-    <div class="rules">
-
-        <div class="rule">
-            🧠 <b>Control</b> your anger.
+        <div class="small">
+            Since 28 August 2009
         </div>
 
-        <div class="rule">
-            🗣️ <b>Think</b> before you speak.
+        <h2>
+            Let's see how much time<br>
+            has passed since that day...
+        </h2>
+
+        <div class="counter">
+
+            <div class="counter-box">
+                <span id="hours">0</span>
+                <label>HOURS</label>
+            </div>
+
+            <div class="counter-box">
+                <span id="minutes">0</span>
+                <label>MINUTES</label>
+            </div>
+
+            <div class="counter-box">
+                <span id="seconds">0</span>
+                <label>SECONDS</label>
+            </div>
+
         </div>
 
-        <div class="rule">
-            🎯 <b>Focus</b> on your goals.
+        <p>
+            And every second of it brought you here. ❤️
+        </p>
+
+        <button class="btn" onclick="startCountdown()">
+            Wait... there's something else 🎂
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COUNTDOWN ================= -->
+
+<section class="screen" id="countdown">
+
+    <div class="content">
+
+        <div class="small">
+            Get ready...
         </div>
 
-        <div class="rule">
-            📚 <b>Bring back</b> the topper version of yourself.
+        <div class="count-number" id="countNumber">
+            3
         </div>
 
-        <div class="rule">
-            ❤️ <b>Don't change who you are.</b>
-            Just become better.
+        <div class="count-message" id="countMessage">
+            Something is coming...
         </div>
 
     </div>
@@ -627,80 +730,412 @@ button {
 </section>
 
 
-<!-- FINAL -->
+<!-- ================= BIRTHDAY REVEAL ================= -->
 
-<section class="final">
+<section class="screen" id="birthday">
 
-    <div class="final-cake">🎂</div>
+    <div class="content">
 
-    <h1>HAPPY BIRTHDAY</h1>
+        <div class="birthday-cake">
+            🎂
+        </div>
 
-    <h2>VAATHI! ❤️</h2>
+        <div class="birthday-main">
+            HAPPY BIRTHDAY
+        </div>
 
-    <div class="wishes">
+        <div class="vaathi">
+            VAATHI ❤️
+        </div>
 
-        <div class="wish">😊 More Happiness</div>
-        <div class="wish">🏆 More Success</div>
-        <div class="wish">❤️ Good Health</div>
-        <div class="wish">🕊️ Peace of Mind</div>
-        <div class="wish">🚀 Big Dreams</div>
+        <p>
+            28 August 2009 → another year unlocked 🎉
+        </p>
+
+        <button class="btn" onclick="showScreen('screen5')">
+            Now let's open the memories 📸
+        </button>
 
     </div>
 
-    <p>
-        Here's to another year of growth,
-        memories, adventures,
-        and becoming the best version of yourself.
-    </p>
+</section>
 
-    <button class="glow-btn" onclick="celebrate()">
-        ENJOY YOUR DAY! 🎉
-    </button>
 
-    <p class="signature">
-        No matter what happens,
-        I'm always here for you. ❤️
-        <br><br>
-        Love you, bro.
-    </p>
+<!-- ================= MEMORIES MENU ================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="content">
+
+        <div class="small">
+            A little trip down memory lane
+        </div>
+
+        <h2>
+            Choose a memory 📸
+        </h2>
+
+        <div class="memory-buttons">
+
+            <button class="memory-btn"
+                    onclick="openMemory('baby.jpg','Look at this little guy! 👶❤️')">
+                👶 Baby
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('school.jpg','And then came the school days... 🏫')">
+                🏫 School
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('friends1.jpg','The gang 😂')">
+                😂 The Gang
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('friends2.jpg','Some memories just stay. ❤️')">
+                🤝 Memories
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('friends3.jpg','Brotherhood moments. 😎')">
+                😎 Us
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('hill.jpg','A few places, a lot of memories. 🌄')">
+                🌄 Adventure
+            </button>
+
+            <button class="memory-btn"
+                    onclick="openMemory('mirror.jpg','And somehow... that little kid grew up.')">
+                🪞 Growing Up
+            </button>
+
+        </div>
+
+        <div class="memory-photo">
+
+            <img id="memoryImage"
+                 src="baby.jpg"
+                 alt="Memory">
+
+            <div class="caption"
+                 id="memoryCaption">
+                Look at this little guy! 👶❤️
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="showScreen('screen6')">
+            One serious thing ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BROTHER MESSAGE ================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="content">
+
+        <div class="small">
+            From your brother ❤️
+        </div>
+
+        <h2>
+            One thing I want you to know.
+        </h2>
+
+        <div class="message-box">
+
+            <p>
+                Bro, I know sometimes you get angry.
+                Sometimes you say things you don't mean.
+                Sometimes you feel like life is harder for you
+                than everyone else.
+            </p>
+
+            <br>
+
+            <p>
+                And when you're angry, sometimes you don't care
+                who's standing in front of you.
+            </p>
+
+            <br>
+
+            <p>
+                I'm not saying this to lecture you.
+                I'm saying it because
+                <strong>I believe in you.</strong>
+            </p>
+
+            <br>
+
+            <p>
+                I've seen what you're capable of.
+            </p>
+
+        </div>
+
+        <button class="btn" onclick="showScreen('screen7')">
+            You know which version I mean... 👀
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TOPPER ================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="content">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <div class="small">
+            The version I want back
+        </div>
+
+        <div class="topper-title">
+            THE TOPPER
+        </div>
+
+        <div class="topper-points">
+
+            <div class="topper-point">
+                🧠 <b>Control</b> your anger.
+            </div>
+
+            <div class="topper-point">
+                🗣️ <b>Think</b> before you speak.
+            </div>
+
+            <div class="topper-point">
+                🎯 <b>Focus</b> on what matters.
+            </div>
+
+            <div class="topper-point">
+                📚 You were once the guy who made
+                other toppers nervous.
+            </div>
+
+            <div class="topper-point">
+                ❤️ <b>I want that version of you back.</b>
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="showScreen('gifts')">
+            Okay... enough serious talk 😂
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GIFTS ================= -->
+
+<section class="screen" id="gifts">
+
+    <div class="content">
+
+        <div class="small">
+            You have 3 gifts waiting 🎁
+        </div>
+
+        <h2>
+            Open them one by one
+        </h2>
+
+        <div class="gifts">
+
+            <div class="gift" onclick="openGift(this)">
+
+                <div class="gift-icon">
+                    🎁
+                </div>
+
+                <div class="gift-title">
+                    Gift #1
+                </div>
+
+                <div class="gift-text">
+                    Always keep smiling, bro.
+                    You deserve more good days.
+                    ❤️
+                </div>
+
+            </div>
+
+
+            <div class="gift" onclick="openGift(this)">
+
+                <div class="gift-icon">
+                    🎁
+                </div>
+
+                <div class="gift-title">
+                    Gift #2
+                </div>
+
+                <div class="gift-text">
+                    Never stop becoming better.
+                    Your future self is waiting.
+                    🔥
+                </div>
+
+            </div>
+
+
+            <div class="gift" onclick="openGift(this)">
+
+                <div class="gift-icon">
+                    🎁
+                </div>
+
+                <div class="gift-title">
+                    Gift #3
+                </div>
+
+                <div class="gift-text">
+                    No matter what happens,
+                    I'm still your brother.
+                    ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="showScreen('final')">
+            One last surprise 🎂
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="screen" id="final">
+
+    <div class="content">
+
+        <div class="small">
+            The final surprise
+        </div>
+
+        <div class="final-title">
+            HAPPY BIRTHDAY
+        </div>
+
+        <div class="final-vaathi">
+            VAATHI ❤️
+        </div>
+
+        <div class="final-photo">
+
+            <img src="final.jpg"
+                 alt="Final memory">
+
+        </div>
+
+        <div class="wishes">
+
+            <div class="wish">😊 Happiness</div>
+            <div class="wish">🏆 Success</div>
+            <div class="wish">❤️ Good Health</div>
+            <div class="wish">🕊️ Peace</div>
+            <div class="wish">🚀 Big Dreams</div>
+
+        </div>
+
+        <p>
+            Here's to another year of memories,
+            growth, laughs and becoming the best
+            version of yourself.
+        </p>
+
+        <br>
+
+        <p>
+            No matter what happens,
+            I'm always here for you.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Love you, bro. ❤️</strong>
+        </p>
+
+    </div>
 
 </section>
 
 
 <script>
 
-/* ---------------- BIRTH CALCULATOR ---------------- */
+/* ================= SCREEN CONTROL ================= */
 
-const birthDate = new Date(
-    "2009-08-28T00:00:00"
-);
+function showScreen(id) {
+
+    document.querySelectorAll(".screen")
+        .forEach(screen => {
+            screen.classList.remove("active");
+        });
+
+    const next =
+        document.getElementById(id);
+
+    next.classList.add("active");
+
+}
+
+
+/* ================= AGE TIMER ================= */
+
+const birthDate =
+    new Date("2009-08-28T00:00:00");
 
 function updateAge() {
 
     const now = new Date();
 
-    const difference = now - birthDate;
+    const elapsed =
+        now - birthDate;
 
-    const totalSeconds = Math.floor(
-        difference / 1000
-    );
+    const seconds =
+        Math.floor(elapsed / 1000);
 
-    const totalMinutes = Math.floor(
-        totalSeconds / 60
-    );
+    const minutes =
+        Math.floor(seconds / 60);
 
-    const totalHours = Math.floor(
-        totalMinutes / 60
-    );
+    const hours =
+        Math.floor(minutes / 60);
 
-    document.getElementById("hours").textContent =
-        totalHours.toLocaleString();
+    document.getElementById("hours")
+        .textContent =
+        hours.toLocaleString();
 
-    document.getElementById("minutes").textContent =
-        totalMinutes.toLocaleString();
+    document.getElementById("minutes")
+        .textContent =
+        minutes.toLocaleString();
 
-    document.getElementById("seconds").textContent =
-        totalSeconds.toLocaleString();
+    document.getElementById("seconds")
+        .textContent =
+        seconds.toLocaleString();
 }
 
 updateAge();
@@ -708,7 +1143,90 @@ updateAge();
 setInterval(updateAge, 1000);
 
 
-/* ---------------- CONFETTI ---------------- */
+/* ================= 3 2 1 COUNTDOWN ================= */
+
+let countdownStarted = false;
+
+function startCountdown() {
+
+    if (countdownStarted) return;
+
+    countdownStarted = true;
+
+    showScreen("countdown");
+
+    const number =
+        document.getElementById("countNumber");
+
+    const message =
+        document.getElementById("countMessage");
+
+    let count = 3;
+
+    number.textContent = count;
+    message.textContent = "Get ready...";
+
+    const timer =
+        setInterval(() => {
+
+            count--;
+
+            if (count > 0) {
+
+                number.textContent =
+                    count;
+
+                message.textContent =
+                    count === 2
+                        ? "Almost there..."
+                        : "One more...";
+
+            } else {
+
+                clearInterval(timer);
+
+                number.textContent = "🎉";
+
+                message.textContent =
+                    "HAPPY BIRTHDAY!";
+
+                createConfetti();
+
+                setTimeout(() => {
+
+                    showScreen("birthday");
+
+                }, 1300);
+
+            }
+
+        }, 1000);
+}
+
+
+/* ================= MEMORIES ================= */
+
+function openMemory(image, caption) {
+
+    document.getElementById("memoryImage")
+        .src = image;
+
+    document.getElementById("memoryCaption")
+        .textContent = caption;
+
+}
+
+
+/* ================= GIFTS ================= */
+
+function openGift(gift) {
+
+    gift.classList.toggle("open");
+
+}
+
+
+/* ================= CONFETTI ================= */
 
 function createConfetti() {
 
@@ -720,62 +1238,37 @@ function createConfetti() {
         "#ff7b00"
     ];
 
-    for(let i = 0; i < 80; i++) {
+    for (let i = 0; i < 130; i++) {
 
-        const confetti =
+        const piece =
             document.createElement("div");
 
-        confetti.className = "confetti";
+        piece.className =
+            "confetti";
 
-        confetti.style.left =
+        piece.style.left =
             Math.random() * 100 + "vw";
 
-        confetti.style.background =
+        piece.style.background =
             colors[
                 Math.floor(
                     Math.random() * colors.length
                 )
             ];
 
-        confetti.style.animationDuration =
-            (3 + Math.random() * 5) + "s";
-
-        confetti.style.animationDelay =
-            Math.random() * 5 + "s";
-
-        document.body.appendChild(confetti);
-    }
-}
-
-createConfetti();
-
-
-/* ---------------- FINAL CELEBRATION ---------------- */
-
-function celebrate() {
-
-    for(let i = 0; i < 150; i++) {
-
-        const confetti =
-            document.createElement("div");
-
-        confetti.className = "confetti";
-
-        confetti.style.left =
-            Math.random() * 100 + "vw";
-
-        confetti.style.background =
-            `hsl(${Math.random()*360},100%,60%)`;
-
-        confetti.style.animationDuration =
+        piece.style.animationDuration =
             (2 + Math.random() * 3) + "s";
 
-        document.body.appendChild(confetti);
-    }
+        piece.style.animationDelay =
+            Math.random() * .8 + "s";
 
-    alert(
-        "🎉 HAPPY BIRTHDAY VAATHI! ❤️🎂"
-    );
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 5000);
+
+    }
 }
 
 </script>
