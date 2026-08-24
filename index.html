@@ -18,308 +18,460 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #080808;
+    background: #07070a;
     color: white;
+    font-family: Georgia, "Times New Roman", serif;
     overflow-x: hidden;
 }
 
-/* ---------- GENERAL ---------- */
+/* ================= COMMON ================= */
 
 section {
     min-height: 100vh;
     width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    position: relative;
+    padding: 50px 20px;
     overflow: hidden;
 }
 
 .content {
     width: min(850px, 92%);
     text-align: center;
-    z-index: 2;
+    position: relative;
+    z-index: 5;
 }
 
 .small {
     font-family: Arial, sans-serif;
-    letter-spacing: 4px;
-    text-transform: uppercase;
     font-size: 12px;
-    color: #aaa;
-    margin-bottom: 25px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #bcbcbc;
+    margin-bottom: 22px;
 }
 
 h1 {
-    font-size: clamp(45px, 9vw, 90px);
-    line-height: 1;
-    margin-bottom: 25px;
+    font-size: clamp(48px, 11vw, 105px);
+    line-height: .95;
 }
 
 h2 {
-    font-size: clamp(32px, 6vw, 58px);
+    font-size: clamp(34px, 7vw, 65px);
     margin-bottom: 25px;
 }
 
 p {
-    font-size: clamp(17px, 2.5vw, 22px);
+    font-size: clamp(17px, 2.7vw, 22px);
     line-height: 1.8;
-    color: #d6d6d6;
+    color: #d7d7d7;
 }
 
 button {
-    border: 1px solid #777;
-    background: transparent;
-    color: white;
-    padding: 14px 32px;
+    margin-top: 30px;
+    padding: 15px 34px;
+    border: 1px solid rgba(255,255,255,.45);
     border-radius: 50px;
+    background: rgba(255,255,255,.06);
+    color: white;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 30px;
-    transition: 0.3s;
+    transition: .3s;
+    backdrop-filter: blur(10px);
 }
 
 button:hover {
     background: white;
-    color: black;
-    transform: scale(1.05);
+    color: #111;
+    transform: translateY(-3px) scale(1.04);
 }
 
-/* ---------- BACKGROUND ---------- */
-
-.glow {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    filter: blur(80px);
-}
-
-.glow.one {
-    top: -150px;
-    left: -150px;
-}
-
-.glow.two {
-    bottom: -180px;
-    right: -150px;
-}
-
-/* ---------- INTRO ---------- */
+/* ================= INTRO ================= */
 
 #intro {
     background:
-        radial-gradient(circle at center, #202020 0%, #080808 65%);
+        radial-gradient(circle at 50% 45%, #292929 0%, #0c0c0e 42%, #050507 100%);
 }
 
-.intro-line {
-    width: 0;
-    height: 1px;
-    background: white;
-    margin: 25px auto;
-    animation: lineGrow 2s forwards;
+.intro-title {
+    animation: fadeUp 1.3s ease forwards;
 }
 
-@keyframes lineGrow {
-    to {
-        width: 180px;
-    }
-}
-
-#intro h1 {
-    animation: fadeUp 1.5s ease forwards;
-}
-
-.fade-text {
+.intro-sub {
+    margin-top: 25px;
     opacity: 0;
-    animation: fadeUp 1.5s 0.6s forwards;
+    animation: fadeUp 1.2s .5s forwards;
 }
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ---------- CHILDHOOD ---------- */
-
-#childhood {
-    background: linear-gradient(#101010, #161616);
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .18;
 }
 
-.photo-frame {
-    width: min(380px, 90%);
-    margin: 0 auto 35px;
-    padding: 10px;
-    background: #171717;
-    border: 1px solid #444;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+.glow.one {
+    background: #ff4f81;
+    top: -150px;
+    left: -150px;
 }
 
-.photo-frame img {
-    width: 100%;
-    display: block;
+.glow.two {
+    background: #6c63ff;
+    bottom: -150px;
+    right: -150px;
 }
 
-.photo-placeholder {
-    aspect-ratio: 3 / 4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    background: #111;
-}
+/* ================= DATE ================= */
 
-/* ---------- YEARS ---------- */
-
-#years {
-    background: #0b0b0b;
-}
-
-.timeline {
-    margin: 45px auto;
-    width: min(650px, 90%);
-    text-align: left;
-}
-
-.timeline p {
-    padding: 20px 0;
-    border-bottom: 1px solid #292929;
-}
-
-/* ---------- MESSAGE ---------- */
-
-#message {
+#date {
     background:
-        radial-gradient(circle at center, #191919, #070707);
+        linear-gradient(135deg, #111118, #09090c);
 }
 
-.message-box {
-    border-left: 2px solid #777;
-    padding: 10px 0 10px 25px;
-    text-align: left;
+.date-card {
+    width: min(420px, 90%);
     margin: 35px auto;
-    width: min(700px, 90%);
+    padding: 45px 25px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 30px;
+    background: rgba(255,255,255,.045);
+    box-shadow: 0 25px 80px rgba(0,0,0,.45);
+    backdrop-filter: blur(15px);
 }
 
-.message-box p {
-    margin-bottom: 22px;
+.date-number {
+    font-family: Arial, sans-serif;
+    font-size: clamp(90px, 20vw, 160px);
+    font-weight: 800;
+    line-height: .8;
 }
 
-/* ---------- TOPPER ---------- */
-
-#topper {
-    background: linear-gradient(#080808, #151515);
+.date-month {
+    font-family: Arial, sans-serif;
+    letter-spacing: 10px;
+    font-size: 22px;
+    margin-top: 20px;
 }
 
-.topper-word {
-    font-size: clamp(45px, 10vw, 100px);
-    font-weight: bold;
-    letter-spacing: 5px;
-    margin: 30px 0;
+.date-caption {
+    margin-top: 25px;
+    color: #aaa;
 }
 
-.highlight {
-    color: white;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 8px;
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-/* ---------- BIRTHDAY ---------- */
+.time-box {
+    min-width: 70px;
+    padding: 13px 8px;
+    border-radius: 15px;
+    background: rgba(255,255,255,.07);
+}
 
-#birthday {
+.time-box strong {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+
+.time-box span {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+/* ================= BIRTHDAY ================= */
+
+#birthday-start {
     background:
-        radial-gradient(circle at center, #292929 0%, #080808 70%);
+        radial-gradient(circle at center, #24141b, #09090b 65%);
 }
 
-.birthday {
-    font-size: clamp(40px, 9vw, 85px);
+.birthday-title {
+    font-size: clamp(48px, 11vw, 105px);
     font-weight: bold;
-    line-height: 1.1;
+    line-height: .9;
 }
 
-.name {
-    font-size: clamp(35px, 8vw, 75px);
+.vaathi {
+    font-size: clamp(45px, 10vw, 95px);
     margin-top: 15px;
 }
 
-.cake {
-    font-size: 70px;
-    margin: 25px 0;
-    animation: float 2s ease-in-out infinite;
+.heart {
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
 }
 
-@keyframes float {
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.cake {
+    font-size: 85px;
+    margin: 35px 0 10px;
+    animation: cakeFloat 2s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
     50% {
         transform: translateY(-12px);
     }
 }
 
-/* ---------- FINAL ---------- */
+/* ================= BALLOONS ================= */
 
-#final {
-    background: #050505;
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    font-size: 55px;
+    animation: balloonUp linear infinite;
+    opacity: .7;
 }
 
-.final-message {
-    font-size: clamp(24px, 4vw, 38px);
-    line-height: 1.6;
+.b1 {
+    left: 7%;
+    animation-duration: 12s;
+}
+
+.b2 {
+    left: 28%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.b3 {
+    right: 25%;
+    animation-duration: 13s;
+    animation-delay: 4s;
+}
+
+.b4 {
+    right: 7%;
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+@keyframes balloonUp {
+    from {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    to {
+        transform: translateY(-125vh) rotate(8deg);
+    }
+}
+
+/* ================= CHILDHOOD ================= */
+
+#childhood {
+    background: #0a0a0c;
+}
+
+.photo-frame {
+    width: min(390px, 90%);
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 22px;
+    background: #151519;
+    border: 1px solid #333;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+
+.photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #101014;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
+/* ================= MEMORIES ================= */
+
+#memories {
+    background:
+        linear-gradient(#09090b, #131318);
+}
+
+.memory-grid {
+    width: min(700px, 95%);
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.memory {
+    padding: 25px 15px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
+    font-size: 18px;
+}
+
+.memory span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* ================= BROTHER MESSAGE ================= */
+
+#brother {
+    background:
+        radial-gradient(circle at center, #19191e, #060608 70%);
+}
+
+.message {
+    width: min(700px, 95%);
+    margin: 30px auto;
+    padding: 35px 30px;
+    text-align: left;
+    border-radius: 25px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.message p {
+    margin-bottom: 22px;
+}
+
+/* ================= MOTIVATION ================= */
+
+#motivation {
+    background:
+        radial-gradient(circle at center, #17171b, #050506);
+}
+
+.topper {
+    font-family: Arial, sans-serif;
+    font-size: clamp(55px, 14vw, 130px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: .9;
+    margin: 30px 0;
+}
+
+.topper span {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+}
+
+.quote {
+    width: min(650px, 95%);
+    margin: auto;
+    font-size: clamp(21px, 4vw, 31px);
+    line-height: 1.5;
+}
+
+/* ================= FINAL BIRTHDAY ================= */
+
+#final {
+    background:
+        radial-gradient(circle at center, #3b1825 0%, #160b10 38%, #050506 75%);
+}
+
+.final-title {
+    font-size: clamp(45px, 11vw, 110px);
+    font-weight: 900;
+    line-height: .9;
+}
+
+.final-name {
+    font-size: clamp(45px, 10vw, 95px);
+    margin-top: 15px;
+}
+
+.final-cake {
+    font-size: 95px;
+    margin: 30px 0;
+}
+
+.final-text {
+    font-size: clamp(19px, 3.5vw, 27px);
 }
 
 .signature {
     margin-top: 45px;
     font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
     color: #999;
-    letter-spacing: 3px;
 }
 
-/* ---------- SCROLL INDICATOR ---------- */
+/* ================= CONFETTI ================= */
 
-.scroll {
-    position: absolute;
-    bottom: 25px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #777;
-    animation: blink 2s infinite;
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 8px;
+    height: 14px;
+    z-index: 999;
+    pointer-events: none;
+    animation: confettiFall 3s linear forwards;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0.25;
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
     }
 }
 
-/* ---------- MOBILE ---------- */
+/* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
 
     section {
-        padding: 35px 15px;
+        padding: 40px 15px;
     }
 
-    .message-box {
-        padding-left: 18px;
+    .memory-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    button {
-        padding: 13px 27px;
+    .message {
+        padding: 25px 20px;
+    }
+
+    .time-box {
+        min-width: 62px;
     }
 }
 </style>
 </head>
+
 
 <body>
 
@@ -334,21 +486,114 @@ button:hover {
 
         <div class="small">A little something for you</div>
 
-        <h1>Hey bro...</h1>
+        <h1 class="intro-title">
+            Hey bro...
+        </h1>
 
-        <div class="intro-line"></div>
-
-        <p class="fade-text">
-            Don't skip this one.
+        <p class="intro-sub">
+            Before you ask what this is...
+            just press the button. 😂
         </p>
 
-        <button onclick="goTo('childhood')">
-            Start
+        <button onclick="go('date')">
+            🎁 Open your surprise
         </button>
 
     </div>
 
-    <div class="scroll">SCROLL</div>
+</section>
+
+
+<!-- ================= DATE ================= -->
+
+<section id="date">
+
+    <div class="content">
+
+        <div class="small">Save this date</div>
+
+        <div class="date-card">
+
+            <div class="date-number">28</div>
+
+            <div class="date-month">
+                AUGUST
+            </div>
+
+            <div class="date-caption">
+                The day a legend was added to the world. 😌
+            </div>
+
+            <div class="countdown">
+
+                <div class="time-box">
+                    <strong id="days">--</strong>
+                    <span>DAYS</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="hours">--</strong>
+                    <span>HOURS</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="minutes">--</strong>
+                    <span>MINUTES</span>
+                </div>
+
+                <div class="time-box">
+                    <strong id="seconds">--</strong>
+                    <span>SECONDS</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button onclick="go('birthday-start')">
+            Continue 🎂
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BIRTHDAY START ================= -->
+
+<section id="birthday-start">
+
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎈</div>
+    <div class="balloon b3">🎈</div>
+    <div class="balloon b4">🎈</div>
+
+    <div class="content">
+
+        <div class="small">Another year unlocked</div>
+
+        <div class="birthday-title">
+            HAPPY<br>
+            BIRTHDAY
+        </div>
+
+        <div class="vaathi">
+            VAATHI <span class="heart">❤️</span>
+        </div>
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <p>
+            But bro... this isn't just another birthday wish.
+        </p>
+
+        <button onclick="go('childhood')">
+            There's something inside 🎁
+        </button>
+
+    </div>
 
 </section>
 
@@ -359,27 +604,29 @@ button:hover {
 
     <div class="content">
 
-        <div class="small">Before everything</div>
+        <div class="small">Let's go back for a second...</div>
 
         <div class="photo-frame">
 
-            <!-- WE WILL ADD THE REAL PHOTO HERE LATER -->
+            <!-- Replace this placeholder with your childhood photo later -->
 
             <div class="photo-placeholder">
-                Childhood photo will appear here ❤️
+                👶<br><br>
+                Your childhood photo goes here
             </div>
 
         </div>
 
-        <h2>Look at this little guy.</h2>
+        <h2>Look at this little guy. 😂</h2>
 
         <p>
-            He had absolutely no idea<br>
-            how far life was going to take him.
+            No idea about exams.<br>
+            No idea about responsibilities.<br>
+            No idea about how crazy life would become.
         </p>
 
-        <button onclick="goTo('years')">
-            Continue
+        <button onclick="go('memories')">
+            Keep going ❤️
         </button>
 
     </div>
@@ -387,37 +634,47 @@ button:hover {
 </section>
 
 
-<!-- ================= YEARS ================= -->
+<!-- ================= MEMORIES ================= -->
 
-<section id="years">
+<section id="memories">
 
     <div class="content">
 
-        <div class="small">Years passed...</div>
+        <div class="small">Us</div>
 
-        <h2>A lot changed.</h2>
+        <h2>Somehow, we got here.</h2>
 
-        <div class="timeline">
+        <div class="memory-grid">
 
-            <p>School memories.</p>
+            <div class="memory">
+                <span>😂</span>
+                Random laughs
+            </div>
 
-            <p>Fights.</p>
+            <div class="memory">
+                <span>🥊</span>
+                Random fights
+            </div>
 
-            <p>Laughs.</p>
+            <div class="memory">
+                <span>🤝</span>
+                Still brothers
+            </div>
 
-            <p>Problems.</p>
-
-            <p>Lessons.</p>
+            <div class="memory">
+                <span>❤️</span>
+                Always there
+            </div>
 
         </div>
 
         <p>
-            And somehow,<br>
-            that little kid became the person you are today.
+            We've had our moments.<br>
+            Good ones, bad ones, stupid ones...
         </p>
 
-        <button onclick="goTo('message')">
-            One more thing
+        <button onclick="go('brother')">
+            Now seriously...
         </button>
 
     </div>
@@ -425,41 +682,44 @@ button:hover {
 </section>
 
 
-<!-- ================= MESSAGE ================= -->
+<!-- ================= BROTHER ================= -->
 
-<section id="message">
+<section id="brother">
 
     <div class="content">
 
         <div class="small">From your brother</div>
 
-        <h2>Bro, listen to this.</h2>
+        <h2>One thing I want you to know.</h2>
 
-        <div class="message-box">
+        <div class="message">
 
             <p>
-                I know sometimes you feel like life is hard only for you.
+                Bro, I know sometimes you feel like
+                life is harder for you than everyone else.
             </p>
 
             <p>
-                And when you're angry, you sometimes go into
-                full fight mode. You don't really care who's
-                standing in front of you, and words come out
-                before you think about them.
+                And when you're angry, sometimes you go
+                straight into fight mode. You don't care
+                who's standing in front of you, and words
+                come out before you think.
             </p>
 
             <p>
-                But bro... those things don't define who you are.
+                I'm not saying this to put you down.
+                I'm saying it because I know there's
+                a much better version of you.
             </p>
 
             <p>
-                You have much more in you than that.
+                And I want to see that version again.
             </p>
 
         </div>
 
-        <button onclick="goTo('topper')">
-            Keep reading
+        <button onclick="go('motivation')">
+            You know which version I mean...
         </button>
 
     </div>
@@ -469,96 +729,44 @@ button:hover {
 
 <!-- ================= TOPPER ================= -->
 
-<section id="topper">
+<section id="motivation">
 
     <div class="content">
 
-        <div class="small">And this is what I really want</div>
+        <div class="small">You were once this guy</div>
 
-        <div class="topper-word">
+        <div class="topper">
             THE<br>
-            <span class="highlight">TOPPER</span>
+            <span>TOPPER</span>
         </div>
 
-        <p>
-            Bro, I want that version of you back.
-        </p>
+        <div class="quote">
 
-        <br>
+            You were once the guy who made
+            other toppers nervous.
 
-        <p>
-            There was a time when you were a huge topper.
-            Even the toppers around you knew they had to
-            compete with you.
-        </p>
+            <br><br>
 
-        <br>
+            I don't want some perfect version of you.
 
-        <p>
-            Your studies didn't suddenly become impossible.
-            Somewhere along the way, your mindset changed.
-        </p>
+            <br>
 
-        <br>
+            I just want you to get your mindset back.
 
-        <p>
-            So change it again.
-        </p>
+            <br><br>
 
-        <br>
-
-        <p>
             Control your anger.<br>
             Think before you speak.<br>
-            Stop fighting every battle.
-        </p>
+            Focus on what actually matters.
 
-        <br>
+            <br><br>
 
-        <p>
-            You don't need to prove yourself to everyone.
-            Just become the version of yourself
-            that you know you're capable of being.
-        </p>
+            **I want the topper version of you back.** ❤️
 
-        <button onclick="goTo('birthday')">
-            Now... one last thing
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ================= BIRTHDAY ================= -->
-
-<section id="birthday">
-
-    <div class="content">
-
-        <div class="small">Today is your day</div>
-
-        <div class="birthday">
-            HAPPY<br>
-            BIRTHDAY
         </div>
 
-        <div class="name">
-            VAATHI ❤️
-        </div>
-
-        <div class="cake">
-            🎂
-        </div>
-
-        <p>
-            Keep growing.<br>
-            Keep learning.<br>
-            And don't forget the person you want to become.
-        </p>
-
-        <button onclick="goTo('final')">
-            One final message
+        <button onclick="go('final'); celebrate();">
+            Okay... enough serious talk 😂
         </button>
 
     </div>
@@ -570,24 +778,45 @@ button:hover {
 
 <section id="final">
 
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎈</div>
+    <div class="balloon b3">🎈</div>
+    <div class="balloon b4">🎈</div>
+
     <div class="content">
 
-        <div class="small">From your brother</div>
-
-        <div class="final-message">
-
-            Whatever happens,<br>
-            I'm still your brother.<br><br>
-
-            So fight less.<br>
-            Think more.<br>
-            Study hard.<br>
-            And bring that topper version of you back.
-            
+        <div class="small">
+            28 • AUGUST • YOUR DAY
         </div>
 
+        <div class="final-title">
+            HAPPY<br>
+            BIRTHDAY
+        </div>
+
+        <div class="final-name">
+            VAATHI ❤️
+        </div>
+
+        <div class="final-cake">
+            🎂
+        </div>
+
+        <p class="final-text">
+            Here's to another year of life,
+            laughter, chaos, growth and memories.
+        </p>
+
+        <br>
+
+        <p class="final-text">
+            Whatever happens...
+            <br>
+            we're still brothers.
+        </p>
+
         <div class="signature">
-            HAPPY BIRTHDAY, BRO ❤️
+            MADE WITH ❤️ BY YOUR BROTHER
         </div>
 
     </div>
@@ -597,12 +826,100 @@ button:hover {
 
 <script>
 
-function goTo(sectionId) {
+/* ================= SMOOTH NAVIGATION ================= */
 
-    document.getElementById(sectionId).scrollIntoView({
+function go(id) {
+
+    document.getElementById(id).scrollIntoView({
         behavior: "smooth"
     });
 
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+function updateCountdown() {
+
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let birthday = new Date(year, 7, 28, 0, 0, 0);
+
+    /*
+       If this year's birthday has already passed,
+       count toward next year's birthday.
+    */
+
+    if (now > birthday) {
+        birthday = new Date(year + 1, 7, 28, 0, 0, 0);
+    }
+
+    const difference = birthday - now;
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* ================= CONFETTI ================= */
+
+function celebrate() {
+
+    for (let i = 0; i < 120; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        piece.style.transform =
+            "rotate(" + Math.random() * 360 + "deg)";
+
+        piece.style.background =
+            "hsl(" + Math.random() * 360 + ", 80%, 65%)";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 4500);
+    }
 }
 
 </script>
