@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For Vaathi ❤️</title>
 
@@ -16,6 +15,7 @@
 <link
 href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
+
 
 <style>
 
@@ -39,15 +39,19 @@ body {
 
     font-family: "Poppins", sans-serif;
 
+    color: white;
+
+    overflow: hidden;
+
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(113, 32, 180, 0.35),
+            rgba(113, 32, 180, .35),
             transparent 35%
         ),
         radial-gradient(
             circle at 80% 25%,
-            rgba(255, 32, 156, 0.20),
+            rgba(255, 32, 156, .20),
             transparent 35%
         ),
         linear-gradient(
@@ -56,15 +60,11 @@ body {
             #0b0018,
             #16002f
         );
-
-    color: white;
-
-    overflow: hidden;
 }
 
 
 /* =========================================================
-   STAR BACKGROUND
+   BACKGROUND STARS
 ========================================================= */
 
 .stars {
@@ -73,9 +73,9 @@ body {
 
     inset: 0;
 
-    pointer-events: none;
+    z-index: -20;
 
-    z-index: -10;
+    pointer-events: none;
 
     background-image:
 
@@ -98,7 +98,8 @@ body {
     opacity: .25;
 
     animation:
-        starsMove 25s linear infinite;
+        starsMove
+        25s linear infinite;
 }
 
 @keyframes starsMove {
@@ -118,7 +119,7 @@ body {
 
 
 /* =========================================================
-   SCREEN SYSTEM
+   SCREENS
 ========================================================= */
 
 .screen {
@@ -128,11 +129,10 @@ body {
     inset: 0;
 
     width: 100%;
+
     height: 100vh;
 
-    padding:
-        25px
-        6%;
+    padding: 20px 7%;
 
     display: flex;
 
@@ -149,7 +149,6 @@ body {
     transform: scale(1.04);
 
     transition:
-
         opacity .65s ease,
         transform .65s ease,
         visibility .65s;
@@ -178,6 +177,7 @@ body {
 }
 
 .content::-webkit-scrollbar {
+
     display: none;
 }
 
@@ -218,7 +218,7 @@ h2 {
 
     line-height: 1.1;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 
@@ -238,19 +238,18 @@ p {
 
 
 /* =========================================================
-   BUTTONS
+   BUTTON
 ========================================================= */
 
 .btn {
 
-    margin: 12px 6px;
+    margin:
+        12px 6px;
 
     padding:
-        14px
-        25px;
+        14px 26px;
 
     border:
-
         1px solid
         rgba(255,255,255,.35);
 
@@ -326,6 +325,7 @@ p {
         4s ease-in-out infinite;
 }
 
+
 .balloon::after {
 
     content: "";
@@ -343,6 +343,7 @@ p {
     top: 60px;
 }
 
+
 .balloon.one {
 
     left: 4%;
@@ -356,6 +357,7 @@ p {
             #ff1493
         );
 }
+
 
 .balloon.two {
 
@@ -373,6 +375,7 @@ p {
     animation-delay: 1s;
 }
 
+
 .balloon.three {
 
     right: 12%;
@@ -389,6 +392,7 @@ p {
     animation-delay: 2s;
 }
 
+
 @keyframes balloonFloat {
 
     50% {
@@ -401,7 +405,7 @@ p {
 
 
 /* =========================================================
-   SCREEN 1 — HERO
+   HERO
 ========================================================= */
 
 .hero-cake {
@@ -421,10 +425,12 @@ p {
         infinite;
 }
 
+
 @keyframes cakeFloat {
 
     50% {
-        transform: translateY(-12px);
+        transform:
+            translateY(-12px);
     }
 }
 
@@ -466,6 +472,7 @@ p {
         5s linear infinite;
 }
 
+
 @keyframes gradientMove {
 
     to {
@@ -475,7 +482,7 @@ p {
 
 
 /* =========================================================
-   SCREEN 2 — DATE
+   DATE
 ========================================================= */
 
 .date-number {
@@ -503,6 +510,7 @@ p {
     color: transparent;
 }
 
+
 .date-month {
 
     font-family: "Cinzel", serif;
@@ -519,18 +527,20 @@ p {
     color: #ffd9f6;
 }
 
+
 .date-year {
 
     font-size: 26px;
 
     color: #8bdfff;
 
-    margin: 12px 0 22px;
+    margin:
+        12px 0 22px;
 }
 
 
 /* =========================================================
-   SCREEN 3 — TIME SINCE BIRTH
+   TIME COUNTER
 ========================================================= */
 
 .counter {
@@ -548,8 +558,7 @@ p {
     max-width: 850px;
 
     margin:
-        25px
-        auto;
+        25px auto;
 }
 
 
@@ -615,7 +624,7 @@ p {
 
 
 /* =========================================================
-   SCREEN 4 — 3 2 1
+   COUNTDOWN
 ========================================================= */
 
 .count-number {
@@ -651,6 +660,7 @@ p {
         alternate;
 }
 
+
 @keyframes countPulse {
 
     from {
@@ -674,7 +684,7 @@ p {
 
 
 /* =========================================================
-   SCREEN 5 — BIRTHDAY REVEAL
+   BIRTHDAY
 ========================================================= */
 
 .birthday-cake {
@@ -686,6 +696,7 @@ p {
         1.5s
         infinite;
 }
+
 
 @keyframes cakePulse {
 
@@ -725,7 +736,9 @@ p {
 
 .vaathi {
 
-    font-family: "Pacifico", cursive;
+    font-family:
+        "Pacifico",
+        cursive;
 
     font-size:
         clamp(
@@ -743,7 +756,88 @@ p {
 
 
 /* =========================================================
-   MEMORY SELECTOR
+   BABY PHOTO
+========================================================= */
+
+.baby-photo-frame {
+
+    width:
+        min(
+            370px,
+            72%
+        );
+
+    margin:
+        24px auto;
+
+    padding:
+        10px
+        10px
+        16px;
+
+    background:
+        #f1dfb9;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.65);
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        transform .5s ease;
+}
+
+
+.baby-photo-frame:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+}
+
+
+.baby-photo-frame img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+
+    /*
+        The uploaded baby photo is sideways.
+        This rotates it upright.
+    */
+
+    transform:
+        rotate(90deg)
+        scale(1.02);
+}
+
+
+.baby-caption {
+
+    color:
+        #241527;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        18px;
+
+    padding-top:
+        12px;
+}
+
+
+/* =========================================================
+   MEMORY BUTTONS
 ========================================================= */
 
 .memory-buttons {
@@ -759,8 +853,7 @@ p {
     max-width: 850px;
 
     margin:
-        25px
-        auto;
+        20px auto;
 }
 
 
@@ -770,7 +863,8 @@ p {
         11px
         18px;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     border:
         1px solid
@@ -785,7 +879,9 @@ p {
 
     transition: .25s;
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 }
 
 
@@ -800,7 +896,7 @@ p {
 
 
 /* =========================================================
-   MEMORY PHOTO
+   NORMAL MEMORY PHOTO
 ========================================================= */
 
 .photo-frame {
@@ -812,12 +908,12 @@ p {
         );
 
     margin:
-        20px
-        auto;
+        18px auto;
 
     padding: 10px;
 
-    background: #f2e2bc;
+    background:
+        #f2e2bc;
 
     box-shadow:
         0 20px 55px
@@ -832,25 +928,31 @@ p {
 
     width: 100%;
 
-    max-height: 48vh;
+    max-height: 43vh;
 
     object-fit: cover;
 
     display: block;
+
+    transition:
+        opacity .2s;
 }
 
 
 .photo-caption {
 
-    color: #241527;
+    color:
+        #241527;
 
     font-family:
         "Pacifico",
         cursive;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    padding: 10px;
+    padding:
+        10px;
 }
 
 
@@ -867,8 +969,7 @@ p {
         );
 
     margin:
-        20px
-        auto;
+        20px auto;
 
     padding: 30px;
 
@@ -894,9 +995,11 @@ p {
 
 .message-box strong {
 
-    color: #ff6adc;
+    color:
+        #ff6adc;
 
-    font-size: 18px;
+    font-size:
+        18px;
 }
 
 
@@ -920,9 +1023,11 @@ p {
         infinite;
 }
 
+
 @keyframes trophyFloat {
 
     50% {
+
         transform:
             translateY(-10px)
             rotate(3deg);
@@ -932,7 +1037,9 @@ p {
 
 .topper-title {
 
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
 
     font-size:
         clamp(
@@ -941,22 +1048,27 @@ p {
             90px
         );
 
-    color: #ffd237;
+    color:
+        #ffd237;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 }
 
 
 .topper-points {
 
-    max-width: 700px;
+    max-width:
+        700px;
 
     margin:
         auto;
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 12px;
+    gap:
+        12px;
 }
 
 
@@ -966,9 +1078,11 @@ p {
         14px
         18px;
 
-    text-align: left;
+    text-align:
+        left;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     background:
         rgba(255,255,255,.05);
@@ -981,7 +1095,8 @@ p {
 
 .topper-point b {
 
-    color: #ffd342;
+    color:
+        #ffd342;
 }
 
 
@@ -991,7 +1106,8 @@ p {
 
 .gifts {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
@@ -999,19 +1115,25 @@ p {
             1fr
         );
 
-    gap: 15px;
+    gap:
+        15px;
 
-    max-width: 850px;
+    max-width:
+        850px;
 
-    margin: 25px auto;
+    margin:
+        25px auto;
 }
 
 
 .gift {
 
-    padding: 30px 15px;
+    padding:
+        30px
+        15px;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
     border:
         1px solid
@@ -1025,9 +1147,11 @@ p {
             rgba(90,50,255,.16)
         );
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 
@@ -1045,35 +1169,41 @@ p {
 
 .gift-icon {
 
-    font-size: 55px;
+    font-size:
+        55px;
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
 }
 
 
 .gift-title {
 
-    font-weight: 700;
-
-    color: #fff;
+    font-weight:
+        700;
 }
 
 
 .gift-message {
 
-    margin-top: 12px;
+    margin-top:
+        12px;
 
-    color: #ffc6ee;
+    color:
+        #ffc6ee;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    display: none;
+    display:
+        none;
 }
 
 
 .gift.open .gift-message {
 
-    display: block;
+    display:
+        block;
 }
 
 
@@ -1083,7 +1213,9 @@ p {
 
 .final-title {
 
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
 
     font-size:
         clamp(
@@ -1092,15 +1224,19 @@ p {
             105px
         );
 
-    line-height: .95;
+    line-height:
+        .95;
 
-    color: #ffd33a;
+    color:
+        #ffd33a;
 }
 
 
 .final-vaathi {
 
-    font-family: "Pacifico", cursive;
+    font-family:
+        "Pacifico",
+        cursive;
 
     font-size:
         clamp(
@@ -1109,7 +1245,8 @@ p {
             95px
         );
 
-    color: #ff4dbd;
+    color:
+        #ff4dbd;
 }
 
 
@@ -1118,16 +1255,17 @@ p {
     width:
         min(
             500px,
-            90%
+            88%
         );
 
     margin:
-        20px
-        auto;
+        18px auto;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         2px solid
@@ -1141,9 +1279,11 @@ p {
 
 .final-photo img {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 }
 
 
@@ -1153,15 +1293,20 @@ p {
 
 .wishes {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 10px;
+    gap:
+        10px;
 
-    margin: 22px 0;
+    margin:
+        18px 0;
 }
 
 
@@ -1171,13 +1316,10 @@ p {
         10px
         16px;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     background:
-        rgba(255,255,255,.08);
-
-    border:
-        1px solid
         rgba(255,255,255,.08);
 }
 
@@ -1188,23 +1330,30 @@ p {
 
 .confetti {
 
-    position: fixed;
+    position:
+        fixed;
 
-    top: -20px;
+    top:
+        -20px;
 
-    width: 8px;
+    width:
+        8px;
 
-    height: 14px;
+    height:
+        14px;
 
-    z-index: 9999;
+    z-index:
+        9999;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
     animation:
         confettiFall
         linear
         forwards;
 }
+
 
 @keyframes confettiFall {
 
@@ -1214,7 +1363,8 @@ p {
             translateY(110vh)
             rotate(720deg);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 }
 
@@ -1223,49 +1373,83 @@ p {
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (
+    max-width: 700px
+) {
 
     .screen {
 
         padding:
-            20px
+            15px
             12px;
     }
 
+
     .counter {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
+
 
     .counter-box {
 
         padding:
-            16px 10px;
+            15px
+            10px;
     }
+
 
     .gifts {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        max-width: 350px;
+        max-width:
+            350px;
     }
+
 
     .message-box {
 
-        padding: 22px;
+        padding:
+            22px;
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
+
+
+    .baby-photo-frame {
+
+        width:
+            min(
+                300px,
+                70%
+            );
+    }
+
+
+    .baby-photo-frame img {
+
+        height:
+            245px;
+    }
+
 
     .photo-frame img {
 
-        max-height: 42vh;
+        max-height:
+            38vh;
     }
+
 
     .balloon {
 
-        transform: scale(.75);
+        transform:
+            scale(.75);
     }
+
 }
 
 </style>
@@ -1275,8 +1459,6 @@ p {
 
 <body>
 
-
-<!-- BACKGROUND -->
 
 <div class="stars"></div>
 
@@ -1316,7 +1498,9 @@ id="screen1"
 
     <button
     class="btn"
-    onclick="showScreen('screen2')"
+    onclick="
+        showScreen('screen2')
+    "
     >
         OPEN YOUR SURPRISE 🎁
     </button>
@@ -1327,7 +1511,7 @@ id="screen1"
 
 
 <!-- =========================================================
-     SCREEN 2 — BIRTH DATE
+     SCREEN 2
 ========================================================= -->
 
 <section
@@ -1360,7 +1544,9 @@ id="screen2"
 
     <button
     class="btn"
-    onclick="showScreen('screen3')"
+    onclick="
+        showScreen('screen3')
+    "
     >
         Let's see how far we've come 👀
     </button>
@@ -1371,7 +1557,7 @@ id="screen2"
 
 
 <!-- =========================================================
-     SCREEN 3 — TIME SINCE BIRTH
+     SCREEN 3
 ========================================================= -->
 
 <section
@@ -1391,6 +1577,7 @@ id="screen3"
     </h2>
 
     <div class="counter">
+
 
         <div class="counter-box">
 
@@ -1445,16 +1632,21 @@ id="screen3"
 
         </div>
 
+
     </div>
+
 
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
 
+
     <button
     class="btn"
-    onclick="startCountdown()"
+    onclick="
+        startCountdown()
+    "
     >
         Wait... 🎂
     </button>
@@ -1465,7 +1657,7 @@ id="screen3"
 
 
 <!-- =========================================================
-     SCREEN 4 — 3 2 1
+     SCREEN 4 — COUNTDOWN
 ========================================================= -->
 
 <section
@@ -1499,7 +1691,7 @@ id="countdown"
 
 
 <!-- =========================================================
-     SCREEN 5 — BIRTHDAY REVEAL
+     SCREEN 5 — BIRTHDAY
 ========================================================= -->
 
 <section
@@ -1529,9 +1721,11 @@ id="birthday"
 
     <button
     class="btn"
-    onclick="showScreen('memories')"
+    onclick="
+        showScreen('baby')
+    "
     >
-        Now... let's look back 📸
+        Now... look at this 👀
     </button>
 
 </div>
@@ -1540,7 +1734,60 @@ id="birthday"
 
 
 <!-- =========================================================
-     SCREEN 6 — MEMORIES
+     SCREEN 6 — BABY PHOTO
+========================================================= -->
+
+<section
+class="screen"
+id="baby"
+>
+
+<div class="content">
+
+    <div class="small">
+        Let's go back for a moment... 🥹
+    </div>
+
+    <h2>
+        See this guy. 👶
+    </h2>
+
+    <p>
+        He had absolutely no idea<br>
+        how much life was waiting for him.
+    </p>
+
+
+    <div class="baby-photo-frame">
+
+        <img
+        src="baby.jpg"
+        alt="Vaathi as a baby"
+        >
+
+        <div class="baby-caption">
+            Look at him... ❤️
+        </div>
+
+    </div>
+
+
+    <button
+    class="btn"
+    onclick="
+        showScreen('memories')
+    "
+    >
+        He grew up... 👀
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SCREEN 7 — MORE MEMORIES
 ========================================================= -->
 
 <section
@@ -1551,36 +1798,25 @@ id="memories"
 <div class="content">
 
     <div class="small">
-        A little trip down memory lane
+        And then... years passed 📸
     </div>
 
     <h2>
-        Pick a memory 📸
+        From that little guy...<br>
+        to this.
     </h2>
 
 
     <div class="memory-buttons">
 
-        <button
-        class="memory-btn"
-        onclick="
-        openMemory(
-        'baby.jpg',
-        'Look at this little guy! 👶❤️'
-        )
-        "
-        >
-            👶 Baby
-        </button>
-
 
         <button
         class="memory-btn"
         onclick="
-        openMemory(
-        'frnds1.jpg',
-        'And then came the school days... 🏫'
-        )
+            openMemory(
+                'frnds1.jpg',
+                'The school days... 🏫'
+            )
         "
         >
             🏫 School
@@ -1590,10 +1826,10 @@ id="memories"
         <button
         class="memory-btn"
         onclick="
-        openMemory(
-        'frnds2.jpg',
-        'Some memories just stay. ❤️'
-        )
+            openMemory(
+                'frnds2.jpg',
+                'Some memories just stay. ❤️'
+            )
         "
         >
             🤝 Memory
@@ -1603,10 +1839,10 @@ id="memories"
         <button
         class="memory-btn"
         onclick="
-        openMemory(
-        'Frnds3.jpg',
-        'Brotherhood moments. 😎'
-        )
+            openMemory(
+                'Frnds3.jpg',
+                'Brotherhood moments. 😎'
+            )
         "
         >
             😎 Us
@@ -1616,10 +1852,10 @@ id="memories"
         <button
         class="memory-btn"
         onclick="
-        openMemory(
-        'hill.jpg',
-        'A few places, a lot of memories. 🌄'
-        )
+            openMemory(
+                'hill.jpg',
+                'A few places, a lot of memories. 🌄'
+            )
         "
         >
             🌄 Adventure
@@ -1629,14 +1865,15 @@ id="memories"
         <button
         class="memory-btn"
         onclick="
-        openMemory(
-        'mirror.jpg',
-        'And somehow... that little kid grew up.'
-        )
+            openMemory(
+                'mirror.jpg',
+                'And somehow... that little kid grew up.'
+            )
         "
         >
             🪞 Growing Up
         </button>
+
 
     </div>
 
@@ -1645,7 +1882,7 @@ id="memories"
 
         <img
         id="memoryImage"
-        src="baby.jpg"
+        src="frnds1.jpg"
         alt="Memory"
         >
 
@@ -1653,7 +1890,7 @@ id="memories"
         class="photo-caption"
         id="memoryCaption"
         >
-            Look at this little guy! 👶❤️
+            The school days... 🏫
         </div>
 
     </div>
@@ -1661,9 +1898,11 @@ id="memories"
 
     <button
     class="btn"
-    onclick="showScreen('message')"
+    onclick="
+        showScreen('message')
+    "
     >
-        One serious thing ❤️
+        Now seriously... ❤️
     </button>
 
 </div>
@@ -1672,7 +1911,7 @@ id="memories"
 
 
 <!-- =========================================================
-     SCREEN 7 — BROTHER MESSAGE
+     SCREEN 8 — BROTHER MESSAGE
 ========================================================= -->
 
 <section
@@ -1700,14 +1939,18 @@ id="message"
             for you than everyone else.
         </p>
 
+
         <br>
+
 
         <p>
             And when you're angry, sometimes you don't
             care who's standing in front of you.
         </p>
 
+
         <br>
+
 
         <p>
             I'm not saying this to lecture you.
@@ -1715,7 +1958,9 @@ id="message"
             <strong>I believe in you.</strong>
         </p>
 
+
         <br>
+
 
         <p>
             I've seen what you're capable of.
@@ -1726,7 +1971,9 @@ id="message"
 
     <button
     class="btn"
-    onclick="showScreen('topper')"
+    onclick="
+        showScreen('topper')
+    "
     >
         You know which version I mean... 👀
     </button>
@@ -1737,7 +1984,7 @@ id="message"
 
 
 <!-- =========================================================
-     SCREEN 8 — TOPPER
+     SCREEN 9 — TOPPER
 ========================================================= -->
 
 <section
@@ -1762,33 +2009,61 @@ id="topper"
 
     <div class="topper-points">
 
-        <div class="topper-point">
-            🧠 <b>Control</b> your anger.
-        </div>
 
         <div class="topper-point">
-            🗣️ <b>Think</b> before you speak.
+
+            🧠
+            <b>Control</b>
+            your anger.
+
         </div>
 
-        <div class="topper-point">
-            🎯 <b>Focus</b> on what matters.
-        </div>
 
         <div class="topper-point">
-            📚 You were once the guy who
+
+            🗣️
+            <b>Think</b>
+            before you speak.
+
+        </div>
+
+
+        <div class="topper-point">
+
+            🎯
+            <b>Focus</b>
+            on what matters.
+
+        </div>
+
+
+        <div class="topper-point">
+
+            📚
+            You were once the guy who
             made other toppers nervous.
+
         </div>
 
+
         <div class="topper-point">
-            ❤️ <b>I want that version of you back.</b>
+
+            ❤️
+            <b>
+                I want that version of you back.
+            </b>
+
         </div>
+
 
     </div>
 
 
     <button
     class="btn"
-    onclick="showScreen('gifts')"
+    onclick="
+        showScreen('gifts')
+    "
     >
         Okay... enough serious talk 😂
     </button>
@@ -1799,7 +2074,7 @@ id="topper"
 
 
 <!-- =========================================================
-     SCREEN 9 — GIFTS
+     SCREEN 10 — GIFTS
 ========================================================= -->
 
 <section
@@ -1823,7 +2098,9 @@ id="gifts"
 
         <div
         class="gift"
-        onclick="openGift(this)"
+        onclick="
+            openGift(this)
+        "
         >
 
             <div class="gift-icon">
@@ -1845,7 +2122,9 @@ id="gifts"
 
         <div
         class="gift"
-        onclick="openGift(this)"
+        onclick="
+            openGift(this)
+        "
         >
 
             <div class="gift-icon">
@@ -1867,7 +2146,9 @@ id="gifts"
 
         <div
         class="gift"
-        onclick="openGift(this)"
+        onclick="
+            openGift(this)
+        "
         >
 
             <div class="gift-icon">
@@ -1885,12 +2166,15 @@ id="gifts"
 
         </div>
 
+
     </div>
 
 
     <button
     class="btn"
-    onclick="showScreen('final')"
+    onclick="
+        showScreen('final')
+    "
     >
         One last surprise 🎂
     </button>
@@ -1901,7 +2185,7 @@ id="gifts"
 
 
 <!-- =========================================================
-     SCREEN 10 — FINAL
+     SCREEN 11 — FINAL
 ========================================================= -->
 
 <section
@@ -1931,7 +2215,7 @@ id="final"
 
         <img
         src="vaathi.jpg"
-        alt="Final memory"
+        alt="Vaathi"
         >
 
     </div>
@@ -1939,25 +2223,31 @@ id="final"
 
     <div class="wishes">
 
+
         <div class="wish">
             😊 Happiness
         </div>
+
 
         <div class="wish">
             🏆 Success
         </div>
 
+
         <div class="wish">
             ❤️ Good Health
         </div>
+
 
         <div class="wish">
             🕊️ Peace
         </div>
 
+
         <div class="wish">
             🚀 Big Dreams
         </div>
+
 
     </div>
 
@@ -1968,14 +2258,18 @@ id="final"
         best version of yourself.
     </p>
 
+
     <br>
+
 
     <p>
         No matter what happens,
         I'm always here for you.
     </p>
 
+
     <br>
+
 
     <p>
         <strong>
@@ -1996,28 +2290,28 @@ id="final"
 
 function showScreen(id) {
 
-    const screens =
-        document.querySelectorAll(".screen");
+    document
+        .querySelectorAll(".screen")
+        .forEach(
+            screen => {
 
-    screens.forEach(
-        screen => {
+                screen.classList.remove(
+                    "active"
+                );
 
-            screen.classList.remove("active");
-
-        }
-    );
+            }
+        );
 
 
-    const nextScreen =
-        document.getElementById(id);
-
-    nextScreen.classList.add("active");
+    document
+        .getElementById(id)
+        .classList.add("active");
 
 }
 
 
 /* =========================================================
-   AGE / ELAPSED TIME
+   TIME SINCE BIRTH
 ========================================================= */
 
 const birthDate =
@@ -2030,6 +2324,7 @@ function updateAge() {
 
     const now =
         new Date();
+
 
     const elapsed =
         now - birthDate;
@@ -2053,21 +2348,21 @@ function updateAge() {
         );
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
+    document
+        .getElementById("hours")
+        .textContent =
         totalHours.toLocaleString();
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
+    document
+        .getElementById("minutes")
+        .textContent =
         totalMinutes.toLocaleString();
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
+    document
+        .getElementById("seconds")
+        .textContent =
         totalSeconds.toLocaleString();
 
 }
@@ -2082,7 +2377,7 @@ setInterval(
 
 
 /* =========================================================
-   3 - 2 - 1 BIRTHDAY COUNTDOWN
+   3 2 1 COUNTDOWN
 ========================================================= */
 
 let countdownStarted =
@@ -2092,7 +2387,9 @@ let countdownStarted =
 function startCountdown() {
 
     if (countdownStarted) {
+
         return;
+
     }
 
 
@@ -2117,7 +2414,8 @@ function startCountdown() {
         );
 
 
-    let count = 3;
+    let count =
+        3;
 
 
     number.textContent =
@@ -2141,19 +2439,10 @@ function startCountdown() {
                         count;
 
 
-                    if (count === 2) {
-
-                        message.textContent =
-                            "Almost there...";
-
-                    }
-
-                    else {
-
-                        message.textContent =
-                            "One more...";
-
-                    }
+                    message.textContent =
+                        count === 2
+                            ? "Almost there..."
+                            : "One more...";
 
                 }
 
@@ -2229,7 +2518,6 @@ function openMemory(
             img.src =
                 image;
 
-
             text.textContent =
                 caption;
 
@@ -2273,15 +2561,10 @@ function createConfetti() {
     const colors = [
 
         "#ff2e93",
-
         "#8c52ff",
-
         "#00d4ff",
-
         "#ffd700",
-
         "#ff7b00",
-
         "#38ff9b"
 
     ];
@@ -2319,16 +2602,14 @@ function createConfetti() {
 
         piece.style.animationDuration =
             (
-                2
-                +
+                2 +
                 Math.random() * 3
             )
             + "s";
 
 
         piece.style.animationDelay =
-            Math.random()
-            * .8
+            Math.random() * .8
             + "s";
 
 
