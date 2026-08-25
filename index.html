@@ -3,9 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For Vaathi ❤️</title>
 
@@ -42,13 +40,13 @@ body {
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(113, 32, 180, .35),
-            transparent 35%
+            rgba(113, 32, 180, .30),
+            transparent 34%
         ),
         radial-gradient(
             circle at 80% 25%,
-            rgba(255, 32, 156, .20),
-            transparent 35%
+            rgba(255, 32, 156, .16),
+            transparent 34%
         ),
         linear-gradient(
             135deg,
@@ -60,7 +58,7 @@ body {
 
 
 /* =========================================================
-   STARS
+   STAR FIELD
 ========================================================= */
 
 .stars {
@@ -77,7 +75,7 @@ body {
         ),
         radial-gradient(
             circle,
-            rgba(255,80,220,.8) 1px,
+            rgba(255,80,220,.75) 1px,
             transparent 1px
         );
 
@@ -85,31 +83,119 @@ body {
         90px 90px,
         130px 130px;
 
-    opacity: .25;
+    opacity: .22;
 
-    animation:
-        starsMove
-        25s linear infinite;
+    animation: starsMove 28s linear infinite;
 }
 
 @keyframes starsMove {
-
     from {
-        background-position:
-            0 0,
-            0 0;
+        background-position: 0 0, 0 0;
     }
 
     to {
-        background-position:
-            180px 180px,
-            -180px 100px;
+        background-position: 180px 160px, -180px 100px;
     }
 }
 
 
 /* =========================================================
-   SCREEN SYSTEM
+   FLOATING DECORATIONS
+========================================================= */
+
+.decor {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.float-item {
+    position: absolute;
+    bottom: -90px;
+    opacity: .72;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,.18));
+    animation: floatUp linear infinite;
+}
+
+.float-balloon {
+    font-size: 42px;
+}
+
+.float-candy {
+    font-size: 28px;
+}
+
+.float-cake {
+    font-size: 34px;
+}
+
+.float-star {
+    font-size: 20px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-55vh)
+            translateX(18px)
+            rotate(8deg);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-12px)
+            rotate(-5deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   SCENE TRANSITION
+========================================================= */
+
+.transition-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.55),
+            rgba(255,70,190,.2),
+            transparent 60%
+        );
+
+    transform: scale(.2);
+
+    transition:
+        opacity .25s ease,
+        transform .65s ease;
+}
+
+.transition-flash.active {
+    opacity: 1;
+    transform: scale(2.5);
+}
+
+
+/* =========================================================
+   SCREENS
 ========================================================= */
 
 .screen {
@@ -130,18 +216,23 @@ body {
     opacity: 0;
     visibility: hidden;
 
-    transform: scale(1.04);
+    transform:
+        scale(1.04)
+        translateY(10px);
 
     transition:
-        opacity .65s ease,
-        transform .65s ease,
-        visibility .65s;
+        opacity .55s ease,
+        transform .55s ease,
+        visibility .55s;
 }
 
 .screen.active {
     opacity: 1;
     visibility: visible;
-    transform: scale(1);
+
+    transform:
+        scale(1)
+        translateY(0);
 }
 
 .content {
@@ -178,28 +269,46 @@ h2 {
 }
 
 h2 {
-    font-size: clamp(32px, 6vw, 65px);
+    font-size:
+        clamp(
+            32px,
+            6vw,
+            65px
+        );
+
     line-height: 1.1;
+
     margin-bottom: 18px;
 }
 
 p {
     color: #ddd;
-    font-size: clamp(15px, 2vw, 19px);
+
+    font-size:
+        clamp(
+            15px,
+            2vw,
+            19px
+        );
+
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   BUTTON
+   BUTTONS
 ========================================================= */
 
 .btn {
     margin: 12px 6px;
 
-    padding: 14px 26px;
+    padding:
+        14px 26px;
 
-    border: 1px solid rgba(255,255,255,.35);
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
     border-radius: 50px;
 
     background:
@@ -213,6 +322,7 @@ p {
     color: white;
 
     font-family: "Poppins", sans-serif;
+
     font-size: 15px;
     font-weight: 600;
 
@@ -220,7 +330,7 @@ p {
 
     box-shadow:
         0 0 15px rgba(255,20,147,.35),
-        0 0 35px rgba(123,44,255,.25);
+        0 0 35px rgba(123,44,255,.22);
 
     transition: .3s;
 }
@@ -237,87 +347,84 @@ p {
 
 
 /* =========================================================
-   BALLOONS
+   YES / NO AREA
 ========================================================= */
 
-.balloon {
-    position: fixed;
+.answer-area {
+    margin-top: 22px;
 
-    width: 48px;
-    height: 62px;
+    display:
+        flex;
 
-    border-radius: 50%;
+    justify-content:
+        center;
 
-    z-index: -1;
+    align-items:
+        center;
 
-    opacity: .75;
+    gap: 10px;
 
+    flex-wrap: wrap;
+}
+
+.yes-btn {
+    background:
+        linear-gradient(
+            90deg,
+            #16c784,
+            #18e6a0,
+            #00aef0
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,220,170,.35),
+        0 0 30px rgba(0,180,255,.18);
+}
+
+.no-btn {
+    background:
+        linear-gradient(
+            90deg,
+            #3b3148,
+            #5a3d63
+        );
+
+    box-shadow:
+        none;
+
+    position: relative;
+}
+
+.no-btn.nope {
     animation:
-        balloonFloat
-        4s ease-in-out infinite;
+        nopeShake
+        .35s
+        ease;
 }
 
-.balloon::after {
-    content: "";
+@keyframes nopeShake {
 
-    position: absolute;
-
-    width: 1px;
-    height: 90px;
-
-    background: #ddd;
-
-    left: 50%;
-    top: 60px;
-}
-
-.balloon.one {
-    left: 4%;
-    top: 15%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ff438c,
-            #ff1493
-        );
-}
-
-.balloon.two {
-    right: 5%;
-    top: 18%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #7c4dff,
-            #4b26ff
-        );
-
-    animation-delay: 1s;
-}
-
-.balloon.three {
-    right: 12%;
-    bottom: 15%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffbd32,
-            #ff6900
-        );
-
-    animation-delay: 2s;
-}
-
-@keyframes balloonFloat {
-
-    50% {
-        transform:
-            translateY(-22px)
-            rotate(5deg);
+    0%, 100% {
+        transform: translateX(0);
     }
+
+    25% {
+        transform: translateX(-9px);
+    }
+
+    75% {
+        transform: translateX(9px);
+    }
+}
+
+.question-answer {
+    min-height: 28px;
+
+    margin-top: 15px;
+
+    color: #ffb9ef;
+
+    font-size: 14px;
 }
 
 
@@ -436,7 +543,8 @@ p {
     font-size: 26px;
     color: #8bdfff;
 
-    margin: 12px 0 22px;
+    margin:
+        12px 0 22px;
 }
 
 
@@ -454,11 +562,13 @@ p {
 
     max-width: 850px;
 
-    margin: 25px auto;
+    margin:
+        25px auto;
 }
 
 .counter-box {
-    padding: 24px 12px;
+    padding:
+        24px 12px;
 
     border-radius: 20px;
 
@@ -475,11 +585,8 @@ p {
         );
 
     box-shadow:
-        0 0 20px
-        rgba(255,0,200,.15),
-
-        inset 0 0 20px
-        rgba(100,0,255,.1);
+        0 0 20px rgba(255,0,200,.15),
+        inset 0 0 20px rgba(100,0,255,.1);
 }
 
 .counter-number {
@@ -513,7 +620,7 @@ p {
 
 
 /* =========================================================
-   3 2 1 COUNTDOWN
+   COUNTDOWN
 ========================================================= */
 
 .count-number {
@@ -559,6 +666,7 @@ p {
 
 .count-message {
     font-size: 22px;
+
     color: #ffd7f5;
 
     margin-top: 25px;
@@ -610,7 +718,9 @@ p {
 }
 
 .vaathi {
-    font-family: "Pacifico", cursive;
+    font-family:
+        "Pacifico",
+        cursive;
 
     font-size:
         clamp(
@@ -628,6 +738,77 @@ p {
 
 
 /* =========================================================
+   SONG
+========================================================= */
+
+.song-card {
+
+    width:
+        min(
+            550px,
+            90%
+        );
+
+    margin:
+        22px auto;
+
+    padding:
+        22px;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid
+        rgba(255,110,220,.35);
+
+    background:
+        rgba(255,255,255,.045);
+
+    box-shadow:
+        0 0 28px
+        rgba(255,30,200,.12);
+}
+
+.song-note {
+
+    color:
+        #ffb9ef;
+
+    font-size:
+        14px;
+
+    margin-top:
+        8px;
+}
+
+.music-dot {
+
+    display:
+        inline-block;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        #26e6a8;
+
+    box-shadow:
+        0 0 10px
+        #26e6a8;
+
+    margin-right:
+        7px;
+}
+
+
+/* =========================================================
    BABY PHOTO
 ========================================================= */
 
@@ -639,26 +820,28 @@ p {
             82%
         );
 
-    margin: 22px auto;
+    margin:
+        22px auto;
 
     padding:
-        10px
-        10px
-        15px;
+        10px 10px 15px;
 
-    background: #f1dfb9;
+    background:
+        #f1dfb9;
 
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.65);
 
-    transform: rotate(-2deg);
+    transform:
+        rotate(-2deg);
 
     transition:
         transform .5s ease;
 }
 
 .baby-photo-frame:hover {
+
     transform:
         rotate(0deg)
         scale(1.02);
@@ -666,29 +849,36 @@ p {
 
 .baby-photo-frame img {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 290px;
+    height:
+        290px;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
-    display: block;
+    display:
+        block;
 
-    /* Photo is already corrected/up-right */
-    transform: none;
+    transform:
+        none;
 }
 
 .baby-caption {
 
-    color: #241527;
+    color:
+        #241527;
 
     font-family:
         "Pacifico",
         cursive;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    padding-top: 12px;
+    padding-top:
+        12px;
 }
 
 
@@ -698,24 +888,29 @@ p {
 
 .memory-buttons {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 8px;
+    gap:
+        8px;
 
-    max-width: 850px;
+    max-width:
+        850px;
 
-    margin: 20px auto;
+    margin:
+        20px auto;
 }
 
 .memory-btn {
 
     padding:
-        11px
-        18px;
+        11px 18px;
 
     border-radius:
         30px;
@@ -727,11 +922,14 @@ p {
     background:
         rgba(255,255,255,.06);
 
-    color: white;
+    color:
+        white;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .25s;
+    transition:
+        .25s;
 
     font-family:
         "Poppins",
@@ -763,7 +961,8 @@ p {
     margin:
         18px auto;
 
-    padding: 10px;
+    padding:
+        10px;
 
     background:
         #f2e2bc;
@@ -778,13 +977,17 @@ p {
 
 .photo-frame img {
 
-    width: 100%;
+    width:
+        100%;
 
-    max-height: 42vh;
+    max-height:
+        42vh;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
-    display: block;
+    display:
+        block;
 
     transition:
         opacity .2s;
@@ -799,9 +1002,11 @@ p {
         "Pacifico",
         cursive;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    padding: 10px;
+    padding:
+        10px;
 }
 
 
@@ -820,9 +1025,11 @@ p {
     margin:
         20px auto;
 
-    padding: 30px;
+    padding:
+        30px;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
     border:
         1px solid
@@ -836,14 +1043,20 @@ p {
             .75
         );
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
-    text-align: left;
+    text-align:
+        left;
 }
 
 .message-box strong {
-    color: #ff6adc;
-    font-size: 18px;
+
+    color:
+        #ff6adc;
+
+    font-size:
+        18px;
 }
 
 
@@ -853,7 +1066,8 @@ p {
 
 .trophy {
 
-    font-size: 95px;
+    font-size:
+        95px;
 
     filter:
         drop-shadow(
@@ -1028,7 +1242,8 @@ p {
 }
 
 .gift.open .gift-message {
-    display: block;
+    display:
+        block;
 }
 
 
@@ -1108,11 +1323,6 @@ p {
         100%;
 }
 
-
-/* =========================================================
-   WISHES
-========================================================= */
-
 .wishes {
 
     display:
@@ -1134,8 +1344,7 @@ p {
 .wish {
 
     padding:
-        10px
-        16px;
+        10px 16px;
 
     border-radius:
         30px;
@@ -1208,8 +1417,7 @@ p {
 
     .counter-box {
         padding:
-            15px
-            10px;
+            15px 10px;
     }
 
     .gifts {
@@ -1262,9 +1470,9 @@ p {
 
 <div class="stars"></div>
 
-<div class="balloon one"></div>
-<div class="balloon two"></div>
-<div class="balloon three"></div>
+<div class="decor" id="decor"></div>
+
+<div class="transition-flash" id="transitionFlash"></div>
 
 
 <!-- =========================================================
@@ -1292,9 +1500,7 @@ id="screen1"
 
     <button
     class="btn"
-    onclick="
-        showScreen('screen1b')
-    "
+    onclick="showScreen('screen1b')"
     >
         Listen to me ❤️
     </button>
@@ -1305,7 +1511,7 @@ id="screen1"
 
 
 <!-- =========================================================
-     SCREEN 1B — THANK YOU
+     SCREEN 2 — THANK YOU
 ========================================================= -->
 
 <section
@@ -1343,11 +1549,9 @@ id="screen1b"
 
     <button
     class="btn"
-    onclick="
-        showScreen('screen2')
-    "
+    onclick="showScreen('question1')"
     >
-        Okay... enough emotional stuff 😂
+        I made something for you... 🎁
     </button>
 
 </div>
@@ -1356,7 +1560,73 @@ id="screen1b"
 
 
 <!-- =========================================================
-     SCREEN 2 — BIRTH DATE
+     SCREEN 3 — YES / NO
+========================================================= -->
+
+<section
+class="screen"
+id="question1"
+>
+
+<div class="content">
+
+    <div class="hero-cake">
+        🎁
+    </div>
+
+    <div class="small">
+        Okay... here's the question.
+    </div>
+
+    <h2>
+        I have something<br>
+        for you.
+    </h2>
+
+    <p>
+        Do you wanna see it? 👀
+    </p>
+
+    <div class="answer-area">
+
+        <button
+        class="btn yes-btn"
+        onclick="
+            yesAnswer(
+                'question1',
+                'screen2'
+            )
+        "
+        >
+            YES 😎
+        </button>
+
+        <button
+        class="btn no-btn"
+        onclick="
+            noAnswer(
+                'q1answer',
+                this
+            )
+        "
+        >
+            NO 😶
+        </button>
+
+    </div>
+
+    <div
+    class="question-answer"
+    id="q1answer"
+    ></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SCREEN 4 — DATE
 ========================================================= -->
 
 <section
@@ -1389,9 +1659,7 @@ id="screen2"
 
     <button
     class="btn"
-    onclick="
-        showScreen('screen3')
-    "
+    onclick="showScreen('screen3')"
     >
         Let's see how far we've come 👀
     </button>
@@ -1402,7 +1670,7 @@ id="screen2"
 
 
 <!-- =========================================================
-     SCREEN 3 — TIME SINCE BIRTH
+     SCREEN 5 — TIME SINCE BIRTH
 ========================================================= -->
 
 <section
@@ -1432,14 +1700,11 @@ id="screen3"
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 HOURS
             </span>
 
         </div>
-
 
         <div class="counter-box">
 
@@ -1450,14 +1715,11 @@ id="screen3"
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 MINUTES
             </span>
 
         </div>
-
 
         <div class="counter-box">
 
@@ -1468,9 +1730,7 @@ id="screen3"
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 SECONDS
             </span>
 
@@ -1485,11 +1745,9 @@ id="screen3"
 
     <button
     class="btn"
-    onclick="
-        startCountdown()
-    "
+    onclick="startCountdown()"
     >
-        Wait... 🎂
+        There's more... 🎂
     </button>
 
 </div>
@@ -1498,7 +1756,7 @@ id="screen3"
 
 
 <!-- =========================================================
-     SCREEN 4 — 3 2 1
+     SCREEN 6 — 3 2 1
 ========================================================= -->
 
 <section
@@ -1509,7 +1767,7 @@ id="countdown"
 <div class="content">
 
     <div class="small">
-        Something is coming...
+        Get ready...
     </div>
 
     <div
@@ -1523,7 +1781,7 @@ id="countdown"
     class="count-message"
     id="countMessage"
     >
-        Get ready...
+        Something is coming...
     </div>
 
 </div>
@@ -1532,7 +1790,7 @@ id="countdown"
 
 
 <!-- =========================================================
-     SCREEN 5 — HAPPY BIRTHDAY
+     SCREEN 7 — BIRTHDAY
 ========================================================= -->
 
 <section
@@ -1560,13 +1818,34 @@ id="birthday"
         → another year unlocked 🎉
     </p>
 
+
+    <div class="song-card">
+
+        <div>
+            <span class="music-dot"></span>
+            A song I picked for you ❤️
+        </div>
+
+        <div class="song-note">
+            Let it play while you continue.
+        </div>
+
+        <button
+        class="btn"
+        id="musicBtn"
+        onclick="toggleMusic()"
+        >
+            🎵 Play song
+        </button>
+
+    </div>
+
+
     <button
     class="btn"
-    onclick="
-        showScreen('baby')
-    "
+    onclick="showScreen('question2')"
     >
-        Now... look at this 👀
+        There's something else... 👀
     </button>
 
 </div>
@@ -1575,7 +1854,73 @@ id="birthday"
 
 
 <!-- =========================================================
-     SCREEN 6 — BABY PHOTO
+     SCREEN 8 — YES / NO AGAIN
+========================================================= -->
+
+<section
+class="screen"
+id="question2"
+>
+
+<div class="content">
+
+    <div class="hero-cake">
+        🎂
+    </div>
+
+    <div class="small">
+        Don't leave yet 😂
+    </div>
+
+    <h2>
+        I have one more thing<br>
+        to show you.
+    </h2>
+
+    <p>
+        You wanna see it? 👀
+    </p>
+
+    <div class="answer-area">
+
+        <button
+        class="btn yes-btn"
+        onclick="
+            yesAnswer(
+                'question2',
+                'baby'
+            )
+        "
+        >
+            YES ❤️
+        </button>
+
+        <button
+        class="btn no-btn"
+        onclick="
+            noAnswer(
+                'q2answer',
+                this
+            )
+        "
+        >
+            NO 😶
+        </button>
+
+    </div>
+
+    <div
+    class="question-answer"
+    id="q2answer"
+    ></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SCREEN 9 — BABY
 ========================================================= -->
 
 <section
@@ -1615,9 +1960,7 @@ id="baby"
 
     <button
     class="btn"
-    onclick="
-        showScreen('memories')
-    "
+    onclick="showScreen('memories')"
     >
         He grew up... 👀
     </button>
@@ -1628,7 +1971,7 @@ id="baby"
 
 
 <!-- =========================================================
-     SCREEN 7 — MEMORIES
+     SCREEN 10 — MEMORIES
 ========================================================= -->
 
 <section
@@ -1650,7 +1993,6 @@ id="memories"
 
     <div class="memory-buttons">
 
-
         <button
         class="memory-btn"
         onclick="
@@ -1662,7 +2004,6 @@ id="memories"
         >
             🏫 School
         </button>
-
 
         <button
         class="memory-btn"
@@ -1676,7 +2017,6 @@ id="memories"
             🤝 Memory
         </button>
 
-
         <button
         class="memory-btn"
         onclick="
@@ -1689,7 +2029,6 @@ id="memories"
             😎 Us
         </button>
 
-
         <button
         class="memory-btn"
         onclick="
@@ -1701,7 +2040,6 @@ id="memories"
         >
             🌄 Adventure
         </button>
-
 
         <button
         class="memory-btn"
@@ -1738,9 +2076,7 @@ id="memories"
 
     <button
     class="btn"
-    onclick="
-        showScreen('message')
-    "
+    onclick="showScreen('message')"
     >
         Now seriously... ❤️
     </button>
@@ -1751,7 +2087,7 @@ id="memories"
 
 
 <!-- =========================================================
-     SCREEN 8 — BROTHER MESSAGE
+     SCREEN 11 — MESSAGE
 ========================================================= -->
 
 <section
@@ -1805,9 +2141,7 @@ id="message"
 
     <button
     class="btn"
-    onclick="
-        showScreen('topper')
-    "
+    onclick="showScreen('topper')"
     >
         You know which version I mean... 👀
     </button>
@@ -1818,7 +2152,7 @@ id="message"
 
 
 <!-- =========================================================
-     SCREEN 9 — TOPPER
+     SCREEN 12 — TOPPER
 ========================================================= -->
 
 <section
@@ -1869,11 +2203,9 @@ id="topper"
 
     <button
     class="btn"
-    onclick="
-        showScreen('gifts')
-    "
+    onclick="showScreen('question3')"
     >
-        Okay... enough serious talk 😂
+        One final surprise... 🎁
     </button>
 
 </div>
@@ -1882,7 +2214,75 @@ id="topper"
 
 
 <!-- =========================================================
-     SCREEN 10 — GIFTS
+     SCREEN 13 — YES / NO THIRD TIME
+========================================================= -->
+
+<section
+class="screen"
+id="question3"
+>
+
+<div class="content">
+
+    <div class="hero-cake">
+        🎁
+    </div>
+
+    <div class="small">
+        Last question. Promise. 😂
+    </div>
+
+    <h2>
+        Ready to open<br>
+        your final surprise?
+    </h2>
+
+    <p>
+        Be honest... 👀
+    </p>
+
+
+    <div class="answer-area">
+
+        <button
+        class="btn yes-btn"
+        onclick="
+            yesAnswer(
+                'question3',
+                'gifts'
+            )
+        "
+        >
+            YESSS 🔥
+        </button>
+
+        <button
+        class="btn no-btn"
+        onclick="
+            noAnswer(
+                'q3answer',
+                this
+            )
+        "
+        >
+            NO 😶
+        </button>
+
+    </div>
+
+
+    <div
+    class="question-answer"
+    id="q3answer"
+    ></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SCREEN 14 — GIFTS
 ========================================================= -->
 
 <section
@@ -1903,12 +2303,9 @@ id="gifts"
 
     <div class="gifts">
 
-
         <div
         class="gift"
-        onclick="
-            openGift(this)
-        "
+        onclick="openGift(this)"
         >
 
             <div class="gift-icon">
@@ -1930,9 +2327,7 @@ id="gifts"
 
         <div
         class="gift"
-        onclick="
-            openGift(this)
-        "
+        onclick="openGift(this)"
         >
 
             <div class="gift-icon">
@@ -1954,9 +2349,7 @@ id="gifts"
 
         <div
         class="gift"
-        onclick="
-            openGift(this)
-        "
+        onclick="openGift(this)"
         >
 
             <div class="gift-icon">
@@ -1979,9 +2372,7 @@ id="gifts"
 
     <button
     class="btn"
-    onclick="
-        showScreen('final')
-    "
+    onclick="showScreen('final')"
     >
         One last surprise 🎂
     </button>
@@ -1992,7 +2383,7 @@ id="gifts"
 
 
 <!-- =========================================================
-     SCREEN 11 — FINAL
+     SCREEN 15 — FINAL
 ========================================================= -->
 
 <section
@@ -2079,6 +2470,10 @@ id="final"
 </section>
 
 
+<!-- =========================================================
+   SCRIPT
+========================================================= -->
+
 <script>
 
 /* =========================================================
@@ -2087,34 +2482,137 @@ id="final"
 
 function showScreen(id) {
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen => {
+    playTransition();
 
-            screen.classList.remove(
-                "active"
-            );
+    setTimeout(() => {
 
-        });
+        document
+            .querySelectorAll(".screen")
+            .forEach(screen => {
+                screen.classList.remove("active");
+            });
 
+        const target =
+            document.getElementById(id);
 
-    const target =
-        document.getElementById(id);
+        if (target) {
+            target.classList.add("active");
+        }
 
-
-    if (target) {
-
-        target.classList.add(
-            "active"
-        );
-
-    }
+    }, 180);
 
 }
 
 
 /* =========================================================
-   TIME SINCE 28 AUGUST 2009
+   SPECIAL TRANSITION
+========================================================= */
+
+function playTransition() {
+
+    const flash =
+        document.getElementById(
+            "transitionFlash"
+        );
+
+    flash.classList.remove("active");
+
+    void flash.offsetWidth;
+
+    flash.classList.add("active");
+
+    setTimeout(() => {
+        flash.classList.remove("active");
+    }, 650);
+
+}
+
+
+/* =========================================================
+   YES BUTTON
+========================================================= */
+
+function yesAnswer(
+    currentScreen,
+    nextScreen
+) {
+
+    createMiniBurst();
+
+    /*
+        Start music after a real user click.
+        This is much more reliable than autoplay.
+    */
+
+    startMusic();
+
+    setTimeout(() => {
+
+        showScreen(nextScreen);
+
+    }, 300);
+
+}
+
+
+/* =========================================================
+   NO BUTTON
+========================================================= */
+
+function noAnswer(
+    messageId,
+    button
+) {
+
+    const messages = [
+
+        "Nice try. 😂",
+
+        "No is not an option here bro. 😭",
+
+        "Bro... press YES. 👀",
+
+        "I know you wanna see it. 😂",
+
+        "Still NO? Seriously? 😭",
+
+        "Okay, I'll ask again. 😌",
+
+        "YES is looking pretty good right now. 👀"
+
+    ];
+
+
+    const message =
+        document.getElementById(
+            messageId
+        );
+
+
+    const random =
+        messages[
+            Math.floor(
+                Math.random()
+                * messages.length
+            )
+        ];
+
+
+    message.textContent =
+        random;
+
+
+    button.classList.remove("nope");
+
+    void button.offsetWidth;
+
+    button.classList.add("nope");
+
+}
+
+
+/* =========================================================
+   TIME SINCE BIRTH
 ========================================================= */
 
 const birthDate =
@@ -2199,9 +2697,7 @@ function startCountdown() {
         true;
 
 
-    showScreen(
-        "countdown"
-    );
+    showScreen("countdown");
 
 
     const number =
@@ -2216,7 +2712,8 @@ function startCountdown() {
         );
 
 
-    let count = 3;
+    let count =
+        3;
 
 
     number.textContent =
@@ -2239,19 +2736,14 @@ function startCountdown() {
                     count;
 
 
-                if (count === 2) {
+                message.textContent =
+                    count === 2
+                        ? "Almost there..."
+                        : "One more...";
 
-                    message.textContent =
-                        "Almost there...";
+            }
 
-                } else {
-
-                    message.textContent =
-                        "One more...";
-
-                }
-
-            } else {
+            else {
 
                 clearInterval(timer);
 
@@ -2316,7 +2808,6 @@ function openMemory(
         img.src =
             image;
 
-
         text.textContent =
             caption;
 
@@ -2344,6 +2835,95 @@ function openGift(gift) {
         "open"
     );
 
+    createMiniBurst();
+
+}
+
+
+/* =========================================================
+   SONG
+========================================================= */
+
+const song =
+    new Audio("song.mp3");
+
+song.loop = true;
+
+let songPlaying =
+    false;
+
+
+function startMusic() {
+
+    song
+        .play()
+        .then(() => {
+
+            songPlaying =
+                true;
+
+            updateMusicButton();
+
+        })
+        .catch(() => {
+
+            /*
+                Browser may block autoplay.
+                The Play button will still work.
+            */
+
+        });
+
+}
+
+
+function toggleMusic() {
+
+    if (songPlaying) {
+
+        song.pause();
+
+        songPlaying =
+            false;
+
+    }
+
+    else {
+
+        song
+            .play()
+            .then(() => {
+
+                songPlaying =
+                    true;
+
+            });
+
+    }
+
+
+    updateMusicButton();
+
+}
+
+
+function updateMusicButton() {
+
+    const button =
+        document.getElementById(
+            "musicBtn"
+        );
+
+    if (!button) {
+        return;
+    }
+
+
+    button.textContent =
+        songPlaying
+            ? "⏸ Pause song"
+            : "🎵 Play song";
+
 }
 
 
@@ -2367,7 +2947,7 @@ function createConfetti() {
 
     for (
         let i = 0;
-        i < 140;
+        i < 130;
         i++
     ) {
 
@@ -2404,7 +2984,7 @@ function createConfetti() {
 
 
         piece.style.animationDelay =
-            Math.random() * .8
+            Math.random() * .7
             + "s";
 
 
@@ -2422,6 +3002,172 @@ function createConfetti() {
     }
 
 }
+
+
+/* =========================================================
+   SMALL YES BUTTON BURST
+========================================================= */
+
+function createMiniBurst() {
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            (
+                45 +
+                Math.random() * 10
+            )
+            + "vw";
+
+
+        piece.style.background =
+            [
+                "#ff2e93",
+                "#8c52ff",
+                "#ffd700",
+                "#00d4ff"
+            ][
+                Math.floor(
+                    Math.random() * 4
+                )
+            ];
+
+
+        piece.style.animationDuration =
+            (
+                .9 +
+                Math.random() * 1.2
+            )
+            + "s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 2200);
+
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING DECOR GENERATOR
+   Few objects only — intentionally not crowded.
+========================================================= */
+
+function createDecor() {
+
+    const decor =
+        document.getElementById(
+            "decor"
+        );
+
+
+    const items = [
+        {
+            symbol: "🎈",
+            cls: "float-balloon"
+        },
+        {
+            symbol: "🍬",
+            cls: "float-candy"
+        },
+        {
+            symbol: "🍭",
+            cls: "float-candy"
+        },
+        {
+            symbol: "🧁",
+            cls: "float-cake"
+        },
+        {
+            symbol: "✨",
+            cls: "float-star"
+        }
+    ];
+
+
+    for (
+        let i = 0;
+        i < 7;
+        i++
+    ) {
+
+        const data =
+            items[
+                Math.floor(
+                    Math.random()
+                    * items.length
+                )
+            ];
+
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "float-item "
+            + data.cls;
+
+
+        item.textContent =
+            data.symbol;
+
+
+        item.style.left =
+            Math.random() * 95
+            + "vw";
+
+
+        item.style.animationDuration =
+            (
+                10 +
+                Math.random() * 9
+            )
+            + "s";
+
+
+        item.style.animationDelay =
+            (
+                Math.random() * 8
+            )
+            + "s";
+
+
+        decor.appendChild(
+            item
+        );
+
+    }
+
+}
+
+
+createDecor();
 
 </script>
 
