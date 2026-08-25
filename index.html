@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>For Vaathi ❤️</title>
 
@@ -15,7 +15,6 @@
 <link
 href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
-
 
 <style>
 
@@ -36,11 +35,8 @@ body {
 }
 
 body {
-
     font-family: "Poppins", sans-serif;
-
     color: white;
-
     overflow: hidden;
 
     background:
@@ -64,27 +60,21 @@ body {
 
 
 /* =========================================================
-   BACKGROUND STARS
+   STARS
 ========================================================= */
 
 .stars {
-
     position: fixed;
-
     inset: 0;
-
     z-index: -20;
-
     pointer-events: none;
 
     background-image:
-
         radial-gradient(
             circle,
             rgba(255,255,255,.9) 1px,
             transparent 1px
         ),
-
         radial-gradient(
             circle,
             rgba(255,80,220,.8) 1px,
@@ -119,31 +109,25 @@ body {
 
 
 /* =========================================================
-   SCREENS
+   SCREEN SYSTEM
 ========================================================= */
 
 .screen {
-
     position: fixed;
-
     inset: 0;
 
     width: 100%;
-
     height: 100vh;
 
     padding: 20px 7%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
     opacity: 0;
-
     visibility: hidden;
 
     transform: scale(1.04);
@@ -154,21 +138,14 @@ body {
         visibility .65s;
 }
 
-
 .screen.active {
-
     opacity: 1;
-
     visibility: visible;
-
     transform: scale(1);
 }
 
-
 .content {
-
     width: min(950px, 100%);
-
     max-height: 92vh;
 
     overflow-y: auto;
@@ -177,7 +154,6 @@ body {
 }
 
 .content::-webkit-scrollbar {
-
     display: none;
 }
 
@@ -187,11 +163,8 @@ body {
 ========================================================= */
 
 .small {
-
     font-size: 12px;
-
     letter-spacing: 4px;
-
     text-transform: uppercase;
 
     color: #ffb9ef;
@@ -199,40 +172,20 @@ body {
     margin-bottom: 18px;
 }
 
-
 h1,
 h2 {
-
     font-family: "Cinzel", serif;
 }
 
-
 h2 {
-
-    font-size:
-        clamp(
-            32px,
-            6vw,
-            65px
-        );
-
+    font-size: clamp(32px, 6vw, 65px);
     line-height: 1.1;
-
     margin-bottom: 18px;
 }
 
-
 p {
-
     color: #ddd;
-
-    font-size:
-        clamp(
-            15px,
-            2vw,
-            19px
-        );
-
+    font-size: clamp(15px, 2vw, 19px);
     line-height: 1.7;
 }
 
@@ -242,21 +195,14 @@ p {
 ========================================================= */
 
 .btn {
+    margin: 12px 6px;
 
-    margin:
-        12px 6px;
+    padding: 14px 26px;
 
-    padding:
-        14px 26px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.35);
-
+    border: 1px solid rgba(255,255,255,.35);
     border-radius: 50px;
 
     background:
-
         linear-gradient(
             90deg,
             #7b2cff,
@@ -267,38 +213,26 @@ p {
     color: white;
 
     font-family: "Poppins", sans-serif;
-
     font-size: 15px;
-
     font-weight: 600;
 
     cursor: pointer;
 
     box-shadow:
-
-        0 0 15px
-        rgba(255,20,147,.35),
-
-        0 0 35px
-        rgba(123,44,255,.25);
+        0 0 15px rgba(255,20,147,.35),
+        0 0 35px rgba(123,44,255,.25);
 
     transition: .3s;
 }
 
-
 .btn:hover {
-
     transform:
         translateY(-3px)
         scale(1.04);
 
     box-shadow:
-
-        0 0 25px
-        rgba(255,20,147,.65),
-
-        0 0 50px
-        rgba(123,44,255,.45);
+        0 0 25px rgba(255,20,147,.65),
+        0 0 50px rgba(123,44,255,.45);
 }
 
 
@@ -307,11 +241,9 @@ p {
 ========================================================= */
 
 .balloon {
-
     position: fixed;
 
     width: 48px;
-
     height: 62px;
 
     border-radius: 50%;
@@ -325,29 +257,22 @@ p {
         4s ease-in-out infinite;
 }
 
-
 .balloon::after {
-
     content: "";
 
     position: absolute;
 
     width: 1px;
-
     height: 90px;
 
     background: #ddd;
 
     left: 50%;
-
     top: 60px;
 }
 
-
 .balloon.one {
-
     left: 4%;
-
     top: 15%;
 
     background:
@@ -358,11 +283,8 @@ p {
         );
 }
 
-
 .balloon.two {
-
     right: 5%;
-
     top: 18%;
 
     background:
@@ -375,11 +297,8 @@ p {
     animation-delay: 1s;
 }
 
-
 .balloon.three {
-
     right: 12%;
-
     bottom: 15%;
 
     background:
@@ -392,11 +311,9 @@ p {
     animation-delay: 2s;
 }
 
-
 @keyframes balloonFloat {
 
     50% {
-
         transform:
             translateY(-22px)
             rotate(5deg);
@@ -409,7 +326,6 @@ p {
 ========================================================= */
 
 .hero-cake {
-
     font-size: 105px;
 
     filter:
@@ -425,7 +341,6 @@ p {
         infinite;
 }
 
-
 @keyframes cakeFloat {
 
     50% {
@@ -434,9 +349,7 @@ p {
     }
 }
 
-
 .hero-title {
-
     font-family: "Cinzel", serif;
 
     font-size:
@@ -451,7 +364,6 @@ p {
     margin: 15px 0;
 
     background:
-
         linear-gradient(
             90deg,
             #ff9a00,
@@ -464,14 +376,12 @@ p {
     background-size: 300%;
 
     -webkit-background-clip: text;
-
     color: transparent;
 
     animation:
         gradientMove
         5s linear infinite;
 }
-
 
 @keyframes gradientMove {
 
@@ -486,7 +396,6 @@ p {
 ========================================================= */
 
 .date-number {
-
     font-family: "Cinzel", serif;
 
     font-size:
@@ -497,7 +406,6 @@ p {
         );
 
     background:
-
         linear-gradient(
             90deg,
             #ffd700,
@@ -506,13 +414,10 @@ p {
         );
 
     -webkit-background-clip: text;
-
     color: transparent;
 }
 
-
 .date-month {
-
     font-family: "Cinzel", serif;
 
     font-size:
@@ -527,15 +432,11 @@ p {
     color: #ffd9f6;
 }
 
-
 .date-year {
-
     font-size: 26px;
-
     color: #8bdfff;
 
-    margin:
-        12px 0 22px;
+    margin: 12px 0 22px;
 }
 
 
@@ -544,26 +445,19 @@ p {
 ========================================================= */
 
 .counter {
-
     display: grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
+        repeat(3, 1fr);
 
     gap: 15px;
 
     max-width: 850px;
 
-    margin:
-        25px auto;
+    margin: 25px auto;
 }
 
-
 .counter-box {
-
     padding: 24px 12px;
 
     border-radius: 20px;
@@ -581,7 +475,6 @@ p {
         );
 
     box-shadow:
-
         0 0 20px
         rgba(255,0,200,.15),
 
@@ -589,9 +482,7 @@ p {
         rgba(100,0,255,.1);
 }
 
-
 .counter-number {
-
     display: block;
 
     font-family: Arial, sans-serif;
@@ -608,9 +499,7 @@ p {
     color: #ff72dc;
 }
 
-
 .counter-label {
-
     display: block;
 
     margin-top: 7px;
@@ -624,11 +513,10 @@ p {
 
 
 /* =========================================================
-   COUNTDOWN
+   3 2 1 COUNTDOWN
 ========================================================= */
 
 .count-number {
-
     font-family: "Cinzel", serif;
 
     font-size:
@@ -641,7 +529,6 @@ p {
     line-height: .8;
 
     background:
-
         linear-gradient(
             90deg,
             #ffd900,
@@ -650,7 +537,6 @@ p {
         );
 
     -webkit-background-clip: text;
-
     color: transparent;
 
     animation:
@@ -659,7 +545,6 @@ p {
         infinite
         alternate;
 }
-
 
 @keyframes countPulse {
 
@@ -672,11 +557,8 @@ p {
     }
 }
 
-
 .count-message {
-
     font-size: 22px;
-
     color: #ffd7f5;
 
     margin-top: 25px;
@@ -688,7 +570,6 @@ p {
 ========================================================= */
 
 .birthday-cake {
-
     font-size: 105px;
 
     animation:
@@ -697,7 +578,6 @@ p {
         infinite;
 }
 
-
 @keyframes cakePulse {
 
     50% {
@@ -705,9 +585,7 @@ p {
     }
 }
 
-
 .birthday-title {
-
     font-family: "Cinzel", serif;
 
     font-size:
@@ -718,7 +596,6 @@ p {
         );
 
     background:
-
         linear-gradient(
             90deg,
             #ffd700,
@@ -727,18 +604,13 @@ p {
         );
 
     -webkit-background-clip: text;
-
     color: transparent;
 
     line-height: .95;
 }
 
-
 .vaathi {
-
-    font-family:
-        "Pacifico",
-        cursive;
+    font-family: "Pacifico", cursive;
 
     font-size:
         clamp(
@@ -763,75 +635,60 @@ p {
 
     width:
         min(
-            370px,
-            72%
+            380px,
+            82%
         );
 
-    margin:
-        24px auto;
+    margin: 22px auto;
 
     padding:
         10px
         10px
-        16px;
+        15px;
 
-    background:
-        #f1dfb9;
+    background: #f1dfb9;
 
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.65);
 
-    transform:
-        rotate(-2deg);
+    transform: rotate(-2deg);
 
     transition:
         transform .5s ease;
 }
 
-
 .baby-photo-frame:hover {
-
     transform:
         rotate(0deg)
         scale(1.02);
 }
 
-
-.baby-photo-frame {
-    width: min(370px, 72%);
-    margin: 24px auto;
-    padding: 10px 10px 16px;
-    background: #f1dfb9;
-    box-shadow: 0 20px 50px rgba(0,0,0,.65);
-    transform: rotate(-2deg);
-    overflow: hidden;
-}
-
 .baby-photo-frame img {
+
     width: 100%;
-    height: 300px;
-    object-fit: contain;
+
+    height: 290px;
+
+    object-fit: cover;
+
     display: block;
 
-    transform: rotate(-90deg) scale(.85);
+    /* Photo is already corrected/up-right */
+    transform: none;
 }
-
 
 .baby-caption {
 
-    color:
-        #241527;
+    color: #241527;
 
     font-family:
         "Pacifico",
         cursive;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    padding-top:
-        12px;
+    padding-top: 12px;
 }
 
 
@@ -851,10 +708,8 @@ p {
 
     max-width: 850px;
 
-    margin:
-        20px auto;
+    margin: 20px auto;
 }
-
 
 .memory-btn {
 
@@ -883,7 +738,6 @@ p {
         sans-serif;
 }
 
-
 .memory-btn:hover {
 
     background:
@@ -902,8 +756,8 @@ p {
 
     width:
         min(
-            520px,
-            90%
+            500px,
+            88%
         );
 
     margin:
@@ -922,12 +776,11 @@ p {
         rotate(-1deg);
 }
 
-
 .photo-frame img {
 
     width: 100%;
 
-    max-height: 43vh;
+    max-height: 42vh;
 
     object-fit: cover;
 
@@ -936,7 +789,6 @@ p {
     transition:
         opacity .2s;
 }
-
 
 .photo-caption {
 
@@ -947,16 +799,14 @@ p {
         "Pacifico",
         cursive;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    padding:
-        10px;
+    padding: 10px;
 }
 
 
 /* =========================================================
-   BROTHER MESSAGE
+   MESSAGE
 ========================================================= */
 
 .message-box {
@@ -991,14 +841,9 @@ p {
     text-align: left;
 }
 
-
 .message-box strong {
-
-    color:
-        #ff6adc;
-
-    font-size:
-        18px;
+    color: #ff6adc;
+    font-size: 18px;
 }
 
 
@@ -1022,17 +867,14 @@ p {
         infinite;
 }
 
-
 @keyframes trophyFloat {
 
     50% {
-
         transform:
             translateY(-10px)
             rotate(3deg);
     }
 }
-
 
 .topper-title {
 
@@ -1054,7 +896,6 @@ p {
         25px;
 }
 
-
 .topper-points {
 
     max-width:
@@ -1069,7 +910,6 @@ p {
     gap:
         12px;
 }
-
 
 .topper-point {
 
@@ -1091,11 +931,8 @@ p {
         #ff40d4;
 }
 
-
 .topper-point b {
-
-    color:
-        #ffd342;
+    color: #ffd342;
 }
 
 
@@ -1124,7 +961,6 @@ p {
         25px auto;
 }
 
-
 .gift {
 
     padding:
@@ -1139,7 +975,6 @@ p {
         rgba(255,90,220,.4);
 
     background:
-
         linear-gradient(
             145deg,
             rgba(255,30,150,.18),
@@ -1153,7 +988,6 @@ p {
         .3s;
 }
 
-
 .gift:hover {
 
     transform:
@@ -1165,7 +999,6 @@ p {
         rgba(255,50,200,.3);
 }
 
-
 .gift-icon {
 
     font-size:
@@ -1175,13 +1008,9 @@ p {
         10px;
 }
 
-
 .gift-title {
-
-    font-weight:
-        700;
+    font-weight: 700;
 }
-
 
 .gift-message {
 
@@ -1198,11 +1027,8 @@ p {
         none;
 }
 
-
 .gift.open .gift-message {
-
-    display:
-        block;
+    display: block;
 }
 
 
@@ -1230,7 +1056,6 @@ p {
         #ffd33a;
 }
 
-
 .final-vaathi {
 
     font-family:
@@ -1247,7 +1072,6 @@ p {
     color:
         #ff4dbd;
 }
-
 
 .final-photo {
 
@@ -1274,7 +1098,6 @@ p {
         0 0 40px
         rgba(255,50,200,.25);
 }
-
 
 .final-photo img {
 
@@ -1307,7 +1130,6 @@ p {
     margin:
         18px 0;
 }
-
 
 .wish {
 
@@ -1353,7 +1175,6 @@ p {
         forwards;
 }
 
-
 @keyframes confettiFall {
 
     to {
@@ -1372,35 +1193,26 @@ p {
    MOBILE
 ========================================================= */
 
-@media (
-    max-width: 700px
-) {
+@media (max-width: 700px) {
 
     .screen {
-
         padding:
             15px
             12px;
     }
 
-
     .counter {
-
         grid-template-columns:
             1fr;
     }
 
-
     .counter-box {
-
         padding:
             15px
             10px;
     }
 
-
     .gifts {
-
         grid-template-columns:
             1fr;
 
@@ -1408,9 +1220,7 @@ p {
             350px;
     }
 
-
     .message-box {
-
         padding:
             22px;
 
@@ -1418,37 +1228,28 @@ p {
             14px;
     }
 
-
     .baby-photo-frame {
-
         width:
             min(
-                300px,
-                70%
+                310px,
+                78%
             );
     }
 
-
     .baby-photo-frame img {
-
         height:
-            245px;
+            250px;
     }
 
-
     .photo-frame img {
-
         max-height:
             38vh;
     }
 
-
     .balloon {
-
         transform:
             scale(.75);
     }
-
 }
 
 </style>
@@ -1461,14 +1262,13 @@ p {
 
 <div class="stars"></div>
 
-
 <div class="balloon one"></div>
 <div class="balloon two"></div>
 <div class="balloon three"></div>
 
 
 <!-- =========================================================
-     SCREEN 1
+     SCREEN 1 — PRESIDENT
 ========================================================= -->
 
 <section
@@ -1478,30 +1278,25 @@ id="screen1"
 
 <div class="content">
 
-    <div class="hero-cake">
-        🎂
-    </div>
-
     <div class="small">
-        Psst... Hey bro 👀
+        Hey President... 👀
     </div>
 
-    <div class="hero-title">
-        SOMETHING<br>
-        SPECIAL
-    </div>
+    <h1 class="hero-title">
+        Wait a minute.
+    </h1>
 
     <p>
-        This one is only for you.
+        I want to say something.
     </p>
 
     <button
     class="btn"
     onclick="
-        showScreen('screen2')
+        showScreen('screen1b')
     "
     >
-        OPEN YOUR SURPRISE 🎁
+        Listen to me ❤️
     </button>
 
 </div>
@@ -1510,7 +1305,58 @@ id="screen1"
 
 
 <!-- =========================================================
-     SCREEN 2
+     SCREEN 1B — THANK YOU
+========================================================= -->
+
+<section
+class="screen"
+id="screen1b"
+>
+
+<div class="content">
+
+    <div class="hero-cake">
+        ❤️
+    </div>
+
+    <div class="small">
+        Before anything else...
+    </div>
+
+    <h2>
+        Thank you for coming<br>
+        into my life.
+    </h2>
+
+    <p>
+        Thank you for all the laughs,<br>
+        the fights, the memories,<br>
+        and everything in between.
+    </p>
+
+    <br>
+
+    <p>
+        I'm genuinely glad<br>
+        you're my brother. ❤️
+    </p>
+
+    <button
+    class="btn"
+    onclick="
+        showScreen('screen2')
+    "
+    >
+        Okay... enough emotional stuff 😂
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SCREEN 2 — BIRTH DATE
 ========================================================= -->
 
 <section
@@ -1556,7 +1402,7 @@ id="screen2"
 
 
 <!-- =========================================================
-     SCREEN 3
+     SCREEN 3 — TIME SINCE BIRTH
 ========================================================= -->
 
 <section
@@ -1576,7 +1422,6 @@ id="screen3"
     </h2>
 
     <div class="counter">
-
 
         <div class="counter-box">
 
@@ -1631,15 +1476,12 @@ id="screen3"
 
         </div>
 
-
     </div>
-
 
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
-
 
     <button
     class="btn"
@@ -1656,7 +1498,7 @@ id="screen3"
 
 
 <!-- =========================================================
-     SCREEN 4 — COUNTDOWN
+     SCREEN 4 — 3 2 1
 ========================================================= -->
 
 <section
@@ -1690,7 +1532,7 @@ id="countdown"
 
 
 <!-- =========================================================
-     SCREEN 5 — BIRTHDAY
+     SCREEN 5 — HAPPY BIRTHDAY
 ========================================================= -->
 
 <section
@@ -1761,7 +1603,7 @@ id="baby"
 
         <img
         src="baby.jpg"
-        alt="Vaathi as a baby"
+        alt="Baby Vaathi"
         >
 
         <div class="baby-caption">
@@ -1786,7 +1628,7 @@ id="baby"
 
 
 <!-- =========================================================
-     SCREEN 7 — MORE MEMORIES
+     SCREEN 7 — MEMORIES
 ========================================================= -->
 
 <section
@@ -1873,7 +1715,6 @@ id="memories"
             🪞 Growing Up
         </button>
 
-
     </div>
 
 
@@ -1938,18 +1779,14 @@ id="message"
             for you than everyone else.
         </p>
 
-
         <br>
-
 
         <p>
             And when you're angry, sometimes you don't
             care who's standing in front of you.
         </p>
 
-
         <br>
-
 
         <p>
             I'm not saying this to lecture you.
@@ -1957,9 +1794,7 @@ id="message"
             <strong>I believe in you.</strong>
         </p>
 
-
         <br>
-
 
         <p>
             I've seen what you're capable of.
@@ -2008,52 +1843,26 @@ id="topper"
 
     <div class="topper-points">
 
-
         <div class="topper-point">
-
-            🧠
-            <b>Control</b>
-            your anger.
-
+            🧠 <b>Control</b> your anger.
         </div>
 
-
         <div class="topper-point">
-
-            🗣️
-            <b>Think</b>
-            before you speak.
-
+            🗣️ <b>Think</b> before you speak.
         </div>
 
-
         <div class="topper-point">
-
-            🎯
-            <b>Focus</b>
-            on what matters.
-
+            🎯 <b>Focus</b> on what matters.
         </div>
 
-
         <div class="topper-point">
-
-            📚
-            You were once the guy who
+            📚 You were once the guy who
             made other toppers nervous.
-
         </div>
-
 
         <div class="topper-point">
-
-            ❤️
-            <b>
-                I want that version of you back.
-            </b>
-
+            ❤️ <b>I want that version of you back.</b>
         </div>
-
 
     </div>
 
@@ -2165,7 +1974,6 @@ id="gifts"
 
         </div>
 
-
     </div>
 
 
@@ -2222,31 +2030,25 @@ id="final"
 
     <div class="wishes">
 
-
         <div class="wish">
             😊 Happiness
         </div>
-
 
         <div class="wish">
             🏆 Success
         </div>
 
-
         <div class="wish">
             ❤️ Good Health
         </div>
-
 
         <div class="wish">
             🕊️ Peace
         </div>
 
-
         <div class="wish">
             🚀 Big Dreams
         </div>
-
 
     </div>
 
@@ -2257,18 +2059,14 @@ id="final"
         best version of yourself.
     </p>
 
-
     <br>
-
 
     <p>
         No matter what happens,
         I'm always here for you.
     </p>
 
-
     <br>
-
 
     <p>
         <strong>
@@ -2291,26 +2089,32 @@ function showScreen(id) {
 
     document
         .querySelectorAll(".screen")
-        .forEach(
-            screen => {
+        .forEach(screen => {
 
-                screen.classList.remove(
-                    "active"
-                );
+            screen.classList.remove(
+                "active"
+            );
 
-            }
+        });
+
+
+    const target =
+        document.getElementById(id);
+
+
+    if (target) {
+
+        target.classList.add(
+            "active"
         );
 
-
-    document
-        .getElementById(id)
-        .classList.add("active");
+    }
 
 }
 
 
 /* =========================================================
-   TIME SINCE BIRTH
+   TIME SINCE 28 AUGUST 2009
 ========================================================= */
 
 const birthDate =
@@ -2369,6 +2173,7 @@ function updateAge() {
 
 updateAge();
 
+
 setInterval(
     updateAge,
     1000
@@ -2386,9 +2191,7 @@ let countdownStarted =
 function startCountdown() {
 
     if (countdownStarted) {
-
         return;
-
     }
 
 
@@ -2413,8 +2216,7 @@ function startCountdown() {
         );
 
 
-    let count =
-        3;
+    let count = 3;
 
 
     number.textContent =
@@ -2426,62 +2228,60 @@ function startCountdown() {
 
 
     const timer =
-        setInterval(
-            () => {
+        setInterval(() => {
 
-                count--;
+            count--;
 
 
-                if (count > 0) {
+            if (count > 0) {
 
-                    number.textContent =
-                        count;
+                number.textContent =
+                    count;
 
+
+                if (count === 2) {
 
                     message.textContent =
-                        count === 2
-                            ? "Almost there..."
-                            : "One more...";
+                        "Almost there...";
+
+                } else {
+
+                    message.textContent =
+                        "One more...";
 
                 }
 
-                else {
+            } else {
 
-                    clearInterval(
-                        timer
+                clearInterval(timer);
+
+
+                number.textContent =
+                    "🎉";
+
+
+                message.textContent =
+                    "HAPPY BIRTHDAY!";
+
+
+                createConfetti();
+
+
+                setTimeout(() => {
+
+                    showScreen(
+                        "birthday"
                     );
 
 
-                    number.textContent =
-                        "🎉";
+                    countdownStarted =
+                        false;
 
+                }, 1400);
 
-                    message.textContent =
-                        "HAPPY BIRTHDAY!";
+            }
 
-
-                    createConfetti();
-
-
-                    setTimeout(
-                        () => {
-
-                            showScreen(
-                                "birthday"
-                            );
-
-                            countdownStarted =
-                                false;
-
-                        },
-                        1400
-                    );
-
-                }
-
-            },
-            1000
-        );
+        }, 1000);
 
 }
 
@@ -2511,27 +2311,25 @@ function openMemory(
         "0";
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            img.src =
-                image;
-
-            text.textContent =
-                caption;
+        img.src =
+            image;
 
 
-            img.onload =
-                () => {
+        text.textContent =
+            caption;
 
-                    img.style.opacity =
-                        "1";
 
-                };
+        img.onload =
+            () => {
 
-        },
-        180
-    );
+                img.style.opacity =
+                    "1";
+
+            };
+
+    }, 180);
 
 }
 
@@ -2540,9 +2338,7 @@ function openMemory(
    GIFTS
 ========================================================= */
 
-function openGift(
-    gift
-) {
+function openGift(gift) {
 
     gift.classList.toggle(
         "open"
@@ -2617,14 +2413,11 @@ function createConfetti() {
         );
 
 
-        setTimeout(
-            () => {
+        setTimeout(() => {
 
-                piece.remove();
+            piece.remove();
 
-            },
-            5000
-        );
+        }, 5000);
 
     }
 
