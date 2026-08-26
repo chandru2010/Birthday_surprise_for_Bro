@@ -1157,9 +1157,6 @@ p {
     margin:
         3px auto 4px;
 
-    cursor:
-        default;
-
     transition:
         transform .18s ease;
 }
@@ -1205,7 +1202,7 @@ p {
 }
 
 
-/* bottom layer */
+/* bottom cake */
 
 .cake-bottom {
 
@@ -1254,7 +1251,7 @@ p {
 }
 
 
-/* middle layer */
+/* middle cake */
 
 .cake-middle {
 
@@ -1327,7 +1324,7 @@ p {
 }
 
 
-/* cream drops */
+/* cream */
 
 .cream-drop {
 
@@ -1354,6 +1351,7 @@ p {
 }
 
 .drop1 {
+
     left:
         74px;
 
@@ -1362,6 +1360,7 @@ p {
 }
 
 .drop2 {
+
     left:
         122px;
 
@@ -1370,6 +1369,7 @@ p {
 }
 
 .drop3 {
+
     left:
         174px;
 
@@ -1378,6 +1378,7 @@ p {
 }
 
 .drop4 {
+
     left:
         220px;
 
@@ -1461,13 +1462,11 @@ p {
 }
 
 .candle.left {
-
     left:
         112px;
 }
 
 .candle.right {
-
     left:
         181px;
 }
@@ -1500,13 +1499,11 @@ p {
 }
 
 .flame.left {
-
     left:
         106px;
 }
 
 .flame.right {
-
     left:
         175px;
 }
@@ -1693,77 +1690,7 @@ p {
 }
 
 
-/* cake sparkles */
-
-.cake-sparkle {
-
-    position:
-        absolute;
-
-    color:
-        #ffd85c;
-
-    font-size:
-        20px;
-
-    animation:
-        sparkleFloat
-        1.5s
-        infinite
-        alternate;
-}
-
-.spark1 {
-
-    left:
-        35px;
-
-    top:
-        85px;
-}
-
-.spark2 {
-
-    right:
-        28px;
-
-    top:
-        105px;
-}
-
-.spark3 {
-
-    left:
-        22px;
-
-    bottom:
-        80px;
-}
-
-.spark4 {
-
-    right:
-        25px;
-
-    bottom:
-        72px;
-}
-
-@keyframes sparkleFloat {
-
-    to {
-
-        transform:
-            scale(1.3)
-            rotate(20deg);
-
-        opacity:
-            .45;
-    }
-}
-
-
-/* cake cut flash */
+/* cut flash */
 
 .cake-cut-flash {
 
@@ -1891,6 +1818,76 @@ p {
                 var(--y)
             )
             scale(.2);
+    }
+}
+
+
+/* cake sparkle */
+
+.cake-sparkle {
+
+    position:
+        absolute;
+
+    color:
+        #ffd85c;
+
+    font-size:
+        20px;
+
+    animation:
+        sparkleFloat
+        1.5s
+        infinite
+        alternate;
+}
+
+.spark1 {
+
+    left:
+        35px;
+
+    top:
+        85px;
+}
+
+.spark2 {
+
+    right:
+        28px;
+
+    top:
+        105px;
+}
+
+.spark3 {
+
+    left:
+        22px;
+
+    bottom:
+        80px;
+}
+
+.spark4 {
+
+    right:
+        25px;
+
+    bottom:
+        72px;
+}
+
+@keyframes sparkleFloat {
+
+    to {
+
+        transform:
+            scale(1.3)
+            rotate(20deg);
+
+        opacity:
+            .45;
     }
 }
 
@@ -2301,6 +2298,7 @@ p {
 @keyframes wave {
 
     50% {
+
         transform:
             scaleY(.3);
 
@@ -2920,6 +2918,223 @@ p {
 
 
 /* =========================================================
+   DAD SCREEN
+========================================================= */
+
+.dad-heading {
+
+    font:
+        700
+        clamp(
+            40px,
+            8vw,
+            78px
+        )
+        Cinzel,
+        serif;
+
+    color:
+        #ffd86a;
+
+    margin-bottom:
+        12px;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,210,80,.22);
+}
+
+.dad-intro {
+
+    width:
+        min(
+            650px,
+            92%
+        );
+
+    margin:
+        0 auto 22px;
+
+    color:
+        #e9dce8;
+}
+
+.dad-photo-frame {
+
+    width:
+        min(
+            430px,
+            88%
+        );
+
+    aspect-ratio:
+        4 / 5;
+
+    margin:
+        20px auto;
+
+    padding:
+        10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7e9c9,
+            #dfc38e
+        );
+
+    border-radius:
+        8px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.55),
+
+        0 0 30px
+        rgba(255,200,90,.12);
+
+    transform:
+        rotate(-1deg);
+
+    animation:
+        dadPhotoIn
+        1s
+        ease
+        forwards;
+}
+
+@keyframes dadPhotoIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px)
+            rotate(-3deg)
+            scale(.96);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            rotate(-1deg)
+            scale(1);
+    }
+}
+
+.dad-photo-placeholder {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        360px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    border:
+        2px dashed
+        rgba(110,70,40,.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ead4a8,
+            #f5e7c8
+        );
+
+    color:
+        #533d37;
+}
+
+.dad-placeholder-icon {
+
+    font-size:
+        55px;
+
+    margin-bottom:
+        15px;
+}
+
+.dad-placeholder-text {
+
+    font:
+        18px
+        "Dancing Script",
+        cursive;
+}
+
+.dad-message {
+
+    width:
+        min(
+            650px,
+            92%
+        );
+
+    margin:
+        16px auto 0;
+}
+
+.dad-quote {
+
+    font:
+        clamp(
+            22px,
+            4vw,
+            32px
+        )
+        "Dancing Script",
+        cursive;
+
+    line-height:
+        1.45;
+
+    color:
+        #ffe8f6;
+}
+
+.dad-caption {
+
+    margin-top:
+        12px;
+
+    font:
+        22px
+        Pacifico,
+        cursive;
+
+    color:
+        #ff72c8;
+}
+
+.dad-next {
+
+    margin-top:
+        22px;
+}
+
+
+/* =========================================================
    FINAL
 ========================================================= */
 
@@ -3112,6 +3327,14 @@ p {
     .balloon-field {
         height:
             270px;
+    }
+
+    .dad-photo-frame {
+        width:
+            min(
+                310px,
+                82%
+            );
     }
 
 }
@@ -3691,7 +3914,7 @@ p {
 
 
 <!-- =========================================================
-     10. CAKE GAME
+     10. CAKE
 ========================================================= -->
 
 <section
@@ -3726,52 +3949,31 @@ p {
         <div class="cake-icing"></div>
 
 
-        <div
-            class="cream-drop drop1">
-        </div>
+        <div class="cream-drop drop1"></div>
 
-        <div
-            class="cream-drop drop2">
-        </div>
+        <div class="cream-drop drop2"></div>
 
-        <div
-            class="cream-drop drop3">
-        </div>
+        <div class="cream-drop drop3"></div>
 
-        <div
-            class="cream-drop drop4">
-        </div>
+        <div class="cream-drop drop4"></div>
 
 
-        <div
-            class="strawberry one">
-
+        <div class="strawberry one">
             🍓
-
         </div>
 
-        <div
-            class="strawberry two">
-
+        <div class="strawberry two">
             🍓
-
         </div>
 
-        <div
-            class="strawberry three">
-
+        <div class="strawberry three">
             🍓
-
         </div>
 
 
-        <div
-            class="candle left">
-        </div>
+        <div class="candle left"></div>
 
-        <div
-            class="candle right">
-        </div>
+        <div class="candle right"></div>
 
 
         <div
@@ -3792,9 +3994,7 @@ p {
 
 
         <div class="knife">
-
             🔪
-
         </div>
 
 
@@ -3814,8 +4014,6 @@ p {
             ✨
         </div>
 
-
-        <!-- CUTTING EFFECT -->
 
         <div class="cake-cut-flash"></div>
 
@@ -3943,45 +4141,31 @@ p {
         <div
             class="pop-balloon b1"
             onclick="popBalloon(this)">
-
             🎈
-
         </div>
-
 
         <div
             class="pop-balloon b2"
             onclick="popBalloon(this)">
-
             🎈
-
         </div>
-
 
         <div
             class="pop-balloon b3"
             onclick="popBalloon(this)">
-
             🎈
-
         </div>
-
 
         <div
             class="pop-balloon b4"
             onclick="popBalloon(this)">
-
             🎈
-
         </div>
-
 
         <div
             class="pop-balloon b5"
             onclick="popBalloon(this)">
-
             🎈
-
         </div>
 
     </div>
@@ -4432,9 +4616,9 @@ p {
         class="btn"
         id="giftNext1"
         style="display:none"
-        onclick="showScreen('gift2')">
+        onclick="showScreen('dadScreen')">
 
-        Open Gift 2 🎁
+        There's someone special... ❤️
 
     </button>
 
@@ -4444,7 +4628,99 @@ p {
 
 
 <!-- =========================================================
-     17. GIFT 2 — FRIENDS
+     17. DAD
+========================================================= -->
+
+<section
+    class="screen"
+    id="dadScreen"
+>
+
+<div class="content">
+
+    <div class="small">
+        There's someone special... ❤️
+    </div>
+
+
+    <h2 class="dad-heading">
+        Your First Hero.
+    </h2>
+
+
+    <p class="dad-intro">
+
+        Some people don't need
+        a big introduction.
+
+        Their place in your heart
+        says everything.
+
+    </p>
+
+
+    <!-- PHOTO PLACEHOLDER -->
+
+    <div class="dad-photo-frame">
+
+        <div
+            class="dad-photo-placeholder">
+
+            <div
+                class="dad-placeholder-icon">
+
+                ❤️
+
+            </div>
+
+
+            <div
+                class="dad-placeholder-text">
+
+                Dad's photo will be here
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="dad-message">
+
+        <div class="dad-quote">
+
+            "A father's love is one of the
+            first things that teaches us
+            what strength really means."
+
+        </div>
+
+
+        <div class="dad-caption">
+
+            Your first hero. ❤️
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="btn dad-next"
+        onclick="showScreen('gift2')">
+
+        Continue ❤️
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     18. GIFT 2 — FRIENDS
 ========================================================= -->
 
 <section
@@ -4546,7 +4822,7 @@ p {
 
 
 <!-- =========================================================
-     18. GIFT 3 — ME
+     19. GIFT 3 — ME
 ========================================================= -->
 
 <section
@@ -4693,7 +4969,7 @@ p {
 
 
 <!-- =========================================================
-     19. FINAL
+     20. FINAL
 ========================================================= -->
 
 <section
@@ -4817,30 +5093,23 @@ birthdayBgm.loop =
 let currentScreen =
     "screen1";
 
-
 let songPlaying =
     false;
-
 
 let birthdayBgmPlaying =
     false;
 
-
 let countdownStarted =
     false;
-
 
 let candlesBlown =
     false;
 
-
 let cakeCut =
     false;
 
-
 let popped =
     0;
-
 
 let lyricTimer =
     null;
@@ -4905,12 +5174,9 @@ function showScreen(id) {
 
 
     if (
-        currentScreen ===
-        "song"
-
+        currentScreen === "song"
         &&
-        id !==
-        "song"
+        id !== "song"
     ) {
 
         stopSong();
@@ -4919,12 +5185,9 @@ function showScreen(id) {
 
 
     if (
-        currentScreen ===
-        "birthday"
-
+        currentScreen === "birthday"
         &&
-        id !==
-        "birthday"
+        id !== "birthday"
     ) {
 
         stopBirthdayBgm();
@@ -5070,7 +5333,7 @@ function noAnswer(
 
 
 /* =========================================================
-   TIME
+   TIME SINCE BIRTH
 ========================================================= */
 
 const birthDate =
@@ -5577,9 +5840,7 @@ function popBalloon(
         balloon.classList.contains(
             "popped"
         )
-
         ||
-
         balloon.classList.contains(
             "popping"
         )
@@ -6218,7 +6479,7 @@ function createMiniBurst() {
 
 
 /* =========================================================
-   FLOATING DECOR
+   DECOR
 ========================================================= */
 
 function createDecor() {
