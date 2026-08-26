@@ -128,7 +128,7 @@ body {
 
 
 /* =========================================================
-   FLOATING DECOR
+   FLOATING DECORATIONS
 ========================================================= */
 
 .decor {
@@ -150,7 +150,7 @@ body {
 
     bottom: -90px;
 
-    opacity: .65;
+    opacity: .62;
 
     animation:
         floatUp
@@ -177,7 +177,6 @@ body {
 @keyframes floatUp {
 
     0% {
-
         transform:
             translateY(0)
             translateX(0)
@@ -185,7 +184,6 @@ body {
     }
 
     50% {
-
         transform:
             translateY(-55vh)
             translateX(18px)
@@ -193,7 +191,6 @@ body {
     }
 
     100% {
-
         transform:
             translateY(-115vh)
             translateX(-12px)
@@ -244,7 +241,7 @@ body {
 
 
 /* =========================================================
-   SCREEN
+   SCREEN SYSTEM
 ========================================================= */
 
 .screen {
@@ -294,13 +291,20 @@ body {
 
 .content {
 
-    width: min(950px, 100%);
+    width:
+        min(
+            950px,
+            100%
+        );
 
-    max-height: 92vh;
+    max-height:
+        92vh;
 
-    overflow-y: auto;
+    overflow-y:
+        auto;
 
-    scrollbar-width: none;
+    scrollbar-width:
+        none;
 }
 
 .content::-webkit-scrollbar {
@@ -314,20 +318,27 @@ body {
 
 .small {
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    color: #ffb9ef;
+    color:
+        #ffb9ef;
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
 }
 
 h1,
 h2 {
-    font-family: "Cinzel", serif;
+    font-family:
+        "Cinzel",
+        serif;
 }
 
 h2 {
@@ -339,14 +350,17 @@ h2 {
             62px
         );
 
-    line-height: 1.08;
+    line-height:
+        1.08;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 }
 
 p {
 
-    color: #ddd;
+    color:
+        #ddd;
 
     font-size:
         clamp(
@@ -355,12 +369,13 @@ p {
             19px
         );
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 
 /* =========================================================
-   BUTTON
+   BUTTONS
 ========================================================= */
 
 .btn {
@@ -435,25 +450,8 @@ p {
             #5b4260
         );
 
-    box-shadow: none;
-}
-
-.answer-area {
-
-    margin-top:
-        22px;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        10px;
+    box-shadow:
+        none;
 }
 
 .nope {
@@ -474,6 +472,24 @@ p {
         transform:
             translateX(9px);
     }
+}
+
+.answer-area {
+
+    margin-top:
+        22px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
 }
 
 .question-answer {
@@ -540,6 +556,14 @@ p {
         infinite;
 }
 
+@keyframes gradientMove {
+
+    to {
+        background-position:
+            300%;
+    }
+}
+
 .wait-line {
 
     font:
@@ -558,7 +582,7 @@ p {
 
 
 /* =========================================================
-   CAKE EMOJI
+   HERO CAKE
 ========================================================= */
 
 .hero-cake {
@@ -647,8 +671,7 @@ p {
         #8bdfff;
 
     margin:
-        10px 0
-        18px;
+        10px 0 18px;
 }
 
 
@@ -893,9 +916,7 @@ p {
         20px auto;
 
     padding:
-        10px
-        10px
-        15px;
+        10px 10px 15px;
 
     background:
         #f1dfb9;
@@ -942,6 +963,9 @@ p {
 
     object-fit:
         contain;
+
+    display:
+        block;
 
     transform:
         rotate(-90deg)
@@ -1083,7 +1107,7 @@ p {
 
 
 /* =========================================================
-   ACTIVITY TITLE
+   ACTIVITY
 ========================================================= */
 
 .activity-title {
@@ -1134,7 +1158,10 @@ p {
         3px auto 4px;
 
     cursor:
-        pointer;
+        default;
+
+    transition:
+        transform .18s ease;
 }
 
 
@@ -1178,7 +1205,7 @@ p {
 }
 
 
-/* bottom cake layer */
+/* bottom layer */
 
 .cake-bottom {
 
@@ -1227,7 +1254,7 @@ p {
 }
 
 
-/* top cake layer */
+/* middle layer */
 
 .cake-middle {
 
@@ -1258,6 +1285,9 @@ p {
 
     z-index:
         2;
+
+    transition:
+        .7s;
 }
 
 
@@ -1324,23 +1354,35 @@ p {
 }
 
 .drop1 {
-    left: 74px;
-    bottom: 125px;
+    left:
+        74px;
+
+    bottom:
+        125px;
 }
 
 .drop2 {
-    left: 122px;
-    bottom: 125px;
+    left:
+        122px;
+
+    bottom:
+        125px;
 }
 
 .drop3 {
-    left: 174px;
-    bottom: 125px;
+    left:
+        174px;
+
+    bottom:
+        125px;
 }
 
 .drop4 {
-    left: 220px;
-    bottom: 125px;
+    left:
+        220px;
+
+    bottom:
+        125px;
 }
 
 
@@ -1356,29 +1398,33 @@ p {
 
     font-size:
         28px;
-
-    filter:
-        drop-shadow(
-            0
-            2px
-            4px
-            rgba(0,0,0,.25)
-        );
 }
 
 .strawberry.one {
-    left: 75px;
-    bottom: 151px;
+
+    left:
+        75px;
+
+    bottom:
+        151px;
 }
 
 .strawberry.two {
-    left: 143px;
-    bottom: 156px;
+
+    left:
+        143px;
+
+    bottom:
+        156px;
 }
 
 .strawberry.three {
-    right: 62px;
-    bottom: 151px;
+
+    right:
+        62px;
+
+    bottom:
+        151px;
 }
 
 
@@ -1415,14 +1461,19 @@ p {
 }
 
 .candle.left {
+
     left:
         112px;
 }
 
 .candle.right {
+
     left:
         181px;
 }
+
+
+/* flames */
 
 .flame {
 
@@ -1449,11 +1500,13 @@ p {
 }
 
 .flame.left {
+
     left:
         106px;
 }
 
 .flame.right {
+
     left:
         175px;
 }
@@ -1513,25 +1566,130 @@ p {
 }
 
 
-/* cake cutting */
+/* =========================================================
+   CINEMATIC CUT
+========================================================= */
 
-.cake-cut .knife {
+.cake-stage.cutting {
 
-    transform:
-        translate(-105px,80px)
-        rotate(20deg);
+    animation:
+        cameraShake
+        .75s
+        cubic-bezier(.36,.07,.19,.97);
 }
 
-.cake-cut .cake-bottom {
+@keyframes cameraShake {
 
-    transform:
-        scaleX(.93);
+    0% {
+        transform:
+            translate(0,0)
+            rotate(0);
+    }
+
+    10% {
+        transform:
+            translate(-7px,3px)
+            rotate(-1deg);
+    }
+
+    20% {
+        transform:
+            translate(7px,-3px)
+            rotate(1deg);
+    }
+
+    30% {
+        transform:
+            translate(-8px,2px)
+            rotate(-1deg);
+    }
+
+    40% {
+        transform:
+            translate(8px,-2px)
+            rotate(1deg);
+    }
+
+    50% {
+        transform:
+            translate(-5px,2px)
+            rotate(-.5deg);
+    }
+
+    60% {
+        transform:
+            translate(5px,-1px)
+            rotate(.5deg);
+    }
+
+    100% {
+        transform:
+            translate(0,0)
+            rotate(0);
+    }
 }
 
-.cake-cut .cake-middle {
+.cake-stage.cake-cut .knife {
 
     transform:
-        scaleX(.94);
+        translate(-115px,92px)
+        rotate(22deg);
+}
+
+.cake-stage.cake-cut .cake-bottom {
+
+    animation:
+        cakeCutBody
+        .9s
+        ease
+        forwards;
+}
+
+.cake-stage.cake-cut .cake-middle {
+
+    animation:
+        cakeCutMiddle
+        .9s
+        ease
+        forwards;
+}
+
+@keyframes cakeCutBody {
+
+    0% {
+        transform:
+            scaleX(1);
+    }
+
+    45% {
+        transform:
+            scaleX(.96);
+    }
+
+    100% {
+        transform:
+            scaleX(.90)
+            translateX(-4px);
+    }
+}
+
+@keyframes cakeCutMiddle {
+
+    0% {
+        transform:
+            scaleX(1);
+    }
+
+    45% {
+        transform:
+            scaleX(.96);
+    }
+
+    100% {
+        transform:
+            scaleX(.90)
+            translateX(4px);
+    }
 }
 
 
@@ -1556,29 +1714,37 @@ p {
 }
 
 .spark1 {
+
     left:
         35px;
+
     top:
         85px;
 }
 
 .spark2 {
+
     right:
         28px;
+
     top:
         105px;
 }
 
 .spark3 {
+
     left:
         22px;
+
     bottom:
         80px;
 }
 
 .spark4 {
+
     right:
         25px;
+
     bottom:
         72px;
 }
@@ -1586,12 +1752,145 @@ p {
 @keyframes sparkleFloat {
 
     to {
+
         transform:
             scale(1.3)
             rotate(20deg);
 
         opacity:
             .45;
+    }
+}
+
+
+/* cake cut flash */
+
+.cake-cut-flash {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8),
+            rgba(255,120,210,.25),
+            transparent 70%
+        );
+}
+
+.cake-stage.cake-cut
+.cake-cut-flash {
+
+    animation:
+        cakeFlash
+        .7s
+        ease
+        forwards;
+}
+
+@keyframes cakeFlash {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            scale(.4);
+    }
+
+    35% {
+        opacity:
+            1;
+
+        transform:
+            scale(1.2);
+    }
+
+    100% {
+        opacity:
+            0;
+
+        transform:
+            scale(1.5);
+    }
+}
+
+
+/* cake crumbs */
+
+.cake-crumb {
+
+    position:
+        absolute;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ff8ec7;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+}
+
+.cake-stage.cake-cut
+.cake-crumb {
+
+    animation:
+        crumbFly
+        .8s
+        ease
+        forwards;
+}
+
+@keyframes crumbFly {
+
+    0% {
+        opacity:
+            0;
+
+        transform:
+            translate(0,0)
+            scale(.5);
+    }
+
+    25% {
+        opacity:
+            1;
+    }
+
+    100% {
+        opacity:
+            0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(.2);
     }
 }
 
@@ -1653,9 +1952,6 @@ p {
 
         0 0 16px
         rgba(255,255,255,.12);
-
-    transition:
-        .18s;
 }
 
 .pop-balloon::after {
@@ -1699,6 +1995,7 @@ p {
     0% {
         transform:
             scale(1);
+
         opacity:
             1;
     }
@@ -1706,6 +2003,7 @@ p {
     30% {
         transform:
             scale(1.35);
+
         opacity:
             1;
     }
@@ -1713,6 +2011,7 @@ p {
     60% {
         transform:
             scale(.6);
+
         opacity:
             .7;
     }
@@ -1720,52 +2019,68 @@ p {
     100% {
         transform:
             scale(0);
+
         opacity:
             0;
     }
 }
 
 .b1 {
+
     left:
         8%;
+
     top:
         25px;
+
     background:
         #ff4f95;
 }
 
 .b2 {
+
     left:
         30%;
+
     top:
         90px;
+
     background:
         #7c52ff;
 }
 
 .b3 {
+
     left:
         55%;
+
     top:
         20px;
+
     background:
         #ffb52f;
 }
 
 .b4 {
+
     left:
         74%;
+
     top:
         105px;
+
     background:
         #24d9c3;
 }
 
 .b5 {
+
     left:
         45%;
+
     top:
         185px;
+
     background:
         #42a5ff;
 }
@@ -1787,7 +2102,7 @@ p {
 
 
 /* =========================================================
-   GOOD JOB MESSAGE
+   GOOD JOB
 ========================================================= */
 
 .good-job {
@@ -1811,18 +2126,18 @@ p {
     text-shadow:
         0 0 20px
         rgba(255,180,0,.45);
-
-    animation:
-        goodJob
-        .7s
-        ease
-        forwards;
 }
 
 .good-job.show {
 
     display:
         block;
+
+    animation:
+        goodJob
+        .7s
+        ease
+        forwards;
 }
 
 @keyframes goodJob {
@@ -1986,7 +2301,6 @@ p {
 @keyframes wave {
 
     50% {
-
         transform:
             scaleY(.3);
 
@@ -2260,7 +2574,7 @@ p {
 .gift-card {
 
     min-height:
-        300px;
+        310px;
 
     padding:
         20px;
@@ -2555,7 +2869,7 @@ p {
 .gift-reveal {
 
     max-width:
-        560px;
+        600px;
 
     opacity:
         0;
@@ -2757,30 +3071,24 @@ p {
    MOBILE
 ========================================================= */
 
-@media (
-    max-width:700px
-) {
+@media (max-width:700px) {
 
     .screen {
-
         padding:
             14px 12px;
     }
 
     .counter {
-
         grid-template-columns:
             1fr;
     }
 
     .counter-box {
-
         padding:
             14px 10px;
     }
 
     .baby-photo-frame {
-
         width:
             min(
                 310px,
@@ -2792,19 +3100,16 @@ p {
     }
 
     .baby-photo-frame .baby-rotator {
-
         height:
             238px;
     }
 
     .photo-frame img {
-
         max-height:
             36vh;
     }
 
     .balloon-field {
-
         height:
             270px;
     }
@@ -2844,7 +3149,7 @@ p {
 <div class="content">
 
     <div class="small">
-        🎩 Your President
+        🎩
     </div>
 
     <h1 class="hero-title">
@@ -2960,9 +3265,15 @@ p {
 
         </button>
 
+
         <button
             class="btn no-btn"
-            onclick="noAnswer('q1answer',this)">
+            onclick="
+                noAnswer(
+                    'q1answer',
+                    this
+                )
+            ">
 
             NO 😶
 
@@ -3099,10 +3410,12 @@ p {
 
     </div>
 
+
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
+
 
     <button
         class="btn"
@@ -3273,6 +3586,7 @@ p {
 
     <div class="memory-buttons">
 
+
         <button
             class="memory-btn"
             onclick="
@@ -3377,7 +3691,7 @@ p {
 
 
 <!-- =========================================================
-     10. CAKE
+     10. CAKE GAME
 ========================================================= -->
 
 <section
@@ -3405,19 +3719,11 @@ p {
         id="cakeStage">
 
 
-        <div
-            class="cake-bottom">
-        </div>
+        <div class="cake-bottom"></div>
 
+        <div class="cake-middle"></div>
 
-        <div
-            class="cake-middle">
-        </div>
-
-
-        <div
-            class="cake-icing">
-        </div>
+        <div class="cake-icing"></div>
 
 
         <div
@@ -3444,14 +3750,12 @@ p {
 
         </div>
 
-
         <div
             class="strawberry two">
 
             🍓
 
         </div>
-
 
         <div
             class="strawberry three">
@@ -3478,7 +3782,6 @@ p {
 
         </div>
 
-
         <div
             class="flame right"
             id="flameRight">
@@ -3488,8 +3791,7 @@ p {
         </div>
 
 
-        <div
-            class="knife">
+        <div class="knife">
 
             🔪
 
@@ -3510,6 +3812,55 @@ p {
 
         <div class="cake-sparkle spark4">
             ✨
+        </div>
+
+
+        <!-- CUTTING EFFECT -->
+
+        <div class="cake-cut-flash"></div>
+
+
+        <div
+            class="cake-crumb"
+            style="
+                left:120px;
+                top:145px;
+                --x:-45px;
+                --y:-35px;
+            ">
+        </div>
+
+
+        <div
+            class="cake-crumb"
+            style="
+                left:150px;
+                top:150px;
+                --x:55px;
+                --y:-28px;
+            ">
+        </div>
+
+
+        <div
+            class="cake-crumb"
+            style="
+                left:180px;
+                top:155px;
+                --x:65px;
+                --y:42px;
+            ">
+        </div>
+
+
+        <div
+            class="cake-crumb"
+            style="
+                left:100px;
+                top:155px;
+                --x:-55px;
+                --y:35px;
+            ">
         </div>
 
     </div>
@@ -3588,7 +3939,6 @@ p {
 
 
     <div class="balloon-field">
-
 
         <div
             class="pop-balloon b1"
@@ -3924,40 +4274,54 @@ p {
     <div class="advice-box">
 
         <p>
+
             When you're angry, control your words.
             Not every battle needs to be fought,
             and not every thought needs to be spoken.
+
         </p>
 
         <br>
 
+
         <p>
+
             Don't let the mindset that life is always
             against you decide your future.
+
         </p>
 
         <br>
 
+
         <p>
+
             You already showed what you're capable of.
             There was a time when you were the topper
             that other toppers were worried about.
+
         </p>
 
         <br>
 
+
         <p>
+
             I don't want you to become someone else.
             I want you to bring back that determination,
             discipline, and confidence.
+
         </p>
 
         <br>
 
+
         <p>
+
             <strong>
                 I want that topper version of you back. ❤️
             </strong>
+
         </p>
 
     </div>
@@ -3977,7 +4341,7 @@ p {
 
 
 <!-- =========================================================
-     16. GIFT 1
+     16. GIFT 1 — FAMILY
 ========================================================= -->
 
 <section
@@ -3992,13 +4356,14 @@ p {
     </div>
 
     <h2>
-        Something small for you.
+        Something meaningful.
     </h2>
 
 
     <div
         class="gift-card"
         id="giftCard1">
+
 
         <div
             class="gift-box"
@@ -4026,19 +4391,35 @@ p {
             class="gift-reveal">
 
             <div class="small">
-                Gift One
+                Gift One 🎁
             </div>
 
-            <div class="gift-message-title">
-                More good days ❤️
+
+            <div
+                class="gift-message-title">
+
+                Your First Gift — Family ❤️
+
             </div>
 
-            <div class="gift-message-text">
 
-                More laughs,
-                more memories,
-                and hopefully fewer
-                unnecessary fights. 😂
+            <div
+                class="gift-message-text">
+
+                The people who were there
+                before you even knew
+                what life was.
+
+                <br><br>
+
+                They fight with you,
+                care for you,
+                support you,
+                and somehow still tolerate you. 😂
+
+                <br><br>
+
+                Never forget their value.
 
             </div>
 
@@ -4063,7 +4444,7 @@ p {
 
 
 <!-- =========================================================
-     17. GIFT 2
+     17. GIFT 2 — FRIENDS
 ========================================================= -->
 
 <section
@@ -4078,13 +4459,14 @@ p {
     </div>
 
     <h2>
-        This one is different.
+        Another important one.
     </h2>
 
 
     <div
         class="gift-card"
         id="giftCard2">
+
 
         <div
             class="gift-box"
@@ -4112,19 +4494,34 @@ p {
             class="gift-reveal">
 
             <div class="small">
-                Gift Two
+                Gift Two 🎁
             </div>
 
-            <div class="gift-message-title">
-                Keep becoming better 🔥
+
+            <div
+                class="gift-message-title">
+
+                Your Second Gift — Friends 🤝
+
             </div>
 
-            <div class="gift-message-text">
 
-                Keep learning,
-                keep improving,
-                and never underestimate
-                what you're capable of.
+            <div
+                class="gift-message-text">
+
+                The people who turn
+                ordinary days into memories.
+
+                <br><br>
+
+                The laughs,
+                the nonsense,
+                the adventures,
+                the inside jokes...
+
+                <br><br>
+
+                Good friends make life lighter. 😂❤️
 
             </div>
 
@@ -4149,7 +4546,7 @@ p {
 
 
 <!-- =========================================================
-     18. GIFT 3
+     18. GIFT 3 — ME
 ========================================================= -->
 
 <section
@@ -4160,17 +4557,18 @@ p {
 <div class="content">
 
     <div class="small">
-        Gift 3 of 3
+        Gift 3 of 3 ❤️
     </div>
 
     <h2>
-        Last one...
+        And the last one...
     </h2>
 
 
     <div
         class="gift-card"
         id="giftCard3">
+
 
         <div
             class="gift-box"
@@ -4198,18 +4596,79 @@ p {
             class="gift-reveal">
 
             <div class="small">
-                Gift Three
+                Gift Three ❤️
             </div>
 
-            <div class="gift-message-title">
-                I'm still your bro. ❤️
+
+            <div
+                class="gift-message-title">
+
+                And the Most Important Gift...
+
             </div>
 
-            <div class="gift-message-text">
 
-                Whatever happens,
-                wherever life takes us,
-                that won't change.
+            <div
+                class="gift-message-text">
+
+                <strong
+                    style="
+                        color:#ffd34d;
+                        font-size:24px;
+                    ">
+
+                    Me. 😌❤️
+
+                </strong>
+
+
+                <br><br>
+
+
+                Okay okay...
+                don't get emotional. 😂
+
+
+                <br><br>
+
+
+                But seriously,
+                I'm not just someone standing
+                beside you today and wishing you.
+
+
+                <br><br>
+
+
+                I'm your brother.
+
+
+                <br><br>
+
+
+                I'll annoy you,
+                fight with you,
+                make fun of you...
+
+
+                <br><br>
+
+
+                and still be there
+                when you need me.
+
+
+                <br><br>
+
+
+                <strong
+                    style="
+                        color:#ff70d2;
+                    ">
+
+                    I'm your third gift. ❤️
+
+                </strong>
 
             </div>
 
@@ -4295,24 +4754,35 @@ p {
 
 
     <p>
-        Here's to another year of memories,
-        growth, laughs and becoming the
+
+        Here's to another year
+        of memories, growth,
+        laughs and becoming the
         best version of yourself.
+
     </p>
+
 
     <br>
 
+
     <p>
+
         No matter what happens,
         I'm always here for you.
+
     </p>
+
 
     <br>
 
+
     <p>
+
         <strong>
             Love you, bro. ❤️
         </strong>
+
     </p>
 
 </div>
@@ -4327,14 +4797,18 @@ p {
 ========================================================= */
 
 const song =
-    new Audio("song.mp3");
+    new Audio(
+        "song.mp3"
+    );
 
 song.loop =
     false;
 
 
 const birthdayBgm =
-    new Audio("birthday-bgm.mp3");
+    new Audio(
+        "birthday-bgm.mp3"
+    );
 
 birthdayBgm.loop =
     true;
@@ -4429,10 +4903,14 @@ const lyrics = [
 
 function showScreen(id) {
 
+
     if (
-        currentScreen === "song"
+        currentScreen ===
+        "song"
+
         &&
-        id !== "song"
+        id !==
+        "song"
     ) {
 
         stopSong();
@@ -4441,9 +4919,12 @@ function showScreen(id) {
 
 
     if (
-        currentScreen === "birthday"
+        currentScreen ===
+        "birthday"
+
         &&
-        id !== "birthday"
+        id !==
+        "birthday"
     ) {
 
         stopBirthdayBgm();
@@ -4470,56 +4951,62 @@ function showScreen(id) {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        document
-            .querySelectorAll(
-                ".screen"
-            )
-            .forEach(
-                screen => {
+            document
+                .querySelectorAll(
+                    ".screen"
+                )
+                .forEach(
+                    screen => {
 
-                    screen.classList.remove(
-                        "active"
-                    );
+                        screen.classList.remove(
+                            "active"
+                        );
 
-                }
-            );
-
-
-        const target =
-            document.getElementById(
-                id
-            );
+                    }
+                );
 
 
-        if (target) {
+            const target =
+                document.getElementById(
+                    id
+                );
 
-            target.classList.add(
+
+            if (target) {
+
+                target.classList.add(
+                    "active"
+                );
+
+                currentScreen =
+                    id;
+
+            }
+
+        },
+        160
+    );
+
+
+    setTimeout(
+        () => {
+
+            flash.classList.remove(
                 "active"
             );
 
-            currentScreen =
-                id;
-
-        }
-
-    }, 160);
-
-
-    setTimeout(() => {
-
-        flash.classList.remove(
-            "active"
-        );
-
-    }, 650);
+        },
+        650
+    );
 
 }
 
 
 /* =========================================================
-   NO
+   NO BUTTON
 ========================================================= */
 
 function noAnswer(
@@ -4549,6 +5036,7 @@ function noAnswer(
             messageId
         )
         .textContent =
+
         messages[
             Math.floor(
                 Math.random()
@@ -4582,7 +5070,7 @@ function noAnswer(
 
 
 /* =========================================================
-   TIME SINCE BIRTH
+   TIME
 ========================================================= */
 
 const birthDate =
@@ -4601,19 +5089,22 @@ function updateAge() {
 
     const seconds =
         Math.floor(
-            elapsed / 1000
+            elapsed /
+            1000
         );
 
 
     const minutes =
         Math.floor(
-            seconds / 60
+            seconds /
+            60
         );
 
 
     const hours =
         Math.floor(
-            minutes / 60
+            minutes /
+            60
         );
 
 
@@ -4622,7 +5113,9 @@ function updateAge() {
             "hours"
         )
         .textContent =
-        hours.toLocaleString();
+
+        hours
+        .toLocaleString();
 
 
     document
@@ -4630,7 +5123,9 @@ function updateAge() {
             "minutes"
         )
         .textContent =
-        minutes.toLocaleString();
+
+        minutes
+        .toLocaleString();
 
 
     document
@@ -4638,7 +5133,9 @@ function updateAge() {
             "seconds"
         )
         .textContent =
-        seconds.toLocaleString();
+
+        seconds
+        .toLocaleString();
 
 }
 
@@ -5010,7 +5507,22 @@ function cutCakeByUser() {
 
 
     stage.classList.add(
-        "cake-cut"
+        "cutting"
+    );
+
+
+    setTimeout(
+        () => {
+
+            stage.classList.add(
+                "cake-cut"
+            );
+
+
+            playCutSound();
+
+        },
+        120
     );
 
 
@@ -5019,19 +5531,20 @@ function cutCakeByUser() {
 
 
     result.textContent =
-        "Yesss! You cut the cake! 🎂🍰🔥";
-
-
-    playGiftSound();
+        "🔪 Cutting... 🍰";
 
 
     setTimeout(
         () => {
 
+            result.textContent =
+                "Yesss! YOU cut the cake! 🎂🔥";
+
+
             createConfetti();
 
         },
-        400
+        850
     );
 
 
@@ -5046,7 +5559,7 @@ function cutCakeByUser() {
                 "inline-block";
 
         },
-        1100
+        1300
     );
 
 }
@@ -5064,7 +5577,9 @@ function popBalloon(
         balloon.classList.contains(
             "popped"
         )
+
         ||
+
         balloon.classList.contains(
             "popping"
         )
@@ -5094,6 +5609,7 @@ function popBalloon(
             "balloonMessage"
         )
         .textContent =
+
         `🎈 ${popped} / 5 popped`;
 
 
@@ -5124,6 +5640,7 @@ function popBalloon(
                         "balloonMessage"
                     )
                     .textContent =
+
                     "🎉 All 5 balloons burst!";
 
 
@@ -5134,7 +5651,6 @@ function popBalloon(
                     .classList.add(
                         "show"
                     );
-
 
             },
             450
@@ -5236,7 +5752,6 @@ function toggleMusic() {
         stopSong();
 
     }
-
 
     else {
 
@@ -5562,7 +6077,8 @@ function createConfetti() {
 
         piece.style.left =
             Math.random()
-            * 100
+            *
+            100
             +
             "vw";
 
@@ -5623,10 +6139,12 @@ function createConfetti() {
 function createMiniBurst() {
 
     const colors = [
+
         "#ff2e93",
         "#8c52ff",
         "#ffd700",
         "#00d4ff"
+
     ];
 
 
@@ -5662,7 +6180,8 @@ function createMiniBurst() {
             colors[
                 Math.floor(
                     Math.random()
-                    * 4
+                    *
+                    4
                 )
             ];
 
@@ -5672,7 +6191,8 @@ function createMiniBurst() {
                 .9
                 +
                 Math.random()
-                * 1.2
+                *
+                1.2
             )
             +
             "s";
@@ -5698,7 +6218,7 @@ function createMiniBurst() {
 
 
 /* =========================================================
-   DECOR
+   FLOATING DECOR
 ========================================================= */
 
 function createDecor() {
@@ -5991,7 +6511,38 @@ function playBlowSound() {
 
 
 /* =========================================================
-   POP
+   CUT SOUND
+========================================================= */
+
+function playCutSound() {
+
+    playTone(
+        180,
+        .12,
+        "sawtooth",
+        .035
+    );
+
+
+    setTimeout(
+        () => {
+
+            playTone(
+                260,
+                .1,
+                "triangle",
+                .025
+            );
+
+        },
+        90
+    );
+
+}
+
+
+/* =========================================================
+   POP SOUND
 ========================================================= */
 
 function playPopSound() {
@@ -6022,7 +6573,7 @@ function playPopSound() {
 
 
 /* =========================================================
-   GIFT
+   GIFT SOUND
 ========================================================= */
 
 function playGiftSound() {
