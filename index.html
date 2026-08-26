@@ -5,13 +5,20 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>For Vaathi ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@500;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -38,8 +45,13 @@ body {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
     color: white;
+
     overflow: hidden;
 
     background:
@@ -48,11 +60,13 @@ body {
             rgba(116, 35, 190, .30),
             transparent 35%
         ),
+
         radial-gradient(
             circle at 85% 25%,
             rgba(255, 40, 170, .18),
             transparent 35%
         ),
+
         linear-gradient(
             135deg,
             #050009,
@@ -63,21 +77,27 @@ body {
 
 
 /* =========================================================
-   BACKGROUND STARS
+   STARS
 ========================================================= */
 
 .stars {
+
     position: fixed;
+
     inset: 0;
+
     z-index: -20;
+
     pointer-events: none;
 
     background-image:
+
         radial-gradient(
             circle,
             rgba(255,255,255,.9) 1px,
             transparent 1px
         ),
+
         radial-gradient(
             circle,
             rgba(255,80,220,.75) 1px,
@@ -100,12 +120,14 @@ body {
 @keyframes starsMove {
 
     from {
+
         background-position:
             0 0,
             0 0;
     }
 
     to {
+
         background-position:
             180px 160px,
             -180px 100px;
@@ -118,7 +140,9 @@ body {
 ========================================================= */
 
 .decor {
+
     position: fixed;
+
     inset: 0;
 
     z-index: -5;
@@ -129,10 +153,12 @@ body {
 }
 
 .float-item {
+
     position: absolute;
+
     bottom: -90px;
 
-    opacity: .6;
+    opacity: .60;
 
     animation:
         floatUp
@@ -159,6 +185,7 @@ body {
 @keyframes floatUp {
 
     0% {
+
         transform:
             translateY(0)
             translateX(0)
@@ -166,6 +193,7 @@ body {
     }
 
     50% {
+
         transform:
             translateY(-55vh)
             translateX(18px)
@@ -173,6 +201,7 @@ body {
     }
 
     100% {
+
         transform:
             translateY(-115vh)
             translateX(-12px)
@@ -188,7 +217,9 @@ body {
 ========================================================= */
 
 .transition-flash {
+
     position: fixed;
+
     inset: 0;
 
     z-index: 9998;
@@ -213,31 +244,39 @@ body {
 }
 
 .transition-flash.active {
+
     opacity: 1;
+
     transform: scale(2.5);
 }
 
 
 /* =========================================================
-   SCREENS
+   SCREEN SYSTEM
 ========================================================= */
 
 .screen {
+
     position: fixed;
+
     inset: 0;
 
     width: 100%;
+
     height: 100vh;
 
     padding: 18px 7%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     opacity: 0;
+
     visibility: hidden;
 
     transform:
@@ -251,7 +290,9 @@ body {
 }
 
 .screen.active {
+
     opacity: 1;
+
     visibility: visible;
 
     transform:
@@ -260,8 +301,15 @@ body {
 }
 
 .content {
-    width: min(950px, 100%);
-    max-height: 92vh;
+
+    width:
+        min(
+            950px,
+            100%
+        );
+
+    max-height:
+        92vh;
 
     overflow-y: auto;
 
@@ -278,8 +326,11 @@ body {
 ========================================================= */
 
 .small {
+
     font-size: 12px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
 
     color: #ffb9ef;
@@ -289,10 +340,14 @@ body {
 
 h1,
 h2 {
-    font-family: "Cinzel", serif;
+
+    font-family:
+        "Cinzel",
+        serif;
 }
 
 h2 {
+
     font-size:
         clamp(
             30px,
@@ -301,10 +356,12 @@ h2 {
         );
 
     line-height: 1.08;
+
     margin-bottom: 15px;
 }
 
 p {
+
     color: #ddd;
 
     font-size:
@@ -323,9 +380,12 @@ p {
 ========================================================= */
 
 .btn {
-    margin: 9px 5px;
 
-    padding: 13px 24px;
+    margin:
+        9px 5px;
+
+    padding:
+        13px 24px;
 
     border:
         1px solid
@@ -361,12 +421,14 @@ p {
 }
 
 .btn:hover {
+
     transform:
         translateY(-3px)
         scale(1.04);
 }
 
 .yes-btn {
+
     background:
         linear-gradient(
             90deg,
@@ -377,6 +439,7 @@ p {
 }
 
 .no-btn {
+
     background:
         linear-gradient(
             90deg,
@@ -388,6 +451,7 @@ p {
 }
 
 .nope {
+
     animation:
         shake
         .35s;
@@ -396,17 +460,20 @@ p {
 @keyframes shake {
 
     25% {
+
         transform:
             translateX(-9px);
     }
 
     75% {
+
         transform:
             translateX(9px);
     }
 }
 
 .answer-area {
+
     margin-top: 22px;
 
     display: flex;
@@ -419,6 +486,7 @@ p {
 }
 
 .question-answer {
+
     min-height: 24px;
 
     margin-top: 10px;
@@ -434,6 +502,7 @@ p {
 ========================================================= */
 
 .hero-title {
+
     font:
         800
         clamp(
@@ -474,11 +543,14 @@ p {
 @keyframes gradientMove {
 
     to {
-        background-position: 300%;
+
+        background-position:
+            300%;
     }
 }
 
 .wait-line {
+
     font:
         600
         clamp(
@@ -493,6 +565,7 @@ p {
 }
 
 .hero-cake {
+
     font-size: 100px;
 
     animation:
@@ -511,6 +584,7 @@ p {
 @keyframes cakeFloat {
 
     50% {
+
         transform:
             translateY(-12px);
     }
@@ -522,6 +596,7 @@ p {
 ========================================================= */
 
 .date-number {
+
     font:
         800
         clamp(
@@ -540,12 +615,14 @@ p {
             #8d53ff
         );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
     color: transparent;
 }
 
 .date-month {
+
     font:
         700
         clamp(
@@ -562,6 +639,7 @@ p {
 }
 
 .date-year {
+
     font-size: 25px;
 
     color: #8bdfff;
@@ -577,10 +655,14 @@ p {
 ========================================================= */
 
 .counter {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(
+            3,
+            1fr
+        );
 
     gap: 14px;
 
@@ -590,7 +672,9 @@ p {
 }
 
 .counter-box {
-    padding: 22px 10px;
+
+    padding:
+        22px 10px;
 
     border-radius: 20px;
 
@@ -599,17 +683,24 @@ p {
         #ff38d1;
 
     background:
-        rgba(20,0,45,.75);
+        rgba(
+            20,
+            0,
+            45,
+            .75
+        );
 
     box-shadow:
         0 0 20px
         rgba(255,0,200,.15),
 
-        inset 0 0 20px
+        inset
+        0 0 20px
         rgba(100,0,255,.1);
 }
 
 .counter-number {
+
     display: block;
 
     font:
@@ -626,6 +717,7 @@ p {
 }
 
 .counter-label {
+
     display: block;
 
     color: #aaa;
@@ -641,6 +733,7 @@ p {
 ========================================================= */
 
 .count-number {
+
     font:
         800
         clamp(
@@ -675,12 +768,14 @@ p {
 @keyframes countPulse {
 
     to {
+
         transform:
             scale(1.05);
     }
 }
 
 .count-message {
+
     font-size: 22px;
 
     color: #ffd7f5;
@@ -694,6 +789,7 @@ p {
 ========================================================= */
 
 .birthday-cake {
+
     font-size: 105px;
 
     animation:
@@ -705,12 +801,14 @@ p {
 @keyframes cakePulse {
 
     50% {
+
         transform:
             scale(1.12);
     }
 }
 
 .birthday-title {
+
     font:
         800
         clamp(
@@ -737,6 +835,7 @@ p {
 }
 
 .vaathi {
+
     font:
         clamp(
             48px,
@@ -746,8 +845,7 @@ p {
         Pacifico,
         cursive;
 
-    color:
-        #ff51c1;
+    color: #ff51c1;
 
     text-shadow:
         0 0 20px
@@ -756,10 +854,11 @@ p {
 
 
 /* =========================================================
-   BABY PHOTO
+   BABY
 ========================================================= */
 
 .baby-photo-frame {
+
     width:
         min(
             390px,
@@ -773,8 +872,7 @@ p {
     padding:
         10px 10px 15px;
 
-    background:
-        #f1dfb9;
+    background: #f1dfb9;
 
     box-shadow:
         0 20px 50px
@@ -787,7 +885,9 @@ p {
 }
 
 .baby-photo-frame .baby-rotator {
+
     width: 100%;
+
     height: 250px;
 
     display: flex;
@@ -800,10 +900,14 @@ p {
 }
 
 .baby-photo-frame img {
+
     width: 80%;
+
     height: 80%;
 
     object-fit: contain;
+
+    display: block;
 
     transform:
         rotate(-90deg)
@@ -811,6 +915,7 @@ p {
 }
 
 .baby-caption {
+
     color: #241527;
 
     font:
@@ -827,6 +932,7 @@ p {
 ========================================================= */
 
 .memory-buttons {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -835,17 +941,18 @@ p {
 
     gap: 8px;
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
     max-width: 850px;
 }
 
 .memory-btn {
+
     padding:
         10px 16px;
 
-    border-radius:
-        30px;
+    border-radius: 30px;
 
     border:
         1px solid
@@ -867,6 +974,7 @@ p {
 }
 
 .memory-btn:hover {
+
     background:
         rgba(255,50,180,.18);
 
@@ -875,6 +983,7 @@ p {
 }
 
 .photo-frame {
+
     width:
         min(
             500px,
@@ -886,8 +995,7 @@ p {
 
     padding: 10px;
 
-    background:
-        #f2e2bc;
+    background: #f2e2bc;
 
     box-shadow:
         0 20px 55px
@@ -898,6 +1006,7 @@ p {
 }
 
 .photo-frame img {
+
     width: 100%;
 
     max-height: 38vh;
@@ -908,6 +1017,7 @@ p {
 }
 
 .photo-caption {
+
     color: #241527;
 
     font:
@@ -920,10 +1030,11 @@ p {
 
 
 /* =========================================================
-   ACTIVITY
+   CAKE SECTION
 ========================================================= */
 
 .activity-title {
+
     font:
         700
         clamp(
@@ -934,674 +1045,150 @@ p {
         Cinzel,
         serif;
 
-    color:
-        #ffd33a;
+    color: #ffd33a;
 
     margin-bottom: 8px;
 }
 
 .activity-sub {
-    color:
-        #ffd8f3;
+
+    color: #ffd8f3;
 
     font-size: 18px;
 }
 
 
 /* =========================================================
-   REDESIGNED BAKERY CAKE
+   IMAGE BASED CAKE
 ========================================================= */
 
 .cake-stage {
 
     position: relative;
 
-    width: 390px;
+    width:
+        min(
+            620px,
+            95vw
+        );
 
-    height: 350px;
+    height:
+        min(
+            430px,
+            55vh
+        );
 
     margin:
-        5px auto
-        -4px;
+        10px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     transition:
-        transform .2s ease;
+        transform .15s ease;
 }
 
 
-/* ---------- Cake board ---------- */
+/* Actual generated cake */
 
-.cake-board {
+.cake-image {
 
     position: absolute;
 
-    left: 35px;
+    left: 50%;
 
-    bottom: 22px;
+    top: 50%;
 
-    width: 320px;
-
-    height: 32px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #ffffff,
-            #cfd2dc
+    width:
+        min(
+            470px,
+            82vw
         );
 
-    border:
-        2px solid
-        rgba(160,160,180,.7);
+    max-height:
+        55vh;
 
-    box-shadow:
-        0 8px 18px
-        rgba(0,0,0,.35),
-
-        inset
-        0 3px
-        8px
-        rgba(255,255,255,.7);
-
-    z-index: 1;
-}
-
-
-/* ---------- Bottom sponge ---------- */
-
-.cake-base {
-
-    position: absolute;
-
-    left: 72px;
-
-    bottom: 49px;
-
-    width: 248px;
-
-    height: 102px;
-
-    border-radius:
-        15px
-        15px
-        28px
-        28px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #74402d 0%,
-            #4a2419 28%,
-            #6a3424 29%,
-            #492117 54%,
-            #67301f 55%,
-            #431d15 100%
+    transform:
+        translate(
+            -50%,
+            -50%
         );
 
-    border:
-        3px solid
-        #35140e;
+    object-fit: contain;
 
-    box-shadow:
-        0 12px 18px
-        rgba(0,0,0,.35),
-
-        inset
-        0 -12px
-        15px
-        rgba(0,0,0,.25);
-
-    z-index: 3;
-
-    transition:
-        transform .8s ease;
-}
-
-
-/* ---------- Cream between layers ---------- */
-
-.cake-cream-bottom {
-
-    position: absolute;
-
-    left: 72px;
-
-    bottom: 103px;
-
-    width: 248px;
-
-    height: 23px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #fffafc,
-            #f5dbe9
-        );
-
-    box-shadow:
-        0 2px
-        5px
-        rgba(0,0,0,.18);
-
-    z-index: 5;
-}
-
-
-/* ---------- Upper sponge ---------- */
-
-.cake-upper {
-
-    position: absolute;
-
-    left: 84px;
-
-    bottom: 118px;
-
-    width: 224px;
-
-    height: 72px;
-
-    border-radius:
-        14px
-        14px
-        20px
-        20px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #7c4430,
-            #4d2519 47%,
-            #713923 48%,
-            #502319 100%
-        );
-
-    border:
-        3px solid
-        #35140e;
-
-    box-shadow:
-        inset
-        0 -10px
-        12px
-        rgba(0,0,0,.2);
-
-    z-index: 4;
-
-    transition:
-        transform .8s ease;
-}
-
-
-/* ---------- Upper cream ---------- */
-
-.cake-cream-top {
-
-    position: absolute;
-
-    left: 84px;
-
-    bottom: 161px;
-
-    width: 224px;
-
-    height: 23px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #fffefe,
-            #f6e2ee
-        );
-
-    box-shadow:
-        0 2px
-        5px
-        rgba(0,0,0,.18);
-
-    z-index: 7;
-}
-
-
-/* ---------- Chocolate top ---------- */
-
-.cake-top {
-
-    position: absolute;
-
-    left: 78px;
-
-    bottom: 178px;
-
-    width: 236px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #5c2b1d,
-            #31120d
-        );
-
-    box-shadow:
-        0 5px
-        9px
-        rgba(0,0,0,.32);
-
-    z-index: 8;
-}
-
-
-/* ---------- Ganache drip ---------- */
-
-.ganache {
-
-    position: absolute;
-
-    left: 77px;
-
-    bottom: 163px;
-
-    width: 238px;
-
-    height: 49px;
-
-    border-radius:
-        50%
-        50%
-        13px
-        13px;
-
-    background:
-        linear-gradient(
-            #431a12,
-            #25100b
-        );
-
-    z-index: 9;
-}
-
-
-/* Drips */
-
-.drip {
-
-    position: absolute;
-
-    top: 25px;
-
-    width: 19px;
-
-    border-radius:
-        0 0 14px 14px;
-
-    background:
-        linear-gradient(
-            #431a12,
-            #25100b
-        );
-}
-
-.drip.d1 {
-
-    left: 23px;
-
-    height: 34px;
-}
-
-.drip.d2 {
-
-    left: 72px;
-
-    height: 23px;
-}
-
-.drip.d3 {
-
-    left: 121px;
-
-    height: 41px;
-}
-
-.drip.d4 {
-
-    left: 170px;
-
-    height: 28px;
-}
-
-.drip.d5 {
-
-    left: 211px;
-
-    height: 36px;
-}
-
-
-/* ---------- Cream swirls ---------- */
-
-.cream-swirl {
-
-    position: absolute;
-
-    width: 45px;
-
-    height: 18px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            #fff,
-            #f8e3ee
-        );
-
-    box-shadow:
-        0 2px
-        4px
-        rgba(0,0,0,.15);
-
-    z-index: 11;
-}
-
-.swirl1 {
-
-    left: 94px;
-
-    bottom: 212px;
-}
-
-.swirl2 {
-
-    left: 160px;
-
-    bottom: 215px;
-}
-
-.swirl3 {
-
-    left: 223px;
-
-    bottom: 211px;
-}
-
-
-/* ---------- Fruit ---------- */
-
-.fruit {
-
-    position: absolute;
-
-    z-index: 13;
-
-    font-size: 26px;
+    display: block;
 
     filter:
         drop-shadow(
-            0 3px 4px
-            rgba(0,0,0,.3)
-        );
-}
-
-.fruit.f1 {
-
-    left: 96px;
-
-    bottom: 213px;
-}
-
-.fruit.f2 {
-
-    left: 158px;
-
-    bottom: 217px;
-}
-
-.fruit.f3 {
-
-    right: 94px;
-
-    bottom: 212px;
-}
-
-
-/* ---------- Sprinkles ---------- */
-
-.sprinkles {
-
-    position: absolute;
-
-    left: 98px;
-
-    bottom: 191px;
-
-    width: 197px;
-
-    height: 26px;
-
-    z-index: 12;
-
-    font-size: 14px;
-
-    letter-spacing: 11px;
-
-    color:
-        #ff6a9e;
-
-    transform:
-        rotate(-2deg);
-}
-
-
-/* ---------- Candles ---------- */
-
-.birthday-candle {
-
-    position: absolute;
-
-    width: 15px;
-
-    height: 59px;
-
-    bottom: 217px;
-
-    border-radius: 7px;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #5e4cff 0 8px,
-            #ff67bc 8px 16px
+            0 18px 25px
+            rgba(0,0,0,.38)
         );
 
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
-    z-index: 16;
-}
-
-.birthday-candle.c1 {
-
-    left: 119px;
-}
-
-.birthday-candle.c2 {
-
-    left: 163px;
-}
-
-.birthday-candle.c3 {
-
-    left: 207px;
-}
-
-.birthday-candle.c4 {
-
-    left: 251px;
+    transition:
+        opacity .28s ease,
+        transform .8s ease;
 }
 
 
-/* ---------- Candle flames ---------- */
+/* After clicking cut */
 
-.candle-flame {
-
-    position: absolute;
-
-    font-size: 29px;
-
-    bottom: 269px;
-
-    z-index: 19;
-
-    animation:
-        flameDance
-        .48s
-        infinite
-        alternate;
-}
-
-.candle-flame.f1 {
-
-    left: 111px;
-}
-
-.candle-flame.f2 {
-
-    left: 155px;
-}
-
-.candle-flame.f3 {
-
-    left: 199px;
-}
-
-.candle-flame.f4 {
-
-    left: 243px;
-}
-
-.candle-flame.off {
+.cake-stage.cake-cut
+.cake-image.whole-cake {
 
     opacity: 0;
 
     transform:
-        translateY(-20px)
-        scale(.1);
-}
-
-@keyframes flameDance {
-
-    from {
-
-        transform:
-            scale(1)
-            rotate(-3deg);
-    }
-
-    to {
-
-        transform:
-            scale(1.14)
-            rotate(3deg);
-    }
+        translate(
+            -50%,
+            -50%
+        )
+        scale(.98);
 }
 
 
-/* ---------- Smoke ---------- */
+/* Cut cake image */
 
-.candle-smoke {
-
-    position: absolute;
-
-    font-size: 22px;
+.cake-image.cut-cake {
 
     opacity: 0;
 
-    z-index: 20;
 }
 
-.candle-smoke.s1 {
+.cake-stage.cake-cut
+.cake-image.cut-cake {
 
-    left: 109px;
+    opacity: 1;
 
-    bottom: 276px;
-}
-
-.candle-smoke.s2 {
-
-    left: 153px;
-
-    bottom: 276px;
-}
-
-.candle-smoke.s3 {
-
-    left: 197px;
-
-    bottom: 276px;
-}
-
-.candle-smoke.s4 {
-
-    left: 241px;
-
-    bottom: 276px;
-}
-
-.candle-smoke.show {
-
-    animation:
-        smokeRise
-        1.5s
-        ease
-        forwards;
-}
-
-@keyframes smokeRise {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translateY(0)
-            scale(.5);
-    }
-
-    25% {
-
-        opacity: .8;
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            translateY(-60px)
-            scale(1.3);
-    }
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        scale(1.02);
 }
 
 
-/* ---------- Knife ---------- */
+/* Knife */
 
 .cake-knife {
 
     position: absolute;
 
-    right: 0;
+    right:
+        12%;
 
-    top: 82px;
+    top:
+        12%;
 
-    font-size: 62px;
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            70px
+        );
 
     z-index: 30;
 
@@ -1611,19 +1198,22 @@ p {
     transition:
         transform
         1s
-        cubic-bezier(.2,.8,.2,1);
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
 }
 
 
-/* =========================================================
-   CUT EFFECTS
-========================================================= */
+/* Knife movement */
 
 .cake-stage.cutting {
 
     animation:
         cakeCamera
-        .9s
+        .85s
         cubic-bezier(
             .36,
             .07,
@@ -1645,49 +1235,49 @@ p {
     10% {
 
         transform:
-            scale(1.05)
-            translate(-8px,3px)
+            scale(1.045)
+            translate(-7px,3px)
             rotate(-1deg);
     }
 
     20% {
 
         transform:
-            scale(1.06)
-            translate(8px,-3px)
+            scale(1.055)
+            translate(7px,-3px)
             rotate(1deg);
     }
 
     30% {
 
         transform:
-            scale(1.06)
-            translate(-9px,2px)
+            scale(1.05)
+            translate(-8px,2px)
             rotate(-1deg);
     }
 
     42% {
 
         transform:
-            scale(1.05)
-            translate(9px,-2px)
+            scale(1.045)
+            translate(8px,-2px)
             rotate(1deg);
     }
 
-    55% {
+    58% {
 
         transform:
-            scale(1.03)
-            translate(-5px,2px)
+            scale(1.025)
+            translate(-5px,1px)
             rotate(-.5deg);
     }
 
-    70% {
+    75% {
 
         transform:
             scale(1.01)
             translate(4px,-1px)
-            rotate(.5deg);
+            rotate(.4deg);
     }
 
     100% {
@@ -1699,73 +1289,15 @@ p {
     }
 }
 
-
-/* Knife enters cake */
-
-.cake-stage.cake-cut .cake-knife {
+.cake-stage.cake-cut
+.cake-knife {
 
     transform:
-        translate(-126px,112px)
+        translate(
+            -180px,
+            150px
+        )
         rotate(22deg);
-}
-
-
-/* Cake reacts */
-
-.cake-stage.cake-cut .cake-base {
-
-    animation:
-        baseSplit
-        .95s
-        ease
-        forwards;
-}
-
-.cake-stage.cake-cut .cake-upper {
-
-    animation:
-        upperSplit
-        .95s
-        ease
-        forwards;
-}
-
-@keyframes baseSplit {
-
-    0% {
-        transform:
-            scaleX(1);
-    }
-
-    45% {
-        transform:
-            scaleX(.97);
-    }
-
-    100% {
-        transform:
-            scaleX(.91)
-            translateX(-7px);
-    }
-}
-
-@keyframes upperSplit {
-
-    0% {
-        transform:
-            scaleX(1);
-    }
-
-    45% {
-        transform:
-            scaleX(.97);
-    }
-
-    100% {
-        transform:
-            scaleX(.91)
-            translateX(7px);
-    }
 }
 
 
@@ -1775,36 +1307,37 @@ p {
 
     position: absolute;
 
-    left: 193px;
+    left: 49%;
 
-    bottom: 48px;
+    top: 25%;
 
     width: 4px;
 
-    height: 150px;
+    height: 52%;
 
-    border-radius: 10px;
+    border-radius: 20px;
 
     background:
         linear-gradient(
             transparent,
-            rgba(255,255,255,.85),
+            rgba(255,255,255,.95),
             transparent
         );
 
     opacity: 0;
 
-    z-index: 28;
+    z-index: 25;
 
     transform:
         rotate(-5deg);
 }
 
-.cake-stage.cake-cut .cake-cut-line {
+.cake-stage.cake-cut
+.cake-cut-line {
 
     animation:
         cutLine
-        .8s
+        .7s
         ease
         forwards;
 }
@@ -1831,7 +1364,7 @@ p {
 
     100% {
 
-        opacity: .1;
+        opacity: .08;
 
         transform:
             scaleY(1)
@@ -1852,20 +1385,21 @@ p {
 
     pointer-events: none;
 
-    opacity: 0;
-
     z-index: 35;
+
+    opacity: 0;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.9),
-            rgba(255,130,220,.3),
+            rgba(255,255,255,.92),
+            rgba(255,120,210,.30),
             transparent 72%
         );
 }
 
-.cake-stage.cake-cut .cake-flash {
+.cake-stage.cake-cut
+.cake-flash {
 
     animation:
         cakeFlash
@@ -1889,7 +1423,7 @@ p {
         opacity: 1;
 
         transform:
-            scale(1.15);
+            scale(1.12);
     }
 
     100% {
@@ -1902,7 +1436,7 @@ p {
 }
 
 
-/* crumbs */
+/* Cake crumbs */
 
 .cake-crumb {
 
@@ -1919,10 +1453,13 @@ p {
 
     opacity: 0;
 
+    pointer-events: none;
+
     z-index: 40;
 }
 
-.cake-stage.cake-cut .cake-crumb {
+.cake-stage.cake-cut
+.cake-crumb {
 
     animation:
         crumbFly
@@ -1938,7 +1475,10 @@ p {
         opacity: 0;
 
         transform:
-            translate(0,0)
+            translate(
+                0,
+                0
+            )
             scale(.4);
     }
 
@@ -1961,64 +1501,8 @@ p {
 }
 
 
-/* sparkle */
-
-.cake-sparkle {
-
-    position: absolute;
-
-    color: #ffd85c;
-
-    font-size: 20px;
-
-    z-index: 23;
-
-    animation:
-        sparkleFloat
-        1.5s
-        infinite
-        alternate;
-}
-
-.spark1 {
-
-    left: 40px;
-    top: 88px;
-}
-
-.spark2 {
-
-    right: 26px;
-    top: 105px;
-}
-
-.spark3 {
-
-    left: 25px;
-    bottom: 86px;
-}
-
-.spark4 {
-
-    right: 20px;
-    bottom: 80px;
-}
-
-@keyframes sparkleFloat {
-
-    to {
-
-        transform:
-            scale(1.35)
-            rotate(20deg);
-
-        opacity: .45;
-    }
-}
-
-
 /* =========================================================
-   MINDSET BALLOONS
+   BALLOONS
 ========================================================= */
 
 .balloon-field {
@@ -2088,8 +1572,7 @@ p {
 
     line-height: 1.15;
 
-    text-transform:
-        uppercase;
+    text-transform: uppercase;
 
     letter-spacing: .5px;
 }
@@ -2168,12 +1651,10 @@ p {
     }
 }
 
-
-/* individual balloons */
-
 .b1 {
 
     left: 4%;
+
     top: 24px;
 
     background:
@@ -2187,6 +1668,7 @@ p {
 .b2 {
 
     left: 28%;
+
     top: 92px;
 
     background:
@@ -2200,6 +1682,7 @@ p {
 .b3 {
 
     left: 52%;
+
     top: 18px;
 
     background:
@@ -2213,6 +1696,7 @@ p {
 .b4 {
 
     left: 74%;
+
     top: 102px;
 
     background:
@@ -2226,6 +1710,7 @@ p {
 .b5 {
 
     left: 42%;
+
     top: 188px;
 
     background:
@@ -2350,7 +1835,8 @@ p {
             92%
         );
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
     padding:
         24px 20px;
@@ -2566,8 +2052,7 @@ p {
         "Dancing Script",
         cursive;
 
-    color:
-        #67204d;
+    color: #67204d;
 
     margin:
         12px 0;
@@ -2602,8 +2087,7 @@ p {
         Pacifico,
         cursive;
 
-    color:
-        #8f2b65;
+    color: #8f2b65;
 }
 
 .letter-heart {
@@ -2898,6 +2382,7 @@ p {
 .gift-light {
 
     width: 0;
+
     height: 0;
 
     border-radius: 50%;
@@ -2953,8 +2438,7 @@ p {
         Cinzel,
         serif;
 
-    color:
-        #ffd34d;
+    color: #ffd34d;
 
     margin-bottom: 8px;
 }
@@ -2983,11 +2467,13 @@ p {
         Cinzel,
         serif;
 
-    color:
-        #ffd86a;
+    color: #ffd86a;
 
-    margin-bottom:
-        12px;
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,210,80,.22);
 }
 
 .dad-intro {
@@ -3013,8 +2499,7 @@ p {
             88%
         );
 
-    aspect-ratio:
-        4 / 5;
+    height: 430px;
 
     margin:
         20px auto;
@@ -3036,56 +2521,50 @@ p {
 
         0 0 30px
         rgba(255,200,90,.12);
+
+    overflow: hidden;
+
+    animation:
+        dadPhotoIn
+        1s
+        ease
+        forwards;
 }
 
-.dad-photo-placeholder {
+.dad-photo {
 
     width: 100%;
 
     height: 100%;
 
-    min-height: 360px;
+    object-fit: cover;
 
-    display:
-        flex;
+    display: block;
 
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-direction:
-        column;
-
-    border:
-        2px dashed
-        rgba(110,70,40,.35);
-
-    background:
-        linear-gradient(
-            145deg,
-            #ead4a8,
-            #f5e7c8
-        );
-
-    color:
-        #533d37;
+    border-radius: 4px;
 }
 
-.dad-placeholder-icon {
+@keyframes dadPhotoIn {
 
-    font-size: 55px;
+    from {
 
-    margin-bottom: 15px;
-}
+        opacity: 0;
 
-.dad-placeholder-text {
+        transform:
+            translateY(20px)
+            rotate(-2deg)
+            scale(.96);
+    }
 
-    font:
-        18px
-        "Dancing Script",
-        cursive;
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(1);
+    }
 }
 
 .dad-message {
@@ -3285,6 +2764,7 @@ p {
     }
 
     .baby-photo-frame {
+
         width:
             min(
                 310px,
@@ -3295,39 +2775,59 @@ p {
     }
 
     .baby-photo-frame .baby-rotator {
+
         height: 238px;
     }
 
     .photo-frame img {
+
         max-height: 36vh;
     }
 
     .cake-stage {
-        transform: scale(.82);
-        transform-origin:
-            center top;
 
         height: 300px;
+    }
 
-        margin-bottom:
-            -24px;
+    .cake-image {
+
+        width:
+            330px;
+
+        max-height:
+            42vh;
+    }
+
+    .cake-knife {
+
+        right: 3%;
+
+        top: 13%;
+
+        font-size: 52px;
     }
 
     .balloon-field {
+
         height: 350px;
     }
 
     .pop-balloon {
+
         width: 94px;
+
         height: 112px;
     }
 
     .dad-photo-frame {
+
         width:
             min(
                 310px,
                 82%
             );
+
+        height: 380px;
     }
 
 }
@@ -3339,6 +2839,10 @@ p {
 
 <body>
 
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
 
 <div class="stars"></div>
 
@@ -3354,7 +2858,7 @@ p {
 
 
 <!-- =========================================================
-     1. OPENING
+     1. HEY PRESIDENT
 ========================================================= -->
 
 <section
@@ -3382,7 +2886,9 @@ p {
 
     <button
         class="btn"
-        onclick="showScreen('screen1b')">
+        onclick="
+            showScreen('screen1b')
+        ">
 
         Listen to me ❤️
 
@@ -3432,7 +2938,9 @@ p {
 
     <button
         class="btn"
-        onclick="showScreen('question1')">
+        onclick="
+            showScreen('question1')
+        ">
 
         I made something for you... 🎁
 
@@ -3475,11 +2983,14 @@ p {
 
         <button
             class="btn yes-btn"
-            onclick="showScreen('screen2')">
+            onclick="
+                showScreen('screen2')
+            ">
 
             YES 😎
 
         </button>
+
 
         <button
             class="btn no-btn"
@@ -3495,6 +3006,7 @@ p {
         </button>
 
     </div>
+
 
     <div
         class="question-answer"
@@ -3538,9 +3050,12 @@ p {
         that became very important.
     </p>
 
+
     <button
         class="btn"
-        onclick="showScreen('screen3')">
+        onclick="
+            showScreen('screen3')
+        ">
 
         Let's see how far we've come 👀
 
@@ -3571,14 +3086,18 @@ p {
         has passed since that day...
     </h2>
 
+
     <div class="counter">
+
 
         <div class="counter-box">
 
             <span
                 class="counter-number"
                 id="hours">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -3587,12 +3106,15 @@ p {
 
         </div>
 
+
         <div class="counter-box">
 
             <span
                 class="counter-number"
                 id="minutes">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -3601,12 +3123,15 @@ p {
 
         </div>
 
+
         <div class="counter-box">
 
             <span
                 class="counter-number"
                 id="seconds">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -3615,16 +3140,21 @@ p {
 
         </div>
 
+
     </div>
+
 
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
 
+
     <button
         class="btn"
-        onclick="startCountdown()">
+        onclick="
+            startCountdown()
+        ">
 
         There's more... 🎂
 
@@ -3653,13 +3183,17 @@ p {
     <div
         class="count-number"
         id="countNumber">
+
         3
+
     </div>
 
     <div
         class="count-message"
         id="countMessage">
+
         Something is coming...
+
     </div>
 
 </div>
@@ -3696,9 +3230,12 @@ p {
         → another year unlocked 🎉
     </p>
 
+
     <button
         class="btn"
-        onclick="showScreen('baby')">
+        onclick="
+            showScreen('baby')
+        ">
 
         There's something special here... 👀
 
@@ -3733,6 +3270,7 @@ p {
         how much life was waiting for him.
     </p>
 
+
     <div class="baby-photo-frame">
 
         <div class="baby-rotator">
@@ -3749,9 +3287,12 @@ p {
 
     </div>
 
+
     <button
         class="btn"
-        onclick="showScreen('memories')">
+        onclick="
+            showScreen('memories')
+        ">
 
         He grew up... 👀
 
@@ -3782,7 +3323,9 @@ p {
         to this.
     </h2>
 
+
     <div class="memory-buttons">
+
 
         <button
             class="memory-btn"
@@ -3792,8 +3335,11 @@ p {
                     'The school days... 🏫'
                 )
             ">
+
             🏫 School
+
         </button>
+
 
         <button
             class="memory-btn"
@@ -3803,8 +3349,11 @@ p {
                     'Some memories just stay. ❤️'
                 )
             ">
+
             🤝 Memory
+
         </button>
+
 
         <button
             class="memory-btn"
@@ -3814,8 +3363,11 @@ p {
                     'Brotherhood moments. 😎'
                 )
             ">
+
             😎 Us
+
         </button>
+
 
         <button
             class="memory-btn"
@@ -3825,8 +3377,11 @@ p {
                     'A few places, a lot of memories. 🌄'
                 )
             ">
+
             🌄 Adventure
+
         </button>
+
 
         <button
             class="memory-btn"
@@ -3836,10 +3391,14 @@ p {
                     'And somehow... that little kid grew up.'
                 )
             ">
+
             🪞 Growing Up
+
         </button>
 
+
     </div>
+
 
     <div class="photo-frame">
 
@@ -3858,9 +3417,12 @@ p {
 
     </div>
 
+
     <button
         class="btn"
-        onclick="showScreen('cakeGame')">
+        onclick="
+            showScreen('cakeGame')
+        ">
 
         Okay... let's celebrate for real 🎂
 
@@ -3872,7 +3434,7 @@ p {
 
 
 <!-- =========================================================
-     10. REDESIGNED CAKE
+     10. IMAGE CAKE
 ========================================================= -->
 
 <section
@@ -3882,16 +3444,22 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         Birthday challenge #1 🎂
     </div>
+
 
     <div class="activity-title">
         MAKE A WISH ✨
     </div>
 
+
     <div class="activity-sub">
-        Blow the candles first... then cut your cake.
+
+        Blow the candles first...<br>
+        then cut your cake.
+
     </div>
 
 
@@ -3900,129 +3468,44 @@ p {
         id="cakeStage">
 
 
-        <div class="cake-board"></div>
+        <!-- WHOLE CAKE -->
+
+        <img
+            id="cakeImageWhole"
+            class="cake-image whole-cake"
+            src="cake-whole.png"
+            alt="Birthday cake">
 
 
-        <div class="cake-base"></div>
+        <!-- CUT CAKE -->
 
-        <div class="cake-cream-bottom"></div>
-
-        <div class="cake-upper"></div>
-
-        <div class="cake-cream-top"></div>
-
-        <div class="cake-top"></div>
-
-        <div class="ganache">
-
-            <div class="drip d1"></div>
-            <div class="drip d2"></div>
-            <div class="drip d3"></div>
-            <div class="drip d4"></div>
-            <div class="drip d5"></div>
-
-        </div>
+        <img
+            id="cakeImageCut"
+            class="cake-image cut-cake"
+            src="cake-cut.png"
+            alt="Cut birthday cake">
 
 
-        <div class="cream-swirl swirl1"></div>
-        <div class="cream-swirl swirl2"></div>
-        <div class="cream-swirl swirl3"></div>
-
-
-        <div class="fruit f1">
-            🍓
-        </div>
-
-        <div class="fruit f2">
-            🍒
-        </div>
-
-        <div class="fruit f3">
-            🍓
-        </div>
-
-
-        <div class="sprinkles">
-            • • • • • • • •
-        </div>
-
-
-        <div
-            class="birthday-candle c1">
-        </div>
-
-        <div
-            class="birthday-candle c2">
-        </div>
-
-        <div
-            class="birthday-candle c3">
-        </div>
-
-        <div
-            class="birthday-candle c4">
-        </div>
-
-
-        <div
-            class="candle-flame f1"
-            id="flame1">
-            🔥
-        </div>
-
-        <div
-            class="candle-flame f2"
-            id="flame2">
-            🔥
-        </div>
-
-        <div
-            class="candle-flame f3"
-            id="flame3">
-            🔥
-        </div>
-
-        <div
-            class="candle-flame f4"
-            id="flame4">
-            🔥
-        </div>
-
-
-        <div
-            class="candle-smoke s1"
-            id="smoke1">
-            ☁️
-        </div>
-
-        <div
-            class="candle-smoke s2"
-            id="smoke2">
-            ☁️
-        </div>
-
-        <div
-            class="candle-smoke s3"
-            id="smoke3">
-            ☁️
-        </div>
-
-        <div
-            class="candle-smoke s4"
-            id="smoke4">
-            ☁️
-        </div>
-
+        <!-- KNIFE -->
 
         <div class="cake-knife">
             🔪
         </div>
 
 
-        <div class="cake-cut-line"></div>
+        <!-- CUT LINE -->
 
-        <div class="cake-flash"></div>
+        <div class="cake-cut-line">
+        </div>
 
+
+        <!-- FLASH -->
+
+        <div class="cake-flash">
+        </div>
+
+
+        <!-- CRUMBS -->
 
         <div
             class="cake-crumb"
@@ -4034,6 +3517,7 @@ p {
             ">
         </div>
 
+
         <div
             class="cake-crumb"
             style="
@@ -4044,6 +3528,7 @@ p {
             ">
         </div>
 
+
         <div
             class="cake-crumb"
             style="
@@ -4053,6 +3538,7 @@ p {
                 --y:45px;
             ">
         </div>
+
 
         <div
             class="cake-crumb"
@@ -4065,29 +3551,15 @@ p {
         </div>
 
 
-        <div class="cake-sparkle spark1">
-            ✨
-        </div>
-
-        <div class="cake-sparkle spark2">
-            ✨
-        </div>
-
-        <div class="cake-sparkle spark3">
-            ✨
-        </div>
-
-        <div class="cake-sparkle spark4">
-            ✨
-        </div>
-
     </div>
 
 
     <button
         class="btn"
         id="blowButton"
-        onclick="blowCandles()">
+        onclick="
+            blowCandles()
+        ">
 
         💨 Blow the candles
 
@@ -4104,7 +3576,9 @@ p {
         class="btn"
         id="cutButton"
         style="display:none"
-        onclick="cutCakeByUser()">
+        onclick="
+            cutCakeByUser()
+        ">
 
         🔪 Cut the cake
 
@@ -4121,11 +3595,14 @@ p {
         class="btn"
         id="cakeNext"
         style="display:none"
-        onclick="showScreen('balloonGame')">
+        onclick="
+            showScreen('balloonGame')
+        ">
 
         🎈 Bring the balloons
 
     </button>
+
 
 </div>
 
@@ -4133,7 +3610,7 @@ p {
 
 
 <!-- =========================================================
-     11. FIVE MINDSET BALLOONS
+     11. MINDSET BALLOONS
 ========================================================= -->
 
 <section
@@ -4147,9 +3624,11 @@ p {
         Birthday challenge #2 🎈
     </div>
 
+
     <div class="activity-title">
         LET THEM GO.
     </div>
+
 
     <div class="activity-sub">
 
@@ -4164,10 +3643,7 @@ p {
 
         <div
             class="pop-balloon b1"
-            data-message="
-                LET IT GO.
-                Control your words.
-            "
+            data-message="LET IT GO. Control your words."
             onclick="popBalloon(this)">
 
             <div class="balloon-emoji">
@@ -4183,10 +3659,7 @@ p {
 
         <div
             class="pop-balloon b2"
-            data-message="
-                LET IT GO.
-                Not every thought deserves your attention.
-            "
+            data-message="LET IT GO. Not every thought deserves your attention."
             onclick="popBalloon(this)">
 
             <div class="balloon-emoji">
@@ -4202,9 +3675,7 @@ p {
 
         <div
             class="pop-balloon b3"
-            data-message="
-                Bad days don't define your whole life.
-            "
+            data-message="Bad days don't define your whole life."
             onclick="popBalloon(this)">
 
             <div class="balloon-emoji">
@@ -4220,9 +3691,7 @@ p {
 
         <div
             class="pop-balloon b4"
-            data-message="
-                Stop underestimating yourself.
-            "
+            data-message="Stop underestimating yourself."
             onclick="popBalloon(this)">
 
             <div class="balloon-emoji">
@@ -4238,10 +3707,7 @@ p {
 
         <div
             class="pop-balloon b5"
-            data-message="
-                Change the mindset.
-                You are not fighting the whole world.
-            "
+            data-message="Change the mindset. You are not fighting the whole world."
             onclick="popBalloon(this)">
 
             <div class="balloon-emoji">
@@ -4253,6 +3719,7 @@ p {
             </div>
 
         </div>
+
 
     </div>
 
@@ -4285,7 +3752,9 @@ p {
         class="btn"
         id="balloonNext"
         style="display:none"
-        onclick="showScreen('songQuestion')">
+        onclick="
+            showScreen('songQuestion')
+        ">
 
         🎵 Continue to your surprise
 
@@ -4311,28 +3780,36 @@ p {
         🎵
     </div>
 
+
     <div class="small">
         Something I picked just for you
     </div>
+
 
     <h2>
         Wanna hear a song<br>
         I dedicated to you?
     </h2>
 
+
     <p>
         Give it a chance. ❤️
     </p>
 
+
     <div class="answer-area">
+
 
         <button
             class="btn yes-btn"
-            onclick="startSongAndShow()">
+            onclick="
+                startSongAndShow()
+            ">
 
             YES 🎵
 
         </button>
+
 
         <button
             class="btn no-btn"
@@ -4347,7 +3824,9 @@ p {
 
         </button>
 
+
     </div>
+
 
     <div
         class="question-answer"
@@ -4374,9 +3853,11 @@ p {
         🎶
     </div>
 
+
     <div class="small">
         This one's for you ❤️
     </div>
+
 
     <h2>
         Just listen for a moment.
@@ -4384,6 +3865,7 @@ p {
 
 
     <div class="song-card">
+
 
         <div class="song-wave">
 
@@ -4416,18 +3898,23 @@ p {
         <button
             class="btn"
             id="musicBtn"
-            onclick="toggleMusic()">
+            onclick="
+                toggleMusic()
+            ">
 
             ▶ Start
 
         </button>
+
 
     </div>
 
 
     <button
         class="btn"
-        onclick="showScreen('letter')">
+        onclick="
+            showScreen('letter')
+        ">
 
         One more thing ❤️
 
@@ -4449,6 +3936,7 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         A birthday letter
     </div>
@@ -4456,7 +3944,9 @@ p {
 
     <div class="letter-wrap">
 
+
         <div class="letter">
+
 
             <div class="letter-date">
                 28 August
@@ -4511,18 +4001,23 @@ p {
                 ❤️
             </div>
 
+
         </div>
+
 
     </div>
 
 
     <button
         class="btn"
-        onclick="showScreen('advice')">
+        onclick="
+            showScreen('advice')
+        ">
 
         There's one thing I really want you to remember...
 
     </button>
+
 
 </div>
 
@@ -4540,12 +4035,14 @@ p {
 
 <div class="content">
 
+
     <div class="advice-title">
         One thing to remember.
     </div>
 
 
     <div class="advice-box">
+
 
         <p>
 
@@ -4557,6 +4054,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -4566,6 +4064,7 @@ p {
             against you decide your future.
 
         </p>
+
 
         <br>
 
@@ -4579,6 +4078,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -4591,6 +4091,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -4602,16 +4103,20 @@ p {
 
         </p>
 
+
     </div>
 
 
     <button
         class="btn"
-        onclick="showScreen('gift1')">
+        onclick="
+            showScreen('gift1')
+        ">
 
         Okay... enough serious talk 😂
 
     </button>
+
 
 </div>
 
@@ -4619,7 +4124,7 @@ p {
 
 
 <!-- =========================================================
-     16. FAMILY
+     16. FAMILY GIFT
 ========================================================= -->
 
 <section
@@ -4629,9 +4134,11 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         Gift 1 of 3
     </div>
+
 
     <h2>
         Your First Gift
@@ -4642,9 +4149,12 @@ p {
         class="gift-card"
         id="giftCard1">
 
+
         <div
             class="gift-box"
-            onclick="openGift(1)">
+            onclick="
+                openGift(1)
+            ">
 
             <div class="gift-base"></div>
 
@@ -4664,13 +4174,16 @@ p {
 
         <div class="gift-reveal">
 
+
             <div class="small">
                 Gift One 🎁
             </div>
 
+
             <div class="gift-message-title">
                 Family ❤️
             </div>
+
 
             <div class="gift-message-text">
 
@@ -4698,7 +4211,9 @@ p {
 
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -4707,11 +4222,14 @@ p {
         class="btn"
         id="giftNext1"
         style="display:none"
-        onclick="showScreen('dadScreen')">
+        onclick="
+            showScreen('dadScreen')
+        ">
 
         There's someone special... ❤️
 
     </button>
+
 
 </div>
 
@@ -4728,6 +4246,7 @@ p {
 >
 
 <div class="content">
+
 
     <div class="small">
         There's someone special... ❤️
@@ -4752,22 +4271,19 @@ p {
 
     <div class="dad-photo-frame">
 
-    <img
-        class="dad-photo"
-        src="dad.jpg"
-        alt="Dad">
 
-</div>
-.dad-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 4px;
-}
+        <img
+            class="dad-photo"
+            src="dad.jpg"
+            alt="Dad"
+        >
+
+
+    </div>
 
 
     <div class="dad-message">
+
 
         <div class="dad-quote">
 
@@ -4777,20 +4293,27 @@ p {
 
         </div>
 
+
         <div class="dad-caption">
+
             Your first hero. ❤️
+
         </div>
+
 
     </div>
 
 
     <button
         class="btn"
-        onclick="showScreen('gift2')">
+        onclick="
+            showScreen('gift2')
+        ">
 
         Continue ❤️
 
     </button>
+
 
 </div>
 
@@ -4808,9 +4331,11 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         Gift 2 of 3
     </div>
+
 
     <h2>
         Your Second Gift
@@ -4821,9 +4346,12 @@ p {
         class="gift-card"
         id="giftCard2">
 
+
         <div
             class="gift-box"
-            onclick="openGift(2)">
+            onclick="
+                openGift(2)
+            ">
 
             <div class="gift-base"></div>
 
@@ -4843,13 +4371,16 @@ p {
 
         <div class="gift-reveal">
 
+
             <div class="small">
                 Gift Two 🎁
             </div>
 
+
             <div class="gift-message-title">
                 Friends 🤝
             </div>
+
 
             <div class="gift-message-text">
 
@@ -4869,7 +4400,9 @@ p {
 
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -4878,11 +4411,14 @@ p {
         class="btn"
         id="giftNext2"
         style="display:none"
-        onclick="showScreen('gift3')">
+        onclick="
+            showScreen('gift3')
+        ">
 
         Open Gift 3 🎁
 
     </button>
+
 
 </div>
 
@@ -4900,9 +4436,11 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         Gift 3 of 3 ❤️
     </div>
+
 
     <h2>
         And the last one...
@@ -4913,9 +4451,12 @@ p {
         class="gift-card"
         id="giftCard3">
 
+
         <div
             class="gift-box"
-            onclick="openGift(3)">
+            onclick="
+                openGift(3)
+            ">
 
             <div class="gift-base"></div>
 
@@ -4935,15 +4476,19 @@ p {
 
         <div class="gift-reveal">
 
+
             <div class="small">
                 Gift Three ❤️
             </div>
+
 
             <div class="gift-message-title">
                 The Most Important Gift...
             </div>
 
+
             <div class="gift-message-text">
+
 
                 <strong
                     style="
@@ -4955,34 +4500,46 @@ p {
 
                 </strong>
 
+
                 <br><br>
+
 
                 Okay okay...
                 don't get emotional. 😂
 
+
                 <br><br>
+
 
                 But seriously,
                 I'm not just someone
                 standing beside you
                 today and wishing you.
 
+
                 <br><br>
+
 
                 I'm your brother.
 
+
                 <br><br>
+
 
                 I'll annoy you,
                 fight with you,
                 make fun of you...
 
+
                 <br><br>
+
 
                 and still be there
                 when you need me.
 
+
                 <br><br>
+
 
                 <strong
                     style="
@@ -4993,9 +4550,12 @@ p {
 
                 </strong>
 
+
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -5004,11 +4564,14 @@ p {
         class="btn"
         id="giftNext3"
         style="display:none"
-        onclick="showScreen('final')">
+        onclick="
+            showScreen('final')
+        ">
 
         The final surprise 🎂
 
     </button>
+
 
 </div>
 
@@ -5025,6 +4588,7 @@ p {
 >
 
 <div class="content">
+
 
     <div class="small">
         The final surprise
@@ -5046,7 +4610,8 @@ p {
 
         <img
             src="vaathi.jpg"
-            alt="Vaathi">
+            alt="Vaathi"
+        >
 
     </div>
 
@@ -5086,14 +4651,20 @@ p {
 
     </p>
 
+
     <br>
+
 
     <p>
+
         No matter what happens,
         I'm always here for you.
+
     </p>
 
+
     <br>
+
 
     <p>
 
@@ -5102,6 +4673,7 @@ p {
         </strong>
 
     </p>
+
 
 </div>
 
@@ -5115,32 +4687,46 @@ p {
 ========================================================= */
 
 const song =
-    new Audio("song.mp3");
+    new Audio(
+        "song.mp3"
+    );
 
-song.loop = false;
+song.loop =
+    false;
 
 
 const birthdayBgm =
-    new Audio("birthday-bgm.mp3");
+    new Audio(
+        "birthday-bgm.mp3"
+    );
 
-birthdayBgm.loop = true;
+birthdayBgm.loop =
+    true;
 
 
-let currentScreen = "screen1";
+let currentScreen =
+    "screen1";
 
-let songPlaying = false;
+let songPlaying =
+    false;
 
-let birthdayBgmPlaying = false;
+let birthdayBgmPlaying =
+    false;
 
-let countdownStarted = false;
+let countdownStarted =
+    false;
 
-let candlesBlown = false;
+let candlesBlown =
+    false;
 
-let cakeCut = false;
+let cakeCut =
+    false;
 
-let popped = 0;
+let popped =
+    0;
 
-let lyricTimer = null;
+let lyricTimer =
+    null;
 
 
 /* =========================================================
@@ -5151,36 +4737,42 @@ const lyrics = [
 
     {
         time: 0.00,
+
         text:
         "Meesa Vacha Thaaya Pola Pesukindra Deivam Neeye... ❤️🙏"
     },
 
     {
         time: 4.52,
+
         text:
         "Edhire Nirkum Imayam Neeyada... 🏔️❤️"
     },
 
     {
         time: 8.87,
+
         text:
         "Enai Naane Paathukolla Kedaithaaye Neeyum Ingae... 🫂💙"
     },
 
     {
         time: 13.67,
+
         text:
         "Adha Naale Dhaano Unmel Thani Paasam... ❤️✨"
     },
 
     {
         time: 18.43,
+
         text:
         "Unnakulle Ennai Neeyum Adai Kaakum Anbai Paarthu... 🫶❤️"
     },
 
     {
         time: 23.30,
+
         text:
         "Varumkaalam Natpum Kuda Namai Pesum... ♾️🤝❤️"
     }
@@ -5189,7 +4781,7 @@ const lyrics = [
 
 
 /* =========================================================
-   NAVIGATION
+   SCREEN NAVIGATION
 ========================================================= */
 
 function showScreen(id) {
@@ -5199,6 +4791,7 @@ function showScreen(id) {
         &&
         id !== "song"
     ) {
+
         stopSong();
     }
 
@@ -5208,6 +4801,7 @@ function showScreen(id) {
         &&
         id !== "birthday"
     ) {
+
         stopBirthdayBgm();
     }
 
@@ -5234,7 +4828,9 @@ function showScreen(id) {
     setTimeout(() => {
 
         document
-            .querySelectorAll(".screen")
+            .querySelectorAll(
+                ".screen"
+            )
             .forEach(
                 screen =>
                     screen.classList.remove(
@@ -5244,7 +4840,9 @@ function showScreen(id) {
 
 
         const target =
-            document.getElementById(id);
+            document.getElementById(
+                id
+            );
 
 
         if (target) {
@@ -5253,8 +4851,10 @@ function showScreen(id) {
                 "active"
             );
 
-            currentScreen = id;
+            currentScreen =
+                id;
         }
+
 
     },160);
 
@@ -5300,10 +4900,12 @@ function noAnswer(
             messageId
         )
         .textContent =
+
         messages[
             Math.floor(
                 Math.random()
-                * messages.length
+                *
+                messages.length
             )
         ];
 
@@ -5312,7 +4914,9 @@ function noAnswer(
         "nope"
     );
 
+
     void button.offsetWidth;
+
 
     button.classList.add(
         "nope"
@@ -5329,7 +4933,7 @@ function noAnswer(
 
 
 /* =========================================================
-   AGE COUNTER
+   TIME SINCE BIRTH
 ========================================================= */
 
 const birthDate =
@@ -5365,24 +4969,32 @@ function updateAge() {
 
 
     document
-        .getElementById("hours")
+        .getElementById(
+            "hours"
+        )
         .textContent =
         hours.toLocaleString();
 
 
     document
-        .getElementById("minutes")
+        .getElementById(
+            "minutes"
+        )
         .textContent =
         minutes.toLocaleString();
 
 
     document
-        .getElementById("seconds")
+        .getElementById(
+            "seconds"
+        )
         .textContent =
         seconds.toLocaleString();
 }
 
+
 updateAge();
+
 
 setInterval(
     updateAge,
@@ -5396,12 +5008,16 @@ setInterval(
 
 function startCountdown() {
 
-    if (countdownStarted) {
+    if (
+        countdownStarted
+    ) {
+
         return;
     }
 
 
-    countdownStarted = true;
+    countdownStarted =
+        true;
 
 
     showScreen(
@@ -5421,75 +5037,92 @@ function startCountdown() {
         );
 
 
-    let count = 3;
+    let count =
+        3;
 
 
-    number.textContent = count;
+    number.textContent =
+        count;
+
 
     message.textContent =
         "Get ready...";
 
 
     const timer =
-        setInterval(() => {
+        setInterval(
+            () => {
 
-            count--;
-
-
-            playTone(
-                600,
-                .08,
-                "sine",
-                .025
-            );
+                count--;
 
 
-            if (count > 0) {
-
-                number.textContent =
-                    count;
-
-                message.textContent =
-                    count === 2
-                    ? "Almost there..."
-                    : "One more...";
-
-            }
-
-            else {
-
-                clearInterval(timer);
+                playTone(
+                    600,
+                    .08,
+                    "sine",
+                    .025
+                );
 
 
-                number.textContent =
-                    "🎉";
+                if (
+                    count > 0
+                ) {
 
-                message.textContent =
-                    "HAPPY BIRTHDAY!";
-
-
-                createConfetti();
-
-                birthdayBurst();
+                    number.textContent =
+                        count;
 
 
-                setTimeout(() => {
+                    message.textContent =
+                        count === 2
+                        ? "Almost there..."
+                        : "One more...";
 
-                    showScreen(
-                        "birthday"
+                }
+
+
+                else {
+
+                    clearInterval(
+                        timer
                     );
 
-                    startBirthdayBgm();
+
+                    number.textContent =
+                        "🎉";
 
 
-                    countdownStarted =
-                        false;
+                    message.textContent =
+                        "HAPPY BIRTHDAY!";
 
-                },1400);
 
-            }
+                    createConfetti();
 
-        },1000);
+
+                    birthdayBurst();
+
+
+                    setTimeout(
+                        () => {
+
+                            showScreen(
+                                "birthday"
+                            );
+
+
+                            startBirthdayBgm();
+
+
+                            countdownStarted =
+                                false;
+
+                        },
+                        1400
+                    );
+                }
+
+            },
+            1000
+        );
 }
 
 
@@ -5499,23 +5132,28 @@ function startCountdown() {
 
 function startBirthdayBgm() {
 
-    birthdayBgm.currentTime = 0;
+    birthdayBgm.currentTime =
+        0;
 
 
     birthdayBgm
         .play()
-        .then(() => {
+        .then(
+            () => {
 
-            birthdayBgmPlaying =
-                true;
+                birthdayBgmPlaying =
+                    true;
 
-        })
-        .catch(() => {
+            }
+        )
+        .catch(
+            () => {
 
-            birthdayBgmPlaying =
-                false;
+                birthdayBgmPlaying =
+                    false;
 
-        });
+            }
+        );
 }
 
 
@@ -5523,9 +5161,11 @@ function stopBirthdayBgm() {
 
     birthdayBgm.pause();
 
-    birthdayBgm.currentTime = 0;
+    birthdayBgm.currentTime =
+        0;
 
-    birthdayBgmPlaying = false;
+    birthdayBgmPlaying =
+        false;
 }
 
 
@@ -5550,7 +5190,8 @@ function openMemory(
         );
 
 
-    img.style.opacity = "0";
+    img.style.opacity =
+        "0";
 
 
     playTone(
@@ -5561,22 +5202,27 @@ function openMemory(
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        img.src = image;
-
-        text.textContent =
-            caption;
+            img.src =
+                image;
 
 
-        img.onload = () => {
+            text.textContent =
+                caption;
 
-            img.style.opacity =
-                "1";
 
-        };
+            img.onload =
+                () => {
 
-    },180);
+                    img.style.opacity =
+                        "1";
+                };
+
+        },
+        180
+    );
 }
 
 
@@ -5586,37 +5232,16 @@ function openMemory(
 
 function blowCandles() {
 
-    if (candlesBlown) {
+    if (
+        candlesBlown
+    ) {
+
         return;
     }
 
 
-    candlesBlown = true;
-
-
-    for (
-        let i = 1;
-        i <= 4;
-        i++
-    ) {
-
-        document
-            .getElementById(
-                "flame" + i
-            )
-            .classList.add(
-                "off"
-            );
-
-
-        document
-            .getElementById(
-                "smoke" + i
-            )
-            .classList.add(
-                "show"
-            );
-    }
+    candlesBlown =
+        true;
 
 
     document
@@ -5638,24 +5263,27 @@ function blowCandles() {
     playBlowSound();
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        document
-            .getElementById(
-                "candleResult"
-            )
-            .textContent =
-            "Perfect. Now cut your cake. 🍰";
+            document
+                .getElementById(
+                    "candleResult"
+                )
+                .textContent =
+                "Perfect. Now cut your cake. 🍰";
 
 
-        document
-            .getElementById(
-                "cutButton"
-            )
-            .style.display =
-            "inline-block";
+            document
+                .getElementById(
+                    "cutButton"
+                )
+                .style.display =
+                "inline-block";
 
-    },1000);
+        },
+        900
+    );
 }
 
 
@@ -5670,11 +5298,13 @@ function cutCakeByUser() {
         ||
         cakeCut
     ) {
+
         return;
     }
 
 
-    cakeCut = true;
+    cakeCut =
+        true;
 
 
     const stage =
@@ -5683,19 +5313,23 @@ function cutCakeByUser() {
         );
 
 
-    document
-        .getElementById(
+    const button =
+        document.getElementById(
             "cutButton"
-        )
-        .style.display =
+        );
+
+
+    const result =
+        document.getElementById(
+            "cakeResult"
+        );
+
+
+    button.style.display =
         "none";
 
 
-    document
-        .getElementById(
-            "cakeResult"
-        )
-        .textContent =
+    result.textContent =
         "🔪 Cutting... 🍰";
 
 
@@ -5704,42 +5338,48 @@ function cutCakeByUser() {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        stage.classList.add(
-            "cake-cut"
-        );
-
-        playCutSound();
-
-    },120);
+            stage.classList.add(
+                "cake-cut"
+            );
 
 
-    setTimeout(() => {
+            playCutSound();
 
-        document
-            .getElementById(
-                "cakeResult"
-            )
-            .textContent =
-            "Yesss! YOU cut the cake! 🎂🔥";
+        },
+        150
+    );
 
 
-        createConfetti();
+    setTimeout(
+        () => {
 
-    },950);
+            result.textContent =
+                "Yesss! YOU cut the cake! 🎂🔥";
 
 
-    setTimeout(() => {
+            createConfetti();
 
-        document
-            .getElementById(
-                "cakeNext"
-            )
-            .style.display =
-            "inline-block";
+        },
+        900
+    );
 
-    },1450);
+
+    setTimeout(
+        () => {
+
+            document
+                .getElementById(
+                    "cakeNext"
+                )
+                .style.display =
+                "inline-block";
+
+        },
+        1450
+    );
 }
 
 
@@ -5747,7 +5387,9 @@ function cutCakeByUser() {
    BALLOONS
 ========================================================= */
 
-function popBalloon(balloon) {
+function popBalloon(
+    balloon
+) {
 
     if (
         balloon.classList.contains(
@@ -5758,6 +5400,7 @@ function popBalloon(balloon) {
             "popping"
         )
     ) {
+
         return;
     }
 
@@ -5771,6 +5414,7 @@ function popBalloon(balloon) {
 
 
     playPopSound();
+
 
     createMiniBurst();
 
@@ -5791,59 +5435,70 @@ function popBalloon(balloon) {
         balloon.dataset.message;
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        balloon.classList.add(
-            "popped"
+            balloon.classList.add(
+                "popped"
+            );
+
+        },
+        450
+    );
+
+
+    if (
+        popped === 5
+    ) {
+
+        setTimeout(
+            () => {
+
+                createConfetti();
+
+
+                document
+                    .getElementById(
+                        "balloonMessage"
+                    )
+                    .textContent =
+                    "🎉 All 5 are gone.";
+
+
+                document
+                    .getElementById(
+                        "balloonReaction"
+                    )
+                    .textContent =
+                    "You don't have to carry all of that into another year.";
+
+
+                document
+                    .getElementById(
+                        "goodJob"
+                    )
+                    .classList.add(
+                        "show"
+                    );
+
+            },
+            600
         );
 
-    },450);
 
+        setTimeout(
+            () => {
 
-    if (popped === 5) {
+                document
+                    .getElementById(
+                        "balloonNext"
+                    )
+                    .style.display =
+                    "inline-block";
 
-        setTimeout(() => {
-
-            createConfetti();
-
-
-            document
-                .getElementById(
-                    "balloonMessage"
-                )
-                .textContent =
-                "🎉 All 5 are gone.";
-
-
-            document
-                .getElementById(
-                    "balloonReaction"
-                )
-                .textContent =
-                "You don't have to carry all of that into another year.";
-
-
-            document
-                .getElementById(
-                    "goodJob"
-                )
-                .classList.add(
-                    "show"
-                );
-
-        },600);
-
-
-        setTimeout(() => {
-
-            document
-                .getElementById(
-                    "balloonNext"
-                )
-                .style.display =
-                "inline-block";
-
-        },1500);
+            },
+            1500
+        );
     }
 }
 
@@ -5854,58 +5509,71 @@ function popBalloon(balloon) {
 
 function startSongAndShow() {
 
-    showScreen("song");
+    showScreen(
+        "song"
+    );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        song.currentTime = 0;
-
-
-        song
-            .play()
-            .then(() => {
-
-                songPlaying = true;
+            song.currentTime =
+                0;
 
 
-                document
-                    .getElementById(
-                        "musicBtn"
-                    )
-                    .textContent =
-                    "⏸ Pause";
+            song
+                .play()
+                .then(
+                    () => {
+
+                        songPlaying =
+                            true;
 
 
-                document
-                    .getElementById(
-                        "songStatus"
-                    )
-                    .textContent =
-                    "🎵 Playing...";
+                        document
+                            .getElementById(
+                                "musicBtn"
+                            )
+                            .textContent =
+                            "⏸ Pause";
 
 
-                startLyrics();
+                        document
+                            .getElementById(
+                                "songStatus"
+                            )
+                            .textContent =
+                            "🎵 Playing...";
 
-            })
-            .catch(() => {
 
-                document
-                    .getElementById(
-                        "songStatus"
-                    )
-                    .textContent =
-                    "Press Start to play 🎵";
+                        startLyrics();
 
-            });
+                    }
+                )
+                .catch(
+                    () => {
 
-    },350);
+                        document
+                            .getElementById(
+                                "songStatus"
+                            )
+                            .textContent =
+                            "Press Start to play 🎵";
+
+                    }
+                );
+
+        },
+        350
+    );
 }
 
 
 function toggleMusic() {
 
-    if (songPlaying) {
+    if (
+        songPlaying
+    ) {
 
         stopSong();
 
@@ -5915,22 +5583,25 @@ function toggleMusic() {
 
         song
             .play()
-            .then(() => {
+            .then(
+                () => {
 
-                songPlaying = true;
-
-
-                document
-                    .getElementById(
-                        "musicBtn"
-                    )
-                    .textContent =
-                    "⏸ Pause";
+                    songPlaying =
+                        true;
 
 
-                startLyrics();
+                    document
+                        .getElementById(
+                            "musicBtn"
+                        )
+                        .textContent =
+                        "⏸ Pause";
 
-            });
+
+                    startLyrics();
+
+                }
+            );
     }
 }
 
@@ -5939,9 +5610,11 @@ function stopSong() {
 
     song.pause();
 
-    song.currentTime = 0;
+    song.currentTime =
+        0;
 
-    songPlaying = false;
+    songPlaying =
+        false;
 
 
     stopLyrics();
@@ -5959,14 +5632,18 @@ function stopSong() {
         );
 
 
-    if (button) {
+    if (
+        button
+    ) {
 
         button.textContent =
             "▶ Start";
     }
 
 
-    if (status) {
+    if (
+        status
+    ) {
 
         status.textContent =
             "Ready...";
@@ -5978,7 +5655,9 @@ song.addEventListener(
     "ended",
     () => {
 
-        songPlaying = false;
+        songPlaying =
+            false;
+
 
         stopLyrics();
 
@@ -6019,7 +5698,8 @@ function startLyrics() {
 
     function update() {
 
-        let active = null;
+        let active =
+            null;
 
 
         for (
@@ -6053,17 +5733,20 @@ function startLyrics() {
             );
 
 
-            setTimeout(() => {
+            setTimeout(
+                () => {
 
-                line.textContent =
-                    active.text;
+                    line.textContent =
+                        active.text;
 
 
-                line.classList.add(
-                    "show"
-                );
+                    line.classList.add(
+                        "show"
+                    );
 
-            },120);
+                },
+                120
+            );
         }
     }
 
@@ -6081,13 +5764,16 @@ function startLyrics() {
 
 function stopLyrics() {
 
-    if (lyricTimer) {
+    if (
+        lyricTimer
+    ) {
 
         clearInterval(
             lyricTimer
         );
 
-        lyricTimer = null;
+        lyricTimer =
+            null;
     }
 
 
@@ -6097,7 +5783,9 @@ function stopLyrics() {
         );
 
 
-    if (line) {
+    if (
+        line
+    ) {
 
         line.classList.remove(
             "show"
@@ -6110,17 +5798,21 @@ function stopLyrics() {
    GIFTS
 ========================================================= */
 
-function openGift(number) {
+function openGift(
+    number
+) {
 
     const card =
         document.getElementById(
-            "giftCard" + number
+            "giftCard" +
+            number
         );
 
 
     const next =
         document.getElementById(
-            "giftNext" + number
+            "giftNext" +
+            number
         );
 
 
@@ -6129,6 +5821,7 @@ function openGift(number) {
             "gift-open"
         )
     ) {
+
         return;
     }
 
@@ -6141,19 +5834,25 @@ function openGift(number) {
     playGiftSound();
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        createConfetti();
+            createConfetti();
 
-    },450);
+        },
+        450
+    );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        next.style.display =
-            "inline-block";
+            next.style.display =
+                "inline-block";
 
-    },1400);
+        },
+        1400
+    );
 }
 
 
@@ -6193,7 +5892,8 @@ function createConfetti() {
 
         piece.style.left =
             Math.random()
-            * 100
+            *
+            100
             +
             "vw";
 
@@ -6213,7 +5913,8 @@ function createConfetti() {
                 2
                 +
                 Math.random()
-                * 3
+                *
+                3
             )
             +
             "s";
@@ -6221,7 +5922,8 @@ function createConfetti() {
 
         piece.style.animationDelay =
             Math.random()
-            * .5
+            *
+            .5
             +
             "s";
 
@@ -6231,11 +5933,14 @@ function createConfetti() {
         );
 
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            piece.remove();
+                piece.remove();
 
-        },5000);
+            },
+            5000
+        );
     }
 }
 
@@ -6277,7 +5982,8 @@ function createMiniBurst() {
                 45
                 +
                 Math.random()
-                * 10
+                *
+                10
             )
             +
             "vw";
@@ -6287,7 +5993,8 @@ function createMiniBurst() {
             colors[
                 Math.floor(
                     Math.random()
-                    * 4
+                    *
+                    4
                 )
             ];
 
@@ -6297,7 +6004,8 @@ function createMiniBurst() {
                 .9
                 +
                 Math.random()
-                * 1.2
+                *
+                1.2
             )
             +
             "s";
@@ -6308,17 +6016,20 @@ function createMiniBurst() {
         );
 
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            piece.remove();
+                piece.remove();
 
-        },2200);
+            },
+            2200
+        );
     }
 }
 
 
 /* =========================================================
-   FLOAT DECOR
+   DECOR
 ========================================================= */
 
 function createDecor() {
@@ -6331,11 +6042,30 @@ function createDecor() {
 
     const items = [
 
-        ["🎈","float-balloon"],
-        ["🍬","float-candy"],
-        ["🍭","float-candy"],
-        ["🧁","float-cake"],
-        ["✨","float-star"]
+        [
+            "🎈",
+            "float-balloon"
+        ],
+
+        [
+            "🍬",
+            "float-candy"
+        ],
+
+        [
+            "🍭",
+            "float-candy"
+        ],
+
+        [
+            "🧁",
+            "float-cake"
+        ],
+
+        [
+            "✨",
+            "float-star"
+        ]
 
     ];
 
@@ -6374,7 +6104,8 @@ function createDecor() {
 
         item.style.left =
             Math.random()
-            * 95
+            *
+            95
             +
             "vw";
 
@@ -6384,7 +6115,8 @@ function createDecor() {
                 10
                 +
                 Math.random()
-                * 9
+                *
+                9
             )
             +
             "s";
@@ -6392,7 +6124,8 @@ function createDecor() {
 
         item.style.animationDelay =
             Math.random()
-            * 8
+            *
+            8
             +
             "s";
 
@@ -6403,6 +6136,7 @@ function createDecor() {
     }
 }
 
+
 createDecor();
 
 
@@ -6410,16 +6144,20 @@ createDecor();
    AUDIO EFFECT ENGINE
 ========================================================= */
 
-let audioContext = null;
+let audioContext =
+    null;
 
 
 function getCtx() {
 
-    if (!audioContext) {
+    if (
+        !audioContext
+    ) {
 
         audioContext =
             new (
-                window.AudioContext ||
+                window.AudioContext
+                ||
                 window.webkitAudioContext
             )();
     }
@@ -6492,7 +6230,9 @@ function playTone(
         );
 
     }
-    catch(error) {}
+    catch (error) {
+
+    }
 }
 
 
@@ -6528,7 +6268,9 @@ function playBlowSound() {
 
         oscillator.frequency.exponentialRampToValueAtTime(
             90,
-            ctx.currentTime + .45
+            ctx.currentTime
+            +
+            .45
         );
 
 
@@ -6540,7 +6282,9 @@ function playBlowSound() {
 
         gain.gain.exponentialRampToValueAtTime(
             .001,
-            ctx.currentTime + .45
+            ctx.currentTime
+            +
+            .45
         );
 
 
@@ -6558,11 +6302,15 @@ function playBlowSound() {
 
 
         oscillator.stop(
-            ctx.currentTime + .45
+            ctx.currentTime
+            +
+            .45
         );
 
     }
-    catch(error) {}
+    catch (error) {
+
+    }
 }
 
 
@@ -6580,16 +6328,19 @@ function playCutSound() {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        playTone(
-            255,
-            .10,
-            "triangle",
-            .025
-        );
+            playTone(
+                255,
+                .10,
+                "triangle",
+                .025
+            );
 
-    },90);
+        },
+        90
+    );
 }
 
 
@@ -6607,16 +6358,19 @@ function playPopSound() {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        playTone(
-            520,
-            .05,
-            "triangle",
-            .02
-        );
+            playTone(
+                520,
+                .05,
+                "triangle",
+                .02
+            );
 
-    },35);
+        },
+        35
+    );
 }
 
 
@@ -6634,16 +6388,19 @@ function playGiftSound() {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        playTone(
-            660,
-            .15,
-            "sine",
-            .035
-        );
+            playTone(
+                660,
+                .15,
+                "sine",
+                .035
+            );
 
-    },110);
+        },
+        110
+    );
 }
 
 
@@ -6661,28 +6418,34 @@ function birthdayBurst() {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        playTone(
-            659,
-            .15,
-            "triangle",
-            .04
-        );
+            playTone(
+                659,
+                .15,
+                "triangle",
+                .04
+            );
 
-    },120);
+        },
+        120
+    );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        playTone(
-            784,
-            .22,
-            "triangle",
-            .045
-        );
+            playTone(
+                784,
+                .22,
+                "triangle",
+                .045
+            );
 
-    },240);
+        },
+        240
+    );
 }
 
 </script>
