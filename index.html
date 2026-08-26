@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@500;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -41,9 +40,8 @@ body {
         linear-gradient(135deg, #050009, #0b0018, #16002f);
 }
 
-
 /* =========================================================
-   STARS
+   BACKGROUND
 ========================================================= */
 
 .stars {
@@ -57,7 +55,6 @@ body {
         radial-gradient(circle, rgba(255,80,220,.75) 1px, transparent 1px);
 
     background-size: 90px 90px, 130px 130px;
-
     opacity: .22;
 
     animation: starsMove 28s linear infinite;
@@ -73,11 +70,6 @@ body {
     }
 }
 
-
-/* =========================================================
-   FLOATING DECORATIONS
-========================================================= */
-
 .decor {
     position: fixed;
     inset: 0;
@@ -90,70 +82,41 @@ body {
     position: absolute;
     bottom: -90px;
     opacity: .65;
-
-    filter:
-        drop-shadow(0 0 8px rgba(255,255,255,.14));
-
+    filter: drop-shadow(0 0 8px rgba(255,255,255,.14));
     animation: floatUp linear infinite;
 }
 
-.float-balloon {
-    font-size: 40px;
-}
-
-.float-candy {
-    font-size: 27px;
-}
-
-.float-cake {
-    font-size: 32px;
-}
-
-.float-star {
-    font-size: 19px;
-}
+.float-balloon { font-size: 40px; }
+.float-candy { font-size: 27px; }
+.float-cake { font-size: 32px; }
+.float-star { font-size: 19px; }
 
 @keyframes floatUp {
-
     0% {
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(-5deg);
+        transform: translateY(0) translateX(0) rotate(-5deg);
     }
 
     50% {
-        transform:
-            translateY(-55vh)
-            translateX(18px)
-            rotate(8deg);
+        transform: translateY(-55vh) translateX(18px) rotate(8deg);
     }
 
     100% {
-        transform:
-            translateY(-115vh)
-            translateX(-12px)
-            rotate(-5deg);
-
+        transform: translateY(-115vh) translateX(-12px) rotate(-5deg);
         opacity: 0;
     }
 }
 
-
 /* =========================================================
-   TRANSITION
+   TRANSITIONS
 ========================================================= */
 
 .transition-flash {
     position: fixed;
     inset: 0;
-
     z-index: 9998;
-
     pointer-events: none;
 
     opacity: 0;
-
     transform: scale(.15);
 
     background:
@@ -174,9 +137,8 @@ body {
     transform: scale(2.5);
 }
 
-
 /* =========================================================
-   SCREEN SYSTEM
+   SCREENS
 ========================================================= */
 
 .screen {
@@ -197,9 +159,7 @@ body {
     opacity: 0;
     visibility: hidden;
 
-    transform:
-        scale(1.04)
-        translateY(10px);
+    transform: scale(1.04) translateY(10px);
 
     transition:
         opacity .55s ease,
@@ -210,25 +170,19 @@ body {
 .screen.active {
     opacity: 1;
     visibility: visible;
-
-    transform:
-        scale(1)
-        translateY(0);
+    transform: scale(1) translateY(0);
 }
 
 .content {
     width: min(950px, 100%);
     max-height: 92vh;
-
     overflow-y: auto;
-
     scrollbar-width: none;
 }
 
 .content::-webkit-scrollbar {
     display: none;
 }
-
 
 /* =========================================================
    TEXT
@@ -238,9 +192,7 @@ body {
     font-size: 12px;
     letter-spacing: 4px;
     text-transform: uppercase;
-
     color: #ffb9ef;
-
     margin-bottom: 18px;
 }
 
@@ -252,30 +204,24 @@ h2 {
 h2 {
     font-size: clamp(32px, 6vw, 65px);
     line-height: 1.1;
-
     margin-bottom: 18px;
 }
 
 p {
     color: #ddd;
-
     font-size: clamp(15px, 2vw, 19px);
-
     line-height: 1.7;
 }
 
-
 /* =========================================================
-   BUTTONS
+   BUTTON
 ========================================================= */
 
 .btn {
     margin: 12px 6px;
-
     padding: 14px 26px;
 
     border: 1px solid rgba(255,255,255,.35);
-
     border-radius: 50px;
 
     background:
@@ -287,11 +233,8 @@ p {
         );
 
     color: white;
-
     font-family: "Poppins", sans-serif;
-
     font-size: 15px;
-
     font-weight: 600;
 
     cursor: pointer;
@@ -304,15 +247,12 @@ p {
 }
 
 .btn:hover {
-    transform:
-        translateY(-3px)
-        scale(1.04);
+    transform: translateY(-3px) scale(1.04);
 
     box-shadow:
         0 0 25px rgba(255,20,147,.65),
         0 0 50px rgba(123,44,255,.45);
 }
-
 
 /* =========================================================
    YES / NO
@@ -326,7 +266,6 @@ p {
     align-items: center;
 
     flex-wrap: wrap;
-
     gap: 10px;
 }
 
@@ -355,37 +294,21 @@ p {
 }
 
 .no-btn.nope {
-    animation:
-        nopeShake
-        .35s
-        ease;
+    animation: nopeShake .35s ease;
 }
 
 @keyframes nopeShake {
-
-    0%,100% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-9px);
-    }
-
-    75% {
-        transform: translateX(9px);
-    }
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-9px); }
+    75% { transform: translateX(9px); }
 }
 
 .question-answer {
     min-height: 28px;
-
     margin-top: 12px;
-
     color: #ffb9ef;
-
     font-size: 14px;
 }
-
 
 /* =========================================================
    HERO
@@ -407,7 +330,6 @@ p {
 }
 
 @keyframes cakeFloat {
-
     50% {
         transform: translateY(-12px);
     }
@@ -424,7 +346,6 @@ p {
         );
 
     line-height: .95;
-
     margin: 15px 0;
 
     background:
@@ -448,12 +369,10 @@ p {
 }
 
 @keyframes gradientMove {
-
     to {
         background-position: 300%;
     }
 }
-
 
 /* =========================================================
    DATE
@@ -492,17 +411,14 @@ p {
         );
 
     letter-spacing: 8px;
-
     color: #ffd9f6;
 }
 
 .date-year {
     font-size: 26px;
     color: #8bdfff;
-
     margin: 12px 0 22px;
 }
-
 
 /* =========================================================
    TIME COUNTER
@@ -517,7 +433,6 @@ p {
     gap: 15px;
 
     max-width: 850px;
-
     margin: 25px auto;
 }
 
@@ -542,7 +457,6 @@ p {
     display: block;
 
     font-family: Arial, sans-serif;
-
     font-weight: 700;
 
     font-size:
@@ -563,13 +477,11 @@ p {
     color: #aaa;
 
     font-size: 10px;
-
     letter-spacing: 2px;
 }
 
-
 /* =========================================================
-   COUNTDOWN
+   3 2 1
 ========================================================= */
 
 .count-number {
@@ -603,24 +515,15 @@ p {
 }
 
 @keyframes countPulse {
-
-    from {
-        transform: scale(.94);
-    }
-
-    to {
-        transform: scale(1.05);
-    }
+    from { transform: scale(.94); }
+    to { transform: scale(1.05); }
 }
 
 .count-message {
     font-size: 22px;
-
     color: #ffd7f5;
-
     margin-top: 25px;
 }
-
 
 /* =========================================================
    BIRTHDAY
@@ -636,7 +539,6 @@ p {
 }
 
 @keyframes cakePulse {
-
     50% {
         transform: scale(1.12);
     }
@@ -683,13 +585,11 @@ p {
         rgba(255,20,147,.7);
 }
 
-
 /* =========================================================
    BABY PHOTO
 ========================================================= */
 
 .baby-photo-frame {
-
     width:
         min(
             380px,
@@ -714,46 +614,29 @@ p {
 }
 
 .baby-photo-frame img {
+    width: 100%;
+    height: 290px;
 
-    width:
-        100%;
-
-    height:
-        290px;
-
-    object-fit:
-        cover;
-
-    display:
-        block;
-
-    transform:
-        none;
+    object-fit: cover;
+    display: block;
 }
 
 .baby-caption {
-
-    color:
-        #241527;
+    color: #241527;
 
     font-family:
         "Pacifico",
         cursive;
 
-    font-size:
-        18px;
-
-    padding-top:
-        12px;
+    font-size: 18px;
+    padding-top: 12px;
 }
 
-
 /* =========================================================
-   MEMORY BUTTONS
+   MEMORY
 ========================================================= */
 
 .memory-buttons {
-
     display:
         flex;
 
@@ -763,18 +646,13 @@ p {
     justify-content:
         center;
 
-    gap:
-        8px;
+    gap: 8px;
 
-    max-width:
-        850px;
-
-    margin:
-        20px auto;
+    max-width: 850px;
+    margin: 20px auto;
 }
 
 .memory-btn {
-
     padding:
         11px 18px;
 
@@ -803,7 +681,6 @@ p {
 }
 
 .memory-btn:hover {
-
     background:
         rgba(255,50,180,.18);
 
@@ -811,13 +688,7 @@ p {
         translateY(-2px);
 }
 
-
-/* =========================================================
-   MEMORY PHOTO
-========================================================= */
-
 .photo-frame {
-
     width:
         min(
             500px,
@@ -842,25 +713,18 @@ p {
 }
 
 .photo-frame img {
+    width: 100%;
 
-    width:
-        100%;
+    max-height: 42vh;
 
-    max-height:
-        42vh;
-
-    object-fit:
-        cover;
-
-    display:
-        block;
+    object-fit: cover;
+    display: block;
 
     transition:
         opacity .2s;
 }
 
 .photo-caption {
-
     color:
         #241527;
 
@@ -875,9 +739,8 @@ p {
         10px;
 }
 
-
 /* =========================================================
-   SONG SCREEN
+   SONG QUESTION
 ========================================================= */
 
 .song-hero {
@@ -896,7 +759,6 @@ p {
 }
 
 @keyframes musicFloat {
-
     50% {
         transform:
             translateY(-10px)
@@ -904,11 +766,14 @@ p {
     }
 }
 
-.song-card {
+/* =========================================================
+   SONG PLAYER
+========================================================= */
 
+.song-card {
     width:
         min(
-            600px,
+            650px,
             92%
         );
 
@@ -921,12 +786,12 @@ p {
     border-radius:
         28px;
 
-    background:
-        rgba(255,255,255,.055);
-
     border:
         1px solid
         rgba(255,100,220,.32);
+
+    background:
+        rgba(255,255,255,.055);
 
     box-shadow:
         0 0 35px
@@ -934,7 +799,6 @@ p {
 }
 
 .song-wave {
-
     height:
         55px;
 
@@ -955,7 +819,6 @@ p {
 }
 
 .wave-bar {
-
     width:
         5px;
 
@@ -970,7 +833,9 @@ p {
 
     animation:
         wave
-        .8s ease-in-out infinite;
+        .8s
+        ease-in-out
+        infinite;
 }
 
 .wave-bar:nth-child(1) {
@@ -1009,16 +874,16 @@ p {
 }
 
 @keyframes wave {
-
     50% {
         transform:
             scaleY(.3);
-        opacity: .5;
+
+        opacity:
+            .5;
     }
 }
 
 .song-status {
-
     margin-top:
         8px;
 
@@ -1029,154 +894,292 @@ p {
         14px;
 }
 
-
 /* =========================================================
-   MESSAGE
+   LYRICS
 ========================================================= */
 
-.message-box {
-
+.lyrics-box {
     width:
         min(
-            850px,
-            95%
+            700px,
+            92%
+        );
+
+    margin:
+        22px auto 10px;
+
+    min-height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+.lyric-line {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            22px,
+            4vw,
+            34px
+        );
+
+    color:
+        #ffe5f8;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.lyric-line.show {
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-wrap {
+    width:
+        min(
+            760px,
+            94%
+        );
+
+    margin:
+        20px auto;
+
+    perspective:
+        1200px;
+}
+
+.letter {
+    position:
+        relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff9ec,
+            #f4e4c2
+        );
+
+    color:
+        #332033;
+
+    padding:
+        34px 30px 30px;
+
+    border-radius:
+        4px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.55);
+
+    transform:
+        rotateX(35deg);
+
+    opacity:
+        0;
+
+    animation:
+        letterOpen
+        1.4s
+        .1s
+        forwards;
+}
+
+@keyframes letterOpen {
+    to {
+        transform:
+            rotateX(0);
+
+        opacity:
+            1;
+    }
+}
+
+.letter::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10px;
+
+    border:
+        1px solid
+        rgba(100,60,50,.25);
+
+    pointer-events:
+        none;
+}
+
+.letter-date {
+    text-align:
+        right;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        18px;
+
+    color:
+        #735163;
+}
+
+.letter-title {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            52px
+        );
+
+    margin:
+        15px 0;
+
+    color:
+        #67204d;
+}
+
+.letter-text {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            20px,
+            3.5vw,
+            29px
+        );
+
+    line-height:
+        1.55;
+
+    text-align:
+        left;
+
+    color:
+        #422c3e;
+}
+
+.letter-sign {
+    margin-top:
+        25px;
+
+    text-align:
+        right;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    color:
+        #8f2b65;
+}
+
+.letter-heart {
+    font-size:
+        36px;
+
+    text-align:
+        center;
+
+    margin-top:
+        8px;
+}
+
+/* =========================================================
+   ADVICE
+========================================================= */
+
+.advice-title {
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            48px,
+            9vw,
+            90px
+        );
+
+    color:
+        #ffd344;
+
+    margin-bottom:
+        20px;
+}
+
+.advice-box {
+    width:
+        min(
+            760px,
+            94%
         );
 
     margin:
         20px auto;
 
     padding:
-        30px;
-
-    border-radius:
-        25px;
-
-    border:
-        1px solid
-        #ff3cda;
-
-    background:
-        rgba(
-            20,
-            0,
-            40,
-            .75
-        );
-
-    line-height:
-        1.8;
-
-    text-align:
-        left;
-}
-
-.message-box strong {
-
-    color:
-        #ff6adc;
-
-    font-size:
-        18px;
-}
-
-
-/* =========================================================
-   TOPPER
-========================================================= */
-
-.trophy {
-
-    font-size:
-        95px;
-
-    filter:
-        drop-shadow(
-            0 0 20px
-            gold
-        );
-
-    animation:
-        trophyFloat
-        2s
-        infinite;
-}
-
-@keyframes trophyFloat {
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotate(3deg);
-    }
-}
-
-.topper-title {
-
-    font-family:
-        "Cinzel",
-        serif;
-
-    font-size:
-        clamp(
-            45px,
-            9vw,
-            90px
-        );
-
-    color:
-        #ffd237;
-
-    margin-bottom:
-        25px;
-}
-
-.topper-points {
-
-    max-width:
-        700px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    gap:
-        12px;
-}
-
-.topper-point {
-
-    padding:
-        14px
-        18px;
-
-    text-align:
-        left;
-
-    border-radius:
-        15px;
-
-    background:
-        rgba(255,255,255,.05);
+        28px;
 
     border-left:
         4px solid
-        #ff40d4;
-}
+        #ff3cda;
 
-.topper-point b {
-    color:
-        #ffd342;
-}
+    border-radius:
+        0 20px 20px 0;
 
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .045
+        );
+
+    text-align:
+        left;
+}
 
 /* =========================================================
    GIFTS
 ========================================================= */
 
 .gift-area {
-
     width:
         min(
             850px,
@@ -1188,9 +1191,8 @@ p {
 }
 
 .gift-card {
-
     display:
-        none;
+        flex;
 
     min-height:
         330px;
@@ -1226,16 +1228,7 @@ p {
         rgba(255,30,190,.12);
 }
 
-.gift-card.active {
-    display:
-        flex;
-}
-
-
-/* ---------------- GIFT BOX ---------------- */
-
 .gift-box {
-
     position:
         relative;
 
@@ -1262,7 +1255,6 @@ p {
 }
 
 .gift-base {
-
     position:
         absolute;
 
@@ -1287,17 +1279,9 @@ p {
             #ff217e,
             #ff075d
         );
-
-    box-shadow:
-        inset
-        -12px
-        0
-        0
-        rgba(120,0,50,.22);
 }
 
 .gift-lid {
-
     position:
         absolute;
 
@@ -1323,19 +1307,16 @@ p {
             #ff1067
         );
 
-    transform:
-        rotate(0deg);
-
     transform-origin:
         left center;
 
     transition:
-        transform .8s cubic-bezier(.2,.8,.2,1),
+        transform .8s
+        cubic-bezier(.2,.8,.2,1),
         top .8s ease;
 }
 
 .gift-ribbon-v {
-
     position:
         absolute;
 
@@ -1359,7 +1340,6 @@ p {
 }
 
 .gift-ribbon-h {
-
     position:
         absolute;
 
@@ -1383,7 +1363,6 @@ p {
 }
 
 .gift-bow {
-
     position:
         absolute;
 
@@ -1425,7 +1404,7 @@ p {
         #ffd34d;
 
     border-radius:
-        60% 60% 45% 45%;
+        60%;
 }
 
 .gift-bow::before {
@@ -1433,9 +1412,7 @@ p {
         -10px;
 
     transform:
-        rotate(
-            -25deg
-        );
+        rotate(-25deg);
 }
 
 .gift-bow::after {
@@ -1443,24 +1420,18 @@ p {
         -10px;
 
     transform:
-        rotate(
-            25deg
-        );
+        rotate(25deg);
 }
 
 .gift-open .gift-lid {
-
     top:
         -4px;
 
     transform:
-        rotate(
-            -26deg
-        );
+        rotate(-26deg);
 }
 
 .gift-open .gift-box {
-
     animation:
         giftShake
         .55s
@@ -1488,11 +1459,7 @@ p {
     }
 }
 
-
-/* ---------------- GIFT LIGHT ---------------- */
-
 .gift-light {
-
     width:
         0;
 
@@ -1516,7 +1483,6 @@ p {
 }
 
 .gift-open .gift-light {
-
     width:
         220px;
 
@@ -1524,11 +1490,7 @@ p {
         220px;
 }
 
-
-/* ---------------- GIFT MESSAGE ---------------- */
-
 .gift-reveal {
-
     max-width:
         550px;
 
@@ -1547,7 +1509,6 @@ p {
 }
 
 .gift-open .gift-reveal {
-
     opacity:
         1;
 
@@ -1556,7 +1517,6 @@ p {
 }
 
 .gift-number {
-
     font-size:
         12px;
 
@@ -1574,7 +1534,6 @@ p {
 }
 
 .gift-message-title {
-
     font-family:
         "Cinzel",
         serif;
@@ -1594,7 +1553,6 @@ p {
 }
 
 .gift-message-text {
-
     color:
         #ddd;
 
@@ -1602,13 +1560,11 @@ p {
         1.7;
 }
 
-
 /* =========================================================
    FINAL
 ========================================================= */
 
 .final-title {
-
     font-family:
         "Cinzel",
         serif;
@@ -1628,7 +1584,6 @@ p {
 }
 
 .final-vaathi {
-
     font-family:
         "Pacifico",
         cursive;
@@ -1645,7 +1600,6 @@ p {
 }
 
 .final-photo {
-
     width:
         min(
             500px,
@@ -1671,7 +1625,6 @@ p {
 }
 
 .final-photo img {
-
     display:
         block;
 
@@ -1680,7 +1633,6 @@ p {
 }
 
 .wishes {
-
     display:
         flex;
 
@@ -1698,7 +1650,6 @@ p {
 }
 
 .wish {
-
     padding:
         10px 16px;
 
@@ -1709,13 +1660,11 @@ p {
         rgba(255,255,255,.08);
 }
 
-
 /* =========================================================
    CONFETTI
 ========================================================= */
 
 .confetti {
-
     position:
         fixed;
 
@@ -1741,9 +1690,7 @@ p {
 }
 
 @keyframes confettiFall {
-
     to {
-
         transform:
             translateY(110vh)
             rotate(720deg);
@@ -1753,12 +1700,11 @@ p {
     }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
     .screen {
         padding:
@@ -1775,7 +1721,8 @@ p {
             15px 10px;
     }
 
-    .message-box {
+    .message-box,
+    .advice-box {
         padding:
             22px;
 
@@ -1805,20 +1752,13 @@ p {
         min-height:
             300px;
     }
-
-    .balloon {
-        transform:
-            scale(.75);
-    }
 }
 
 </style>
-
 </head>
 
 
 <body>
-
 
 <div class="stars"></div>
 
@@ -1828,13 +1768,10 @@ p {
 
 
 <!-- =========================================================
-     SCREEN 1 — PRESIDENT
+     1 — PRESIDENT
 ========================================================= -->
 
-<section
-class="screen active"
-id="screen1"
->
+<section class="screen active" id="screen1">
 
 <div class="content">
 
@@ -1851,9 +1788,8 @@ id="screen1"
     </p>
 
     <button
-    class="btn"
-    onclick="showScreen('screen1b')"
-    >
+        class="btn"
+        onclick="showScreen('screen1b')">
         Listen to me ❤️
     </button>
 
@@ -1863,13 +1799,10 @@ id="screen1"
 
 
 <!-- =========================================================
-     SCREEN 2 — THANK YOU
+     2 — THANK YOU
 ========================================================= -->
 
-<section
-class="screen"
-id="screen1b"
->
+<section class="screen" id="screen1b">
 
 <div class="content">
 
@@ -1900,9 +1833,8 @@ id="screen1b"
     </p>
 
     <button
-    class="btn"
-    onclick="showScreen('question1')"
-    >
+        class="btn"
+        onclick="showScreen('question1')">
         I made something for you... 🎁
     </button>
 
@@ -1912,13 +1844,10 @@ id="screen1b"
 
 
 <!-- =========================================================
-     SCREEN 3 — YES/NO
+     3 — YES / NO
 ========================================================= -->
 
-<section
-class="screen"
-id="question1"
->
+<section class="screen" id="question1">
 
 <div class="content">
 
@@ -1942,25 +1871,23 @@ id="question1"
     <div class="answer-area">
 
         <button
-        class="btn yes-btn"
-        onclick="yesAnswer('screen2')"
-        >
+            class="btn yes-btn"
+            onclick="showScreen('screen2')">
             YES 😎
         </button>
 
         <button
-        class="btn no-btn"
-        onclick="noAnswer('q1answer',this)"
-        >
+            class="btn no-btn"
+            onclick="noAnswer('q1answer', this)">
             NO 😶
         </button>
 
     </div>
 
     <div
-    class="question-answer"
-    id="q1answer"
-    ></div>
+        class="question-answer"
+        id="q1answer">
+    </div>
 
 </div>
 
@@ -1968,13 +1895,10 @@ id="question1"
 
 
 <!-- =========================================================
-     SCREEN 4 — DATE
+     4 — DATE
 ========================================================= -->
 
-<section
-class="screen"
-id="screen2"
->
+<section class="screen" id="screen2">
 
 <div class="content">
 
@@ -2000,9 +1924,8 @@ id="screen2"
     </p>
 
     <button
-    class="btn"
-    onclick="showScreen('screen3')"
-    >
+        class="btn"
+        onclick="showScreen('screen3')">
         Let's see how far we've come 👀
     </button>
 
@@ -2012,13 +1935,10 @@ id="screen2"
 
 
 <!-- =========================================================
-     SCREEN 5 — TIME
+     5 — TIME
 ========================================================= -->
 
-<section
-class="screen"
-id="screen3"
->
+<section class="screen" id="screen3">
 
 <div class="content">
 
@@ -2031,21 +1951,17 @@ id="screen3"
         has passed since that day...
     </h2>
 
-
     <div class="counter">
 
         <div class="counter-box">
 
             <span
-            class="counter-number"
-            id="hours"
-            >
+                class="counter-number"
+                id="hours">
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 HOURS
             </span>
 
@@ -2055,15 +1971,12 @@ id="screen3"
         <div class="counter-box">
 
             <span
-            class="counter-number"
-            id="minutes"
-            >
+                class="counter-number"
+                id="minutes">
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 MINUTES
             </span>
 
@@ -2073,15 +1986,12 @@ id="screen3"
         <div class="counter-box">
 
             <span
-            class="counter-number"
-            id="seconds"
-            >
+                class="counter-number"
+                id="seconds">
                 0
             </span>
 
-            <span
-            class="counter-label"
-            >
+            <span class="counter-label">
                 SECONDS
             </span>
 
@@ -2089,17 +1999,14 @@ id="screen3"
 
     </div>
 
-
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
 
-
     <button
-    class="btn"
-    onclick="startCountdown()"
-    >
+        class="btn"
+        onclick="startCountdown()">
         There's more... 🎂
     </button>
 
@@ -2109,13 +2016,10 @@ id="screen3"
 
 
 <!-- =========================================================
-     SCREEN 6 — COUNTDOWN
+     6 — COUNTDOWN
 ========================================================= -->
 
-<section
-class="screen"
-id="countdown"
->
+<section class="screen" id="countdown">
 
 <div class="content">
 
@@ -2124,16 +2028,14 @@ id="countdown"
     </div>
 
     <div
-    class="count-number"
-    id="countNumber"
-    >
+        class="count-number"
+        id="countNumber">
         3
     </div>
 
     <div
-    class="count-message"
-    id="countMessage"
-    >
+        class="count-message"
+        id="countMessage">
         Something is coming...
     </div>
 
@@ -2143,13 +2045,10 @@ id="countdown"
 
 
 <!-- =========================================================
-     SCREEN 7 — BIRTHDAY
+     7 — BIRTHDAY
 ========================================================= -->
 
-<section
-class="screen"
-id="birthday"
->
+<section class="screen" id="birthday">
 
 <div class="content">
 
@@ -2172,9 +2071,8 @@ id="birthday"
     </p>
 
     <button
-    class="btn"
-    onclick="showScreen('baby')"
-    >
+        class="btn"
+        onclick="showScreen('baby')">
         There's something special here... 👀
     </button>
 
@@ -2184,13 +2082,10 @@ id="birthday"
 
 
 <!-- =========================================================
-     SCREEN 8 — BABY
+     8 — BABY
 ========================================================= -->
 
-<section
-class="screen"
-id="baby"
->
+<section class="screen" id="baby">
 
 <div class="content">
 
@@ -2207,13 +2102,11 @@ id="baby"
         how much life was waiting for him.
     </p>
 
-
     <div class="baby-photo-frame">
 
         <img
-        src="baby.jpg"
-        alt="Baby Vaathi"
-        >
+            src="baby.jpg"
+            alt="Baby Vaathi">
 
         <div class="baby-caption">
             Look at him... ❤️
@@ -2221,11 +2114,9 @@ id="baby"
 
     </div>
 
-
     <button
-    class="btn"
-    onclick="showScreen('memories')"
-    >
+        class="btn"
+        onclick="showScreen('memories')">
         He grew up... 👀
     </button>
 
@@ -2235,13 +2126,10 @@ id="baby"
 
 
 <!-- =========================================================
-     SCREEN 9 — MEMORIES
+     9 — MEMORIES
 ========================================================= -->
 
-<section
-class="screen"
-id="memories"
->
+<section class="screen" id="memories">
 
 <div class="content">
 
@@ -2254,99 +2142,58 @@ id="memories"
         to this.
     </h2>
 
-
     <div class="memory-buttons">
 
-
         <button
-        class="memory-btn"
-        onclick="
-            openMemory(
-                'frnds1.jpg',
-                'The school days... 🏫'
-            )
-        "
-        >
+            class="memory-btn"
+            onclick="openMemory('frnds1.jpg','The school days... 🏫')">
             🏫 School
         </button>
 
-
         <button
-        class="memory-btn"
-        onclick="
-            openMemory(
-                'frnds2.jpg',
-                'Some memories just stay. ❤️'
-            )
-        "
-        >
+            class="memory-btn"
+            onclick="openMemory('frnds2.jpg','Some memories just stay. ❤️')">
             🤝 Memory
         </button>
 
-
         <button
-        class="memory-btn"
-        onclick="
-            openMemory(
-                'Frnds3.jpg',
-                'Brotherhood moments. 😎'
-            )
-        "
-        >
+            class="memory-btn"
+            onclick="openMemory('Frnds3.jpg','Brotherhood moments. 😎')">
             😎 Us
         </button>
 
-
         <button
-        class="memory-btn"
-        onclick="
-            openMemory(
-                'hill.jpg',
-                'A few places, a lot of memories. 🌄'
-            )
-        "
-        >
+            class="memory-btn"
+            onclick="openMemory('hill.jpg','A few places, a lot of memories. 🌄')">
             🌄 Adventure
         </button>
 
-
         <button
-        class="memory-btn"
-        onclick="
-            openMemory(
-                'mirror.jpg',
-                'And somehow... that little kid grew up.'
-            )
-        "
-        >
+            class="memory-btn"
+            onclick="openMemory('mirror.jpg','And somehow... that little kid grew up.')">
             🪞 Growing Up
         </button>
 
     </div>
 
-
     <div class="photo-frame">
 
         <img
-        id="memoryImage"
-        src="frnds1.jpg"
-        alt="Memory"
-        >
+            id="memoryImage"
+            src="frnds1.jpg"
+            alt="Memory">
 
         <div
-        class="photo-caption"
-        id="memoryCaption"
-        >
+            class="photo-caption"
+            id="memoryCaption">
             The school days... 🏫
         </div>
 
     </div>
 
-
     <button
-    class="btn"
-    onclick="showScreen('songQuestion')"
-    >
+        class="btn"
+        onclick="showScreen('songQuestion')">
         I have another surprise... 🎵
     </button>
 
@@ -2356,13 +2203,10 @@ id="memories"
 
 
 <!-- =========================================================
-     SCREEN 10 — SONG YES/NO
+     10 — SONG QUESTION
 ========================================================= -->
 
-<section
-class="screen"
-id="songQuestion"
->
+<section class="screen" id="songQuestion">
 
 <div class="content">
 
@@ -2383,31 +2227,26 @@ id="songQuestion"
         Give it a chance. ❤️
     </p>
 
-
     <div class="answer-area">
 
         <button
-        class="btn yes-btn"
-        onclick="yesSong()"
-        >
+            class="btn yes-btn"
+            onclick="startSongAndShow()">
             YES 🎵
         </button>
 
-
         <button
-        class="btn no-btn"
-        onclick="noAnswer('songAnswer',this)"
-        >
+            class="btn no-btn"
+            onclick="noAnswer('songAnswer', this)">
             NO 😶
         </button>
 
     </div>
 
-
     <div
-    class="question-answer"
-    id="songAnswer"
-    ></div>
+        class="question-answer"
+        id="songAnswer">
+    </div>
 
 </div>
 
@@ -2415,13 +2254,10 @@ id="songQuestion"
 
 
 <!-- =========================================================
-     SCREEN 11 — SONG
+     11 — SONG + LYRICS
 ========================================================= -->
 
-<section
-class="screen"
-id="song"
->
+<section class="screen" id="song">
 
 <div class="content">
 
@@ -2437,7 +2273,6 @@ id="song"
         Just listen for a moment.
     </h2>
 
-
     <div class="song-card">
 
         <div class="song-wave">
@@ -2452,36 +2287,32 @@ id="song"
 
         </div>
 
-
-        <p>
-            A little song from your brother.
-        </p>
-
-
-        <div
-        class="song-status"
-        id="songStatus"
-        >
-            🎵 Playing...
+        <div class="lyrics-box">
+            <div
+                class="lyric-line"
+                id="lyricLine">
+            </div>
         </div>
 
+        <div
+            class="song-status"
+            id="songStatus">
+            ⏳ Ready...
+        </div>
 
         <button
-        class="btn"
-        id="musicBtn"
-        onclick="toggleMusic()"
-        >
-            ⏸ Pause
+            class="btn"
+            id="musicBtn"
+            onclick="toggleMusic()">
+            ▶ Start
         </button>
 
     </div>
 
-
     <button
-    class="btn"
-    onclick="showScreen('message')"
-    >
-        Okay... one serious thing ❤️
+        class="btn"
+        onclick="showScreen('letter')">
+        One more thing ❤️
     </button>
 
 </div>
@@ -2490,69 +2321,77 @@ id="song"
 
 
 <!-- =========================================================
-     SCREEN 12 — MESSAGE
+     12 — LETTER
 ========================================================= -->
 
-<section
-class="screen"
-id="message"
->
+<section class="screen" id="letter">
 
 <div class="content">
 
     <div class="small">
-        From your brother ❤️
+        A birthday letter
     </div>
 
-    <h2>
-        One thing I want you to know.
-    </h2>
+    <div class="letter-wrap">
 
+        <div class="letter">
 
-    <div class="message-box">
+            <div class="letter-date">
+                28 August
+            </div>
 
-        <p>
-            Bro, I know sometimes you get angry.
-            Sometimes you say things you don't mean.
-            Sometimes you feel like life is harder
-            for you than everyone else.
-        </p>
+            <div class="letter-title">
+                Dear Vaathi,
+            </div>
 
+            <div class="letter-text">
 
-        <br>
+                Today isn't just about wishing you
+                another birthday.
 
+                <br><br>
 
-        <p>
-            And when you're angry, sometimes you don't
-            care who's standing in front of you.
-        </p>
+                I wanted to take a moment to tell you
+                something I probably don't say enough.
 
+                <br><br>
 
-        <br>
+                Thank you for being part of my life.
+                Thank you for all the laughs, the fights,
+                the stupid moments, the memories,
+                and everything we've gone through together.
 
+                <br><br>
 
-        <p>
-            I'm not saying this to lecture you.
-            I'm saying it because
-            <strong>I believe in you.</strong>
-        </p>
+                I hope this year gives you more reasons
+                to smile, more confidence in yourself,
+                more peace in your mind, and the courage
+                to become the person you want to be.
 
+                <br><br>
 
-        <br>
+                Whatever happens next,
+                remember that you don't have to face
+                everything alone.
 
+            </div>
 
-        <p>
-            I've seen what you're capable of.
-        </p>
+            <div class="letter-sign">
+                From your bro ❤️
+            </div>
+
+            <div class="letter-heart">
+                ❤️
+            </div>
+
+        </div>
 
     </div>
-
 
     <button
-    class="btn"
-    onclick="showScreen('topper')"
-    >
-        You know which version I mean... 👀
+        class="btn"
+        onclick="showScreen('advice')">
+        There's one thing I really want you to remember...
     </button>
 
 </div>
@@ -2561,60 +2400,62 @@ id="message"
 
 
 <!-- =========================================================
-     SCREEN 13 — TOPPER
+     13 — ADVICE
 ========================================================= -->
 
-<section
-class="screen"
-id="topper"
->
+<section class="screen" id="advice">
 
 <div class="content">
 
-    <div class="trophy">
-        🏆
+    <div class="advice-title">
+        One thing to remember.
     </div>
 
-    <div class="small">
-        The version I want back
+    <div class="advice-box">
+
+        <p>
+            When you're angry, control your words.
+            Not every battle needs to be fought,
+            and not every thought needs to be spoken.
+        </p>
+
+        <br>
+
+        <p>
+            Don't let the mindset that life is always
+            against you decide your future.
+        </p>
+
+        <br>
+
+        <p>
+            You already showed what you're capable of.
+            There was a time when you were the topper
+            that other toppers were worried about.
+        </p>
+
+        <br>
+
+        <p>
+            I don't want you to become someone else.
+            I want you to bring back that determination,
+            discipline, and confidence.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                I want that topper version of you back. ❤️
+            </strong>
+        </p>
+
     </div>
-
-    <div class="topper-title">
-        THE TOPPER
-    </div>
-
-
-    <div class="topper-points">
-
-        <div class="topper-point">
-            🧠 <b>Control</b> your anger.
-        </div>
-
-        <div class="topper-point">
-            🗣️ <b>Think</b> before you speak.
-        </div>
-
-        <div class="topper-point">
-            🎯 <b>Focus</b> on what matters.
-        </div>
-
-        <div class="topper-point">
-            📚 You were once the guy who
-            made other toppers nervous.
-        </div>
-
-        <div class="topper-point">
-            ❤️ <b>I want that version of you back.</b>
-        </div>
-
-    </div>
-
 
     <button
-    class="btn"
-    onclick="showScreen('gift1')"
-    >
-        Enough serious talk... 🎁
+        class="btn"
+        onclick="showScreen('gift1')">
+        Okay... enough serious talk 😂
     </button>
 
 </div>
@@ -2623,13 +2464,10 @@ id="topper"
 
 
 <!-- =========================================================
-     GIFT 1
+     14 — GIFT 1
 ========================================================= -->
 
-<section
-class="screen"
-id="gift1"
->
+<section class="screen" id="gift1">
 
 <div class="content">
 
@@ -2641,33 +2479,21 @@ id="gift1"
         Something small for you.
     </h2>
 
-
-    <div
-    class="gift-card"
-    id="giftCard1"
-    style="display:flex;"
-    >
+    <div class="gift-card" id="giftCard1">
 
         <div
-        class="gift-box"
-        onclick="openAnimatedGift(1)"
-        >
+            class="gift-box"
+            onclick="openAnimatedGift(1)">
 
             <div class="gift-base"></div>
-
             <div class="gift-ribbon-v"></div>
-
             <div class="gift-ribbon-h"></div>
-
             <div class="gift-lid"></div>
-
             <div class="gift-bow"></div>
 
         </div>
 
-
         <div class="gift-light"></div>
-
 
         <div class="gift-reveal">
 
@@ -2688,13 +2514,11 @@ id="gift1"
 
     </div>
 
-
     <button
-    class="btn"
-    id="giftNext1"
-    style="display:none;"
-    onclick="showScreen('gift2')"
-    >
+        class="btn"
+        id="giftNext1"
+        style="display:none"
+        onclick="showScreen('gift2')">
         Open Gift 2 🎁
     </button>
 
@@ -2704,13 +2528,10 @@ id="gift1"
 
 
 <!-- =========================================================
-     GIFT 2
+     15 — GIFT 2
 ========================================================= -->
 
-<section
-class="screen"
-id="gift2"
->
+<section class="screen" id="gift2">
 
 <div class="content">
 
@@ -2722,33 +2543,21 @@ id="gift2"
         This one is different.
     </h2>
 
-
-    <div
-    class="gift-card"
-    id="giftCard2"
-    style="display:flex;"
-    >
+    <div class="gift-card" id="giftCard2">
 
         <div
-        class="gift-box"
-        onclick="openAnimatedGift(2)"
-        >
+            class="gift-box"
+            onclick="openAnimatedGift(2)">
 
             <div class="gift-base"></div>
-
             <div class="gift-ribbon-v"></div>
-
             <div class="gift-ribbon-h"></div>
-
             <div class="gift-lid"></div>
-
             <div class="gift-bow"></div>
 
         </div>
 
-
         <div class="gift-light"></div>
-
 
         <div class="gift-reveal">
 
@@ -2770,13 +2579,11 @@ id="gift2"
 
     </div>
 
-
     <button
-    class="btn"
-    id="giftNext2"
-    style="display:none;"
-    onclick="showScreen('gift3')"
-    >
+        class="btn"
+        id="giftNext2"
+        style="display:none"
+        onclick="showScreen('gift3')">
         Open Gift 3 🎁
     </button>
 
@@ -2786,13 +2593,10 @@ id="gift2"
 
 
 <!-- =========================================================
-     GIFT 3
+     16 — GIFT 3
 ========================================================= -->
 
-<section
-class="screen"
-id="gift3"
->
+<section class="screen" id="gift3">
 
 <div class="content">
 
@@ -2804,33 +2608,21 @@ id="gift3"
         Last one...
     </h2>
 
-
-    <div
-    class="gift-card"
-    id="giftCard3"
-    style="display:flex;"
-    >
+    <div class="gift-card" id="giftCard3">
 
         <div
-        class="gift-box"
-        onclick="openAnimatedGift(3)"
-        >
+            class="gift-box"
+            onclick="openAnimatedGift(3)">
 
             <div class="gift-base"></div>
-
             <div class="gift-ribbon-v"></div>
-
             <div class="gift-ribbon-h"></div>
-
             <div class="gift-lid"></div>
-
             <div class="gift-bow"></div>
 
         </div>
 
-
         <div class="gift-light"></div>
-
 
         <div class="gift-reveal">
 
@@ -2843,22 +2635,19 @@ id="gift3"
             </div>
 
             <div class="gift-message-text">
-                Whatever happens,
-                wherever life takes us,
-                that won't change.
+                Whatever happens, wherever life
+                takes us, that won't change.
             </div>
 
         </div>
 
     </div>
 
-
     <button
-    class="btn"
-    id="giftNext3"
-    style="display:none;"
-    onclick="showScreen('final')"
-    >
+        class="btn"
+        id="giftNext3"
+        style="display:none"
+        onclick="showScreen('final')">
         The final surprise 🎂
     </button>
 
@@ -2868,13 +2657,10 @@ id="gift3"
 
 
 <!-- =========================================================
-     FINAL
+     17 — FINAL
 ========================================================= -->
 
-<section
-class="screen"
-id="final"
->
+<section class="screen" id="final">
 
 <div class="content">
 
@@ -2882,52 +2668,32 @@ id="final"
         The final surprise
     </div>
 
-
     <div class="final-title">
         HAPPY<br>
         BIRTHDAY
     </div>
 
-
     <div class="final-vaathi">
         VAATHI ❤️
     </div>
 
-
     <div class="final-photo">
 
         <img
-        src="vaathi.jpg"
-        alt="Vaathi"
-        >
+            src="vaathi.jpg"
+            alt="Vaathi">
 
     </div>
-
 
     <div class="wishes">
 
-        <div class="wish">
-            😊 Happiness
-        </div>
-
-        <div class="wish">
-            🏆 Success
-        </div>
-
-        <div class="wish">
-            ❤️ Good Health
-        </div>
-
-        <div class="wish">
-            🕊️ Peace
-        </div>
-
-        <div class="wish">
-            🚀 Big Dreams
-        </div>
+        <div class="wish">😊 Happiness</div>
+        <div class="wish">🏆 Success</div>
+        <div class="wish">❤️ Good Health</div>
+        <div class="wish">🕊️ Peace</div>
+        <div class="wish">🚀 Big Dreams</div>
 
     </div>
-
 
     <p>
         Here's to another year of memories,
@@ -2961,7 +2727,14 @@ id="final"
    SCREEN NAVIGATION
 ========================================================= */
 
+let currentScreen = "screen1";
+
 function showScreen(id) {
+
+    /* Stop the song immediately when leaving song screen */
+    if (currentScreen === "song" && id !== "song") {
+        stopSong();
+    }
 
     playTransition();
 
@@ -2970,9 +2743,7 @@ function showScreen(id) {
         document
             .querySelectorAll(".screen")
             .forEach(screen => {
-
                 screen.classList.remove("active");
-
             });
 
         const target =
@@ -2980,10 +2751,10 @@ function showScreen(id) {
 
         if (target) {
             target.classList.add("active");
+            currentScreen = id;
         }
 
     }, 160);
-
 }
 
 
@@ -3005,28 +2776,8 @@ function playTransition() {
     flash.classList.add("active");
 
     setTimeout(() => {
-
         flash.classList.remove("active");
-
     }, 650);
-
-}
-
-
-/* =========================================================
-   YES BUTTON
-========================================================= */
-
-function yesAnswer(nextScreen) {
-
-    createMiniBurst();
-
-    setTimeout(() => {
-
-        showScreen(nextScreen);
-
-    }, 260);
-
 }
 
 
@@ -3034,33 +2785,20 @@ function yesAnswer(nextScreen) {
    NO BUTTON
 ========================================================= */
 
-function noAnswer(
-    messageId,
-    button
-) {
+function noAnswer(messageId, button) {
 
     const messages = [
-
         "Nice try. 😂",
-
         "No is not an option here bro. 😭",
-
         "Bro... press YES. 👀",
-
         "I know you wanna see it. 😂",
-
         "Still NO? Seriously? 😭",
-
         "Okay, I'll ask again. 😌",
-
         "YES is looking pretty good right now. 👀"
-
     ];
 
     const message =
-        document.getElementById(
-            messageId
-        );
+        document.getElementById(messageId);
 
     const random =
         messages[
@@ -3070,14 +2808,15 @@ function noAnswer(
             )
         ];
 
-    message.textContent =
-        random;
+    message.textContent = random;
 
     button.classList.remove("nope");
 
     void button.offsetWidth;
 
     button.classList.add("nope");
+
+    playClickSound();
 }
 
 
@@ -3086,9 +2825,7 @@ function noAnswer(
 ========================================================= */
 
 const birthDate =
-    new Date(
-        "2009-08-28T00:00:00"
-    );
+    new Date("2009-08-28T00:00:00");
 
 
 function updateAge() {
@@ -3115,21 +2852,18 @@ function updateAge() {
         );
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
+    document.getElementById("hours")
+        .textContent =
         totalHours.toLocaleString();
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
+    document.getElementById("minutes")
+        .textContent =
         totalMinutes.toLocaleString();
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
+    document.getElementById("seconds")
+        .textContent =
         totalSeconds.toLocaleString();
 }
 
@@ -3143,11 +2877,10 @@ setInterval(
 
 
 /* =========================================================
-   3 2 1
+   3-2-1 COUNTDOWN
 ========================================================= */
 
-let countdownStarted =
-    false;
+let countdownStarted = false;
 
 
 function startCountdown() {
@@ -3160,66 +2893,53 @@ function startCountdown() {
 
     showScreen("countdown");
 
-
     const number =
-        document.getElementById(
-            "countNumber"
-        );
+        document.getElementById("countNumber");
 
     const message =
-        document.getElementById(
-            "countMessage"
-        );
-
+        document.getElementById("countMessage");
 
     let count = 3;
 
     number.textContent = count;
-
-    message.textContent =
-        "Get ready...";
-
+    message.textContent = "Get ready...";
 
     const timer =
         setInterval(() => {
 
             count--;
 
+            playClickSound();
+
             if (count > 0) {
 
-                number.textContent =
-                    count;
+                number.textContent = count;
 
                 message.textContent =
                     count === 2
                         ? "Almost there..."
                         : "One more...";
 
-            }
-
-            else {
+            } else {
 
                 clearInterval(timer);
 
-                number.textContent =
-                    "🎉";
-
+                number.textContent = "🎉";
                 message.textContent =
                     "HAPPY BIRTHDAY!";
 
                 createConfetti();
+                playBirthdayBurst();
 
                 setTimeout(() => {
 
-                    showScreen(
-                        "birthday"
-                    );
+                    showScreen("birthday");
 
-                    countdownStarted =
-                        false;
+                    countdownStarted = false;
+
+                    startBirthdayBgm();
 
                 }, 1400);
-
             }
 
         }, 1000);
@@ -3230,41 +2950,26 @@ function startCountdown() {
    MEMORY SWITCHER
 ========================================================= */
 
-function openMemory(
-    image,
-    caption
-) {
+function openMemory(image, caption) {
 
     const img =
-        document.getElementById(
-            "memoryImage"
-        );
+        document.getElementById("memoryImage");
 
     const text =
-        document.getElementById(
-            "memoryCaption"
-        );
+        document.getElementById("memoryCaption");
 
+    img.style.opacity = "0";
 
-    img.style.opacity =
-        "0";
-
+    playClickSound();
 
     setTimeout(() => {
 
-        img.src =
-            image;
+        img.src = image;
+        text.textContent = caption;
 
-        text.textContent =
-            caption;
-
-        img.onload =
-            () => {
-
-                img.style.opacity =
-                    "1";
-
-            };
+        img.onload = () => {
+            img.style.opacity = "1";
+        };
 
     }, 180);
 }
@@ -3277,30 +2982,59 @@ function openMemory(
 const song =
     new Audio("song.mp3");
 
-song.loop = true;
+song.loop = false;
 
-let songPlaying =
-    false;
+let songPlaying = false;
 
 
-function yesSong() {
+/*
+   Put your lyrics here.
+   Replace each text with the lyrics you have,
+   and set the time in seconds.
+*/
+
+const lyrics = [
+
+    /*
+    { time: 0, text: "YOUR FIRST LINE" },
+    { time: 5, text: "YOUR SECOND LINE" },
+    { time: 10, text: "YOUR THIRD LINE" }
+    */
+
+];
+
+
+let lyricTimer = null;
+
+
+function startSongAndShow() {
 
     showScreen("song");
 
-    song.play()
-        .then(() => {
+    setTimeout(() => {
 
-            songPlaying =
-                true;
+        song.currentTime = 0;
 
-            updateMusicButton();
+        song.play()
+            .then(() => {
 
-        })
-        .catch(() => {
+                songPlaying = true;
 
-            updateMusicButton();
+                updateMusicButton();
 
-        });
+                startLyrics();
+
+            })
+            .catch(() => {
+
+                document.getElementById(
+                    "songStatus"
+                ).textContent =
+                    "Tap Start to play 🎵";
+
+            });
+
+    }, 350);
 
 }
 
@@ -3309,66 +3043,256 @@ function toggleMusic() {
 
     if (songPlaying) {
 
-        song.pause();
+        stopSong();
 
-        songPlaying =
-            false;
-
-    }
-
-    else {
+    } else {
 
         song.play()
             .then(() => {
 
-                songPlaying =
-                    true;
+                songPlaying = true;
+
+                updateMusicButton();
+
+                startLyrics();
 
             });
 
     }
 
-    updateMusicButton();
 }
+
+
+function stopSong() {
+
+    song.pause();
+
+    song.currentTime = 0;
+
+    songPlaying = false;
+
+    stopLyrics();
+
+    updateMusicButton();
+
+}
+
+
+song.addEventListener(
+    "ended",
+    () => {
+
+        songPlaying = false;
+
+        stopLyrics();
+
+        updateMusicButton();
+
+        document.getElementById(
+            "songStatus"
+        ).textContent =
+            "🎵 Song finished.";
+
+    }
+);
 
 
 function updateMusicButton() {
 
-    const btn =
-        document.getElementById(
-            "musicBtn"
-        );
+    const button =
+        document.getElementById("musicBtn");
 
     const status =
-        document.getElementById(
-            "songStatus"
-        );
+        document.getElementById("songStatus");
 
-    if (!btn) {
+    if (!button) {
         return;
     }
 
 
     if (songPlaying) {
 
-        btn.textContent =
+        button.textContent =
             "⏸ Pause";
 
         status.textContent =
             "🎵 Playing...";
 
-    }
+    } else {
 
-    else {
-
-        btn.textContent =
-            "🎵 Play song";
+        button.textContent =
+            "▶ Start";
 
         status.textContent =
-            "Song paused";
+            "Ready";
 
     }
 }
+
+
+/* =========================================================
+   LYRICS — FADING LINE BY LINE
+========================================================= */
+
+function startLyrics() {
+
+    stopLyrics();
+
+    const line =
+        document.getElementById("lyricLine");
+
+    if (!lyrics.length) {
+
+        line.textContent =
+            "Paste your lyrics into the code to show them here.";
+
+        line.classList.add("show");
+
+        return;
+    }
+
+
+    function updateLyric() {
+
+        const time =
+            song.currentTime;
+
+        let activeLyric =
+            lyrics[0];
+
+        for (
+            let i = 0;
+            i < lyrics.length;
+            i++
+        ) {
+
+            if (
+                time >=
+                lyrics[i].time
+            ) {
+
+                activeLyric =
+                    lyrics[i];
+
+            }
+
+        }
+
+
+        if (
+            activeLyric &&
+            line.textContent !== activeLyric.text
+        ) {
+
+            line.classList.remove("show");
+
+            setTimeout(() => {
+
+                line.textContent =
+                    activeLyric.text;
+
+                line.classList.add("show");
+
+            }, 150);
+
+        }
+
+    }
+
+
+    updateLyric();
+
+    lyricTimer =
+        setInterval(
+            updateLyric,
+            250
+        );
+}
+
+
+function stopLyrics() {
+
+    if (lyricTimer) {
+
+        clearInterval(
+            lyricTimer
+        );
+
+        lyricTimer = null;
+
+    }
+
+    const line =
+        document.getElementById("lyricLine");
+
+    if (line) {
+        line.classList.remove("show");
+    }
+}
+
+
+/* =========================================================
+   BIRTHDAY BGM
+========================================================= */
+
+const birthdayBgm =
+    new Audio(
+        "birthday-bgm.mp3"
+    );
+
+birthdayBgm.loop = true;
+
+let birthdayBgmPlaying = false;
+
+
+function startBirthdayBgm() {
+
+    birthdayBgm.currentTime = 0;
+
+    birthdayBgm.play()
+        .then(() => {
+
+            birthdayBgmPlaying = true;
+
+        })
+        .catch(() => {
+
+            birthdayBgmPlaying = false;
+
+        });
+}
+
+
+function stopBirthdayBgm() {
+
+    birthdayBgm.pause();
+
+    birthdayBgm.currentTime = 0;
+
+    birthdayBgmPlaying = false;
+
+}
+
+
+/* =========================================================
+   STOP BIRTHDAY BGM WHEN LEAVING BIRTHDAY SCREEN
+========================================================= */
+
+const originalShowScreen = showScreen;
+
+showScreen = function(id) {
+
+    if (
+        currentScreen === "birthday" &&
+        id !== "birthday"
+    ) {
+
+        stopBirthdayBgm();
+
+    }
+
+    originalShowScreen(id);
+};
 
 
 /* =========================================================
@@ -3390,38 +3314,22 @@ function openAnimatedGift(number) {
 
     giftsOpened[number] = true;
 
-
     const card =
         document.getElementById(
             "giftCard" + number
         );
 
-
-    const box =
-        card.querySelector(
-            ".gift-box"
-        );
-
-
-    const light =
-        card.querySelector(
-            ".gift-light"
-        );
-
-
     card.classList.add(
         "gift-open"
     );
 
-
-    createMiniBurst();
-
+    playGiftSound();
 
     setTimeout(() => {
 
         createConfetti();
 
-    }, 450);
+    }, 500);
 
 
     setTimeout(() => {
@@ -3436,11 +3344,6 @@ function openAnimatedGift(number) {
             next.style.display =
                 "inline-block";
 
-            next.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-
         }
 
     }, 1500);
@@ -3454,16 +3357,13 @@ function openAnimatedGift(number) {
 function createConfetti() {
 
     const colors = [
-
         "#ff2e93",
         "#8c52ff",
         "#00d4ff",
         "#ffd700",
         "#ff7b00",
         "#38ff9b"
-
     ];
-
 
     for (
         let i = 0;
@@ -3476,125 +3376,44 @@ function createConfetti() {
                 "div"
             );
 
-
         piece.className =
             "confetti";
-
 
         piece.style.left =
             Math.random() * 100
             + "vw";
 
-
         piece.style.background =
             colors[
                 Math.floor(
-                    Math.random()
-                    * colors.length
+                    Math.random() *
+                    colors.length
                 )
             ];
-
 
         piece.style.animationDuration =
             (
                 2 +
                 Math.random() * 3
-            )
-            + "s";
-
+            ) + "s";
 
         piece.style.animationDelay =
             Math.random() * .5
             + "s";
 
-
         document.body.appendChild(
             piece
         );
 
-
         setTimeout(() => {
-
             piece.remove();
-
         }, 5000);
-
     }
 }
 
 
 /* =========================================================
-   MINI BURST
-========================================================= */
-
-function createMiniBurst() {
-
-    const colors = [
-        "#ff2e93",
-        "#8c52ff",
-        "#ffd700",
-        "#00d4ff"
-    ];
-
-
-    for (
-        let i = 0;
-        i < 20;
-        i++
-    ) {
-
-        const piece =
-            document.createElement(
-                "div"
-            );
-
-
-        piece.className =
-            "confetti";
-
-
-        piece.style.left =
-            (
-                45 +
-                Math.random() * 10
-            )
-            + "vw";
-
-
-        piece.style.background =
-            colors[
-                Math.floor(
-                    Math.random()
-                    * colors.length
-                )
-            ];
-
-
-        piece.style.animationDuration =
-            (
-                .9 +
-                Math.random() * 1.2
-            )
-            + "s";
-
-
-        document.body.appendChild(
-            piece
-        );
-
-
-        setTimeout(() => {
-
-            piece.remove();
-
-        }, 2200);
-
-    }
-}
-
-
-/* =========================================================
-   FLOATING DECORATIONS
+   DECORATIONS
 ========================================================= */
 
 function createDecor() {
@@ -3604,36 +3423,28 @@ function createDecor() {
             "decor"
         );
 
-
     const items = [
-
         {
             symbol: "🎈",
             className: "float-balloon"
         },
-
         {
             symbol: "🍬",
             className: "float-candy"
         },
-
         {
             symbol: "🍭",
             className: "float-candy"
         },
-
         {
             symbol: "🧁",
             className: "float-cake"
         },
-
         {
             symbol: "✨",
             className: "float-star"
         }
-
     ];
-
 
     for (
         let i = 0;
@@ -3644,56 +3455,187 @@ function createDecor() {
         const selected =
             items[
                 Math.floor(
-                    Math.random()
-                    * items.length
+                    Math.random() *
+                    items.length
                 )
             ];
-
 
         const item =
             document.createElement(
                 "div"
             );
 
-
         item.className =
             "float-item "
             + selected.className;
 
-
         item.textContent =
             selected.symbol;
-
 
         item.style.left =
             Math.random() * 95
             + "vw";
 
-
         item.style.animationDuration =
             (
                 10 +
                 Math.random() * 9
-            )
-            + "s";
-
+            ) + "s";
 
         item.style.animationDelay =
             (
                 Math.random() * 8
-            )
-            + "s";
+            ) + "s";
+
+        decor.appendChild(item);
+
+    }
+
+}
+
+createDecor();
 
 
-        decor.appendChild(
-            item
+/* =========================================================
+   SIMPLE SOUND EFFECTS
+   Generated with Web Audio — no extra SFX files.
+========================================================= */
+
+let audioContext = null;
+
+
+function getAudioContext() {
+
+    if (!audioContext) {
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    return audioContext;
+}
+
+
+function playTone(
+    frequency,
+    duration,
+    type = "sine",
+    volume = 0.04
+) {
+
+    try {
+
+        const ctx =
+            getAudioContext();
+
+        const oscillator =
+            ctx.createOscillator();
+
+        const gain =
+            ctx.createGain();
+
+        oscillator.type =
+            type;
+
+        oscillator.frequency.value =
+            frequency;
+
+        gain.gain.setValueAtTime(
+            volume,
+            ctx.currentTime
         );
 
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            ctx.currentTime + duration
+        );
+
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+
+        oscillator.start();
+
+        oscillator.stop(
+            ctx.currentTime + duration
+        );
+
+    } catch (error) {
+        /* sound effects are optional */
     }
 }
 
 
-createDecor();
+function playClickSound() {
+
+    playTone(
+        650,
+        .07,
+        "sine",
+        .025
+    );
+
+}
+
+
+function playGiftSound() {
+
+    playTone(
+        440,
+        .12,
+        "sine",
+        .035
+    );
+
+    setTimeout(() => {
+
+        playTone(
+            660,
+            .15,
+            "sine",
+            .035
+        );
+
+    }, 110);
+
+}
+
+
+function playBirthdayBurst() {
+
+    playTone(
+        523,
+        .15,
+        "triangle",
+        .04
+    );
+
+    setTimeout(() => {
+
+        playTone(
+            659,
+            .15,
+            "triangle",
+            .04
+        );
+
+    }, 120);
+
+    setTimeout(() => {
+
+        playTone(
+            784,
+            .22,
+            "triangle",
+            .045
+        );
+
+    }, 240);
+
+}
 
 </script>
 
