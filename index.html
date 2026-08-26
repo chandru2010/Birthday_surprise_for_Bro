@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -11,7 +13,12 @@
 <title>For Vaathi ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Dancing+Script:wght@500;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -62,7 +69,7 @@ body {
 
 
 /* =========================================================
-   BACKGROUND
+   BACKGROUND STARS
 ========================================================= */
 
 .stars {
@@ -89,36 +96,75 @@ body {
 
     opacity: .22;
 
-    animation: starsMove 28s linear infinite;
+    animation:
+        starsMove
+        28s
+        linear
+        infinite;
 }
 
 @keyframes starsMove {
+
     from {
-        background-position: 0 0, 0 0;
+        background-position:
+            0 0,
+            0 0;
     }
 
     to {
-        background-position: 180px 160px, -180px 100px;
+        background-position:
+            180px 160px,
+            -180px 100px;
     }
 }
+
+
+/* =========================================================
+   FLOATING DECOR
+========================================================= */
 
 .decor {
     position: fixed;
     inset: 0;
+
     z-index: -5;
+
     pointer-events: none;
+
     overflow: hidden;
 }
 
 .float-item {
     position: absolute;
+
     bottom: -90px;
+
     opacity: .6;
 
-    animation: floatUp linear infinite;
+    animation:
+        floatUp
+        linear
+        infinite;
+}
+
+.float-balloon {
+    font-size: 40px;
+}
+
+.float-candy {
+    font-size: 27px;
+}
+
+.float-cake {
+    font-size: 32px;
+}
+
+.float-star {
+    font-size: 19px;
 }
 
 @keyframes floatUp {
+
     0% {
         transform:
             translateY(0)
@@ -143,10 +189,17 @@ body {
     }
 }
 
+
+/* =========================================================
+   TRANSITION
+========================================================= */
+
 .transition-flash {
     position: fixed;
     inset: 0;
+
     z-index: 9998;
+
     pointer-events: none;
 
     opacity: 0;
@@ -173,7 +226,7 @@ body {
 
 
 /* =========================================================
-   SCREENS
+   SCREEN SYSTEM
 ========================================================= */
 
 .screen {
@@ -186,6 +239,7 @@ body {
     padding: 18px 7%;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -215,6 +269,7 @@ body {
 
 .content {
     width: min(950px, 100%);
+
     max-height: 92vh;
 
     overflow-y: auto;
@@ -233,9 +288,13 @@ body {
 
 .small {
     font-size: 12px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
+
     color: #ffb9ef;
+
     margin-bottom: 12px;
 }
 
@@ -245,14 +304,28 @@ h2 {
 }
 
 h2 {
-    font-size: clamp(30px, 6vw, 62px);
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            62px
+        );
+
     line-height: 1.08;
+
     margin-bottom: 15px;
 }
 
 p {
     color: #ddd;
-    font-size: clamp(15px, 2vw, 19px);
+
+    font-size:
+        clamp(
+            15px,
+            2vw,
+            19px
+        );
+
     line-height: 1.7;
 }
 
@@ -262,11 +335,18 @@ p {
 ========================================================= */
 
 .btn {
-    margin: 9px 5px;
-    padding: 13px 24px;
+    margin:
+        9px 5px;
 
-    border: 1px solid rgba(255,255,255,.35);
-    border-radius: 50px;
+    padding:
+        13px 24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-radius:
+        50px;
 
     background:
         linear-gradient(
@@ -286,8 +366,11 @@ p {
     cursor: pointer;
 
     box-shadow:
-        0 0 15px rgba(255,20,147,.35),
-        0 0 35px rgba(123,44,255,.22);
+        0 0 15px
+        rgba(255,20,147,.35),
+
+        0 0 35px
+        rgba(123,44,255,.22);
 
     transition: .3s;
 }
@@ -320,16 +403,21 @@ p {
 }
 
 .nope {
-    animation: shake .35s;
+    animation:
+        shake
+        .35s;
 }
 
 @keyframes shake {
+
     25% {
-        transform: translateX(-9px);
+        transform:
+            translateX(-9px);
     }
 
     75% {
-        transform: translateX(9px);
+        transform:
+            translateX(9px);
     }
 }
 
@@ -337,7 +425,9 @@ p {
     margin-top: 22px;
 
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
 
     gap: 10px;
@@ -345,9 +435,11 @@ p {
 
 .question-answer {
     min-height: 24px;
+
     margin-top: 10px;
 
     color: #ffb9ef;
+
     font-size: 14px;
 }
 
@@ -359,11 +451,16 @@ p {
 .hero-title {
     font:
         800
-        clamp(55px, 13vw, 135px)
+        clamp(
+            55px,
+            13vw,
+            135px
+        )
         "Cinzel",
         serif;
 
     line-height: .88;
+
     margin: 10px 0;
 
     background:
@@ -379,6 +476,7 @@ p {
     background-size: 300%;
 
     -webkit-background-clip: text;
+
     color: transparent;
 
     animation:
@@ -389,6 +487,7 @@ p {
 }
 
 @keyframes gradientMove {
+
     to {
         background-position: 300%;
     }
@@ -397,7 +496,11 @@ p {
 .wait-line {
     font:
         600
-        clamp(24px, 4vw, 44px)
+        clamp(
+            24px,
+            4vw,
+            44px
+        )
         "Poppins",
         sans-serif;
 
@@ -421,8 +524,10 @@ p {
 }
 
 @keyframes cakeFloat {
+
     50% {
-        transform: translateY(-12px);
+        transform:
+            translateY(-12px);
     }
 }
 
@@ -434,7 +539,11 @@ p {
 .date-number {
     font:
         800
-        clamp(58px, 13vw, 120px)
+        clamp(
+            58px,
+            13vw,
+            120px
+        )
         "Cinzel",
         serif;
 
@@ -446,23 +555,31 @@ p {
             #8d53ff
         );
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
+
     color: transparent;
 }
 
 .date-month {
     font:
         700
-        clamp(26px, 5vw, 46px)
+        clamp(
+            26px,
+            5vw,
+            46px
+        )
         "Cinzel",
         serif;
 
     letter-spacing: 8px;
+
     color: #ffd9f6;
 }
 
 .date-year {
     font-size: 25px;
+
     color: #8bdfff;
 
     margin:
@@ -478,7 +595,10 @@ p {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(
+            3,
+            1fr
+        );
 
     gap: 14px;
 
@@ -488,7 +608,8 @@ p {
 }
 
 .counter-box {
-    padding: 22px 10px;
+    padding:
+        22px 10px;
 
     border-radius: 20px;
 
@@ -497,7 +618,12 @@ p {
         #ff38d1;
 
     background:
-        rgba(20,0,45,.75);
+        rgba(
+            20,
+            0,
+            45,
+            .75
+        );
 
     box-shadow:
         0 0 20px
@@ -513,7 +639,11 @@ p {
 
     font:
         700
-        clamp(28px, 5vw, 52px)
+        clamp(
+            28px,
+            5vw,
+            52px
+        )
         Arial,
         sans-serif;
 
@@ -524,7 +654,9 @@ p {
     display: block;
 
     color: #aaa;
+
     font-size: 10px;
+
     letter-spacing: 2px;
 }
 
@@ -536,7 +668,11 @@ p {
 .count-number {
     font:
         800
-        clamp(110px, 25vw, 230px)
+        clamp(
+            110px,
+            25vw,
+            230px
+        )
         "Cinzel",
         serif;
 
@@ -551,6 +687,7 @@ p {
         );
 
     -webkit-background-clip: text;
+
     color: transparent;
 
     animation:
@@ -561,14 +698,18 @@ p {
 }
 
 @keyframes countPulse {
+
     to {
-        transform: scale(1.05);
+        transform:
+            scale(1.05);
     }
 }
 
 .count-message {
     font-size: 22px;
+
     color: #ffd7f5;
+
     margin-top: 20px;
 }
 
@@ -587,15 +728,21 @@ p {
 }
 
 @keyframes cakePulse {
+
     50% {
-        transform: scale(1.12);
+        transform:
+            scale(1.12);
     }
 }
 
 .birthday-title {
     font:
         800
-        clamp(46px, 11vw, 112px)
+        clamp(
+            46px,
+            11vw,
+            112px
+        )
         "Cinzel",
         serif;
 
@@ -610,16 +757,22 @@ p {
         );
 
     -webkit-background-clip: text;
+
     color: transparent;
 }
 
 .vaathi {
     font:
-        clamp(48px, 10vw, 98px)
+        clamp(
+            48px,
+            10vw,
+            98px
+        )
         "Pacifico",
         cursive;
 
-    color: #ff51c1;
+    color:
+        #ff51c1;
 
     text-shadow:
         0 0 20px
@@ -645,23 +798,28 @@ p {
     padding:
         10px 10px 15px;
 
-    background: #f1dfb9;
+    background:
+        #f1dfb9;
 
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.65);
 
-    transform: rotate(-2deg);
+    transform:
+        rotate(-2deg);
 
     overflow: hidden;
 }
 
 .baby-photo-frame .baby-rotator {
     width: 100%;
+
     height: 250px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -669,9 +827,12 @@ p {
 
 .baby-photo-frame img {
     width: 80%;
+
     height: 80%;
 
     object-fit: contain;
+
+    display: block;
 
     transform:
         rotate(-90deg)
@@ -696,20 +857,25 @@ p {
 
 .memory-buttons {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
 
     gap: 8px;
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
     max-width: 850px;
 }
 
 .memory-btn {
-    padding: 10px 16px;
+    padding:
+        10px 16px;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     border:
         1px solid
@@ -745,24 +911,29 @@ p {
             88%
         );
 
-    margin: 15px auto;
+    margin:
+        15px auto;
 
     padding: 10px;
 
-    background: #f2e2bc;
+    background:
+        #f2e2bc;
 
     box-shadow:
         0 20px 55px
         rgba(0,0,0,.6);
 
-    transform: rotate(-1deg);
+    transform:
+        rotate(-1deg);
 }
 
 .photo-frame img {
     width: 100%;
+
     max-height: 38vh;
 
     object-fit: cover;
+
     display: block;
 }
 
@@ -785,16 +956,24 @@ p {
 .activity-title {
     font:
         700
-        clamp(38px, 8vw, 80px)
+        clamp(
+            38px,
+            8vw,
+            80px
+        )
         "Cinzel",
         serif;
 
-    color: #ffd33a;
+    color:
+        #ffd33a;
+
     margin-bottom: 8px;
 }
 
 .activity-sub {
-    color: #ffd8f3;
+    color:
+        #ffd8f3;
+
     font-size: 18px;
 }
 
@@ -813,11 +992,13 @@ p {
             55vh
         );
 
-    margin: 10px auto;
+    margin:
+        10px auto;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     transition:
@@ -825,12 +1006,15 @@ p {
 }
 
 
-/* Actual uploaded cake */
+/* =========================================================
+   ACTUAL GENERATED CAKE IMAGES
+========================================================= */
 
 .cake-image {
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     width:
@@ -842,7 +1026,10 @@ p {
     max-height: 55vh;
 
     transform:
-        translate(-50%, -50%);
+        translate(
+            -50%,
+            -50%
+        );
 
     object-fit: contain;
 
@@ -860,45 +1047,225 @@ p {
 }
 
 
-/* Whole cake starts visible */
+/* Whole cake */
 
 .whole-cake {
     opacity: 1;
 }
 
 
-/* Cut cake starts hidden */
+/* Cut cake */
 
 .cut-cake {
     opacity: 0;
 }
 
 
-/* After cutting */
+/* After cut */
 
-.cake-stage.cake-cut .whole-cake {
+.cake-stage.cake-cut
+.whole-cake {
     opacity: 0;
 
     transform:
-        translate(-50%, -50%)
+        translate(
+            -50%,
+            -50%
+        )
         scale(.97);
 }
 
-.cake-stage.cake-cut .cut-cake {
+.cake-stage.cake-cut
+.cut-cake {
     opacity: 1;
 
     transform:
-        translate(-50%, -50%)
+        translate(
+            -50%,
+            -50%
+        )
         scale(1.02);
 }
 
 
-/* Knife */
+/* =========================================================
+   INTERACTIVE FLAMES
+========================================================= */
+
+.cake-flame {
+    position: absolute;
+
+    z-index: 20;
+
+    font-size:
+        clamp(
+            22px,
+            4vw,
+            29px
+        );
+
+    transform-origin:
+        center bottom;
+
+    animation:
+        flameFlicker
+        .45s
+        ease-in-out
+        infinite
+        alternate;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,150,40,.95)
+        );
+
+    transition:
+        opacity .35s ease,
+        transform .45s ease;
+}
+
+
+/*
+   Position of the four flames over the
+   candles in cake-whole.jpeg.
+*/
+
+.flame-1 {
+    left: 39%;
+    top: 20%;
+}
+
+.flame-2 {
+    left: 47%;
+    top: 18%;
+}
+
+.flame-3 {
+    left: 55%;
+    top: 18%;
+}
+
+.flame-4 {
+    left: 63%;
+    top: 20%;
+}
+
+
+@keyframes flameFlicker {
+
+    0% {
+        transform:
+            scale(1)
+            rotate(-4deg);
+    }
+
+    100% {
+        transform:
+            scale(1.14)
+            rotate(4deg);
+    }
+}
+
+
+/* =========================================================
+   FLAME BLOWN STATE
+========================================================= */
+
+.cake-stage.candles-blown
+.cake-flame {
+    opacity: 0;
+
+    transform:
+        translateY(-25px)
+        scale(.2);
+}
+
+
+/* =========================================================
+   SMOKE
+========================================================= */
+
+.cake-smoke {
+    position: absolute;
+
+    z-index: 21;
+
+    font-size:
+        clamp(
+            18px,
+            3vw,
+            24px
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.smoke-1 {
+    left: 39%;
+    top: 16%;
+}
+
+.smoke-2 {
+    left: 47%;
+    top: 14%;
+}
+
+.smoke-3 {
+    left: 55%;
+    top: 14%;
+}
+
+.smoke-4 {
+    left: 63%;
+    top: 16%;
+}
+
+.cake-smoke.show {
+    animation:
+        smokeRise
+        1.5s
+        ease-out
+        forwards;
+}
+
+@keyframes smokeRise {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(.5);
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-65px)
+            translateX(8px)
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   KNIFE
+========================================================= */
 
 .cake-knife {
     position: absolute;
 
     right: 12%;
+
     top: 12%;
 
     font-size:
@@ -910,7 +1277,8 @@ p {
 
     z-index: 30;
 
-    transform: rotate(-20deg);
+    transform:
+        rotate(-20deg);
 
     transition:
         transform
@@ -924,7 +1292,9 @@ p {
 }
 
 
-/* Camera shake */
+/* =========================================================
+   CAMERA SHAKE
+========================================================= */
 
 .cake-stage.cutting {
     animation:
@@ -998,24 +1368,34 @@ p {
 }
 
 
-/* Knife cutting */
+/* =========================================================
+   KNIFE CUT
+========================================================= */
 
-.cake-stage.cake-cut .cake-knife {
+.cake-stage.cake-cut
+.cake-knife {
     transform:
-        translate(-180px,150px)
+        translate(
+            -180px,
+            150px
+        )
         rotate(22deg);
 }
 
 
-/* Cut line */
+/* =========================================================
+   CUT LINE
+========================================================= */
 
 .cake-cut-line {
     position: absolute;
 
     left: 49%;
+
     top: 25%;
 
     width: 4px;
+
     height: 52%;
 
     border-radius: 20px;
@@ -1035,7 +1415,8 @@ p {
         rotate(-5deg);
 }
 
-.cake-stage.cake-cut .cake-cut-line {
+.cake-stage.cake-cut
+.cake-cut-line {
     animation:
         cutLine
         .7s
@@ -1071,7 +1452,9 @@ p {
 }
 
 
-/* Flash */
+/* =========================================================
+   CAKE FLASH
+========================================================= */
 
 .cake-flash {
     position: absolute;
@@ -1095,7 +1478,8 @@ p {
         );
 }
 
-.cake-stage.cake-cut .cake-flash {
+.cake-stage.cake-cut
+.cake-flash {
     animation:
         cakeFlash
         .7s
@@ -1107,32 +1491,42 @@ p {
 
     0% {
         opacity: 0;
-        transform: scale(.3);
+
+        transform:
+            scale(.3);
     }
 
     35% {
         opacity: 1;
-        transform: scale(1.12);
+
+        transform:
+            scale(1.12);
     }
 
     100% {
         opacity: 0;
-        transform: scale(1.6);
+
+        transform:
+            scale(1.6);
     }
 }
 
 
-/* Crumbs */
+/* =========================================================
+   CAKE CRUMBS
+========================================================= */
 
 .cake-crumb {
     position: absolute;
 
     width: 8px;
+
     height: 8px;
 
     border-radius: 50%;
 
-    background: #ff9bca;
+    background:
+        #ff9bca;
 
     opacity: 0;
 
@@ -1141,7 +1535,8 @@ p {
     z-index: 40;
 }
 
-.cake-stage.cake-cut .cake-crumb {
+.cake-stage.cake-cut
+.cake-crumb {
     animation:
         crumbFly
         .85s
@@ -1187,13 +1582,15 @@ p {
 
     max-width: 820px;
 
-    margin: 5px auto 0;
+    margin:
+        5px auto 0;
 }
 
 .pop-balloon {
     position: absolute;
 
     width: 108px;
+
     height: 128px;
 
     border-radius:
@@ -1207,6 +1604,7 @@ p {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     color: white;
@@ -1252,6 +1650,7 @@ p {
     bottom: -55px;
 
     width: 1px;
+
     height: 55px;
 
     background:
@@ -1276,26 +1675,35 @@ p {
 @keyframes balloonBurst {
 
     0% {
-        transform: scale(1);
+        transform:
+            scale(1);
+
         opacity: 1;
     }
 
     20% {
-        transform: scale(1.08);
+        transform:
+            scale(1.08);
     }
 
     38% {
-        transform: scale(1.28);
+        transform:
+            scale(1.28);
+
         opacity: 1;
     }
 
     62% {
-        transform: scale(.55);
+        transform:
+            scale(.55);
+
         opacity: .65;
     }
 
     100% {
-        transform: scale(0);
+        transform:
+            scale(0);
+
         opacity: 0;
     }
 }
@@ -1366,6 +1774,7 @@ p {
     color: #ffb9ef;
 
     font-size: 15px;
+
     font-weight: 600;
 }
 
@@ -1375,6 +1784,7 @@ p {
     color: #ffd85a;
 
     font-size: 14px;
+
     font-weight: 600;
 }
 
@@ -1463,7 +1873,8 @@ p {
             92%
         );
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
     padding:
         24px 20px;
@@ -1488,11 +1899,13 @@ p {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     gap: 5px;
 
-    margin: 10px 0;
+    margin:
+        10px 0;
 }
 
 .wave-bar {
@@ -1600,9 +2013,11 @@ p {
             94%
         );
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
-    perspective: 1200px;
+    perspective:
+        1200px;
 }
 
 .letter {
@@ -1667,7 +2082,8 @@ p {
 
     color: #67204d;
 
-    margin: 12px 0;
+    margin:
+        12px 0;
 }
 
 .letter-text {
@@ -1811,7 +2227,8 @@ p {
     width: 145px;
     height: 125px;
 
-    margin: 14px auto;
+    margin:
+        14px auto;
 
     cursor: pointer;
 }
@@ -2037,7 +2454,8 @@ p {
         "Cinzel",
         serif;
 
-    color: #ffd86a;
+    color:
+        #ffd86a;
 
     margin-bottom: 12px;
 
@@ -2101,6 +2519,7 @@ p {
 
 .dad-photo {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -2154,7 +2573,8 @@ p {
 
     line-height: 1.45;
 
-    color: #ffe8f6;
+    color:
+        #ffe8f6;
 }
 
 .dad-caption {
@@ -2165,7 +2585,8 @@ p {
         "Pacifico",
         cursive;
 
-    color: #ff72c8;
+    color:
+        #ff72c8;
 }
 
 
@@ -2186,7 +2607,8 @@ p {
 
     line-height: .95;
 
-    color: #ffd33a;
+    color:
+        #ffd33a;
 }
 
 .final-vaathi {
@@ -2199,7 +2621,8 @@ p {
         "Pacifico",
         cursive;
 
-    color: #ff4dbd;
+    color:
+        #ff4dbd;
 }
 
 .final-photo {
@@ -2209,7 +2632,8 @@ p {
             88%
         );
 
-    margin: 18px auto;
+    margin:
+        18px auto;
 
     border-radius: 25px;
 
@@ -2239,14 +2663,16 @@ p {
 
     gap: 10px;
 
-    margin: 18px 0;
+    margin:
+        18px 0;
 }
 
 .wish {
     padding:
         10px 16px;
 
-    border-radius: 30px;
+    border-radius:
+        30px;
 
     background:
         rgba(255,255,255,.08);
@@ -2278,7 +2704,6 @@ p {
 @keyframes confettiFall {
 
     to {
-
         transform:
             translateY(110vh)
             rotate(720deg);
@@ -2295,11 +2720,13 @@ p {
 @media(max-width:700px) {
 
     .screen {
-        padding: 14px 12px;
+        padding:
+            14px 12px;
     }
 
     .counter {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .counter-box {
@@ -2331,12 +2758,14 @@ p {
 
     .cake-image {
         width: 330px;
+
         max-height: 42vh;
     }
 
     .cake-knife {
         right: 3%;
         top: 13%;
+
         font-size: 52px;
     }
 
@@ -2382,7 +2811,7 @@ p {
 
 
 <!-- =========================================================
-     1. OPENING
+     1. HEY PRESIDENT
 ========================================================= -->
 
 <section
@@ -2472,7 +2901,7 @@ p {
 
 
 <!-- =========================================================
-     3. YES / NO
+     3. QUESTION
 ========================================================= -->
 
 <section
@@ -2606,7 +3035,9 @@ p {
             <span
                 class="counter-number"
                 id="hours">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -2615,12 +3046,15 @@ p {
 
         </div>
 
+
         <div class="counter-box">
 
             <span
                 class="counter-number"
                 id="minutes">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -2629,12 +3063,15 @@ p {
 
         </div>
 
+
         <div class="counter-box">
 
             <span
                 class="counter-number"
                 id="seconds">
+
                 0
+
             </span>
 
             <span class="counter-label">
@@ -2645,10 +3082,12 @@ p {
 
     </div>
 
+
     <p>
         Every second brought you closer<br>
         to the person you are today. ❤️
     </p>
+
 
     <button
         class="btn"
@@ -2765,6 +3204,7 @@ p {
         how much life was waiting for him.
     </p>
 
+
     <div class="baby-photo-frame">
 
         <div class="baby-rotator">
@@ -2781,6 +3221,7 @@ p {
         </div>
 
     </div>
+
 
     <button
         class="btn"
@@ -2923,7 +3364,7 @@ p {
 
 
 <!-- =========================================================
-     10. CAKE
+     10. CAKE CHALLENGE
 ========================================================= -->
 
 <section
@@ -2954,34 +3395,120 @@ p {
         id="cakeStage">
 
 
-        <!-- IMPORTANT:
-             Actual files are .jpeg -->
+        <!-- YOUR ACTUAL GITHUB IMAGE -->
 
         <img
-            id="cakeImageWhole"
             class="cake-image whole-cake"
             src="cake-whole.jpeg"
             alt="Birthday cake"
         >
 
 
+        <!-- YOUR CUT CAKE -->
+
         <img
-            id="cakeImageCut"
             class="cake-image cut-cake"
             src="cake-cut.jpeg"
             alt="Cut birthday cake"
         >
 
 
-        <div class="cake-knife">
-            🔪
+        <!-- INTERACTIVE FLAMES -->
+
+        <div
+            class="cake-flame flame-1"
+            id="flame1">
+
+            🔥
+
         </div>
 
 
+        <div
+            class="cake-flame flame-2"
+            id="flame2">
+
+            🔥
+
+        </div>
+
+
+        <div
+            class="cake-flame flame-3"
+            id="flame3">
+
+            🔥
+
+        </div>
+
+
+        <div
+            class="cake-flame flame-4"
+            id="flame4">
+
+            🔥
+
+        </div>
+
+
+        <!-- SMOKE -->
+
+        <div
+            class="cake-smoke smoke-1"
+            id="smoke1">
+
+            ☁️
+
+        </div>
+
+
+        <div
+            class="cake-smoke smoke-2"
+            id="smoke2">
+
+            ☁️
+
+        </div>
+
+
+        <div
+            class="cake-smoke smoke-3"
+            id="smoke3">
+
+            ☁️
+
+        </div>
+
+
+        <div
+            class="cake-smoke smoke-4"
+            id="smoke4">
+
+            ☁️
+
+        </div>
+
+
+        <!-- KNIFE -->
+
+        <div class="cake-knife">
+
+            🔪
+
+        </div>
+
+
+        <!-- CUT LINE -->
+
         <div class="cake-cut-line"></div>
+
+
+        <!-- FLASH -->
 
         <div class="cake-flash"></div>
 
+
+        <!-- CRUMBS -->
 
         <div
             class="cake-crumb"
@@ -3026,8 +3553,11 @@ p {
             ">
         </div>
 
+
     </div>
 
+
+    <!-- BLOW -->
 
     <button
         class="btn"
@@ -3045,6 +3575,8 @@ p {
     </div>
 
 
+    <!-- CUT -->
+
     <button
         class="btn"
         id="cutButton"
@@ -3061,6 +3593,8 @@ p {
         id="cakeResult">
     </div>
 
+
+    <!-- NEXT -->
 
     <button
         class="btn"
@@ -3243,14 +3777,17 @@ p {
         🎵
     </div>
 
+
     <div class="small">
         Something I picked just for you
     </div>
+
 
     <h2>
         Wanna hear a song<br>
         I dedicated to you?
     </h2>
+
 
     <p>
         Give it a chance. ❤️
@@ -3258,6 +3795,7 @@ p {
 
 
     <div class="answer-area">
+
 
         <button
             class="btn yes-btn"
@@ -3319,6 +3857,7 @@ p {
 
 
     <div class="song-card">
+
 
         <div class="song-wave">
 
@@ -3482,6 +4021,7 @@ p {
 
     <div class="advice-box">
 
+
         <p>
 
             When you're angry,
@@ -3492,6 +4032,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -3501,6 +4042,7 @@ p {
             against you decide your future.
 
         </p>
+
 
         <br>
 
@@ -3514,6 +4056,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -3526,6 +4069,7 @@ p {
 
         </p>
 
+
         <br>
 
 
@@ -3536,6 +4080,7 @@ p {
             </strong>
 
         </p>
+
 
     </div>
 
@@ -3577,6 +4122,7 @@ p {
         class="gift-card"
         id="giftCard1">
 
+
         <div
             class="gift-box"
             onclick="openGift(1)">
@@ -3599,13 +4145,16 @@ p {
 
         <div class="gift-reveal">
 
+
             <div class="small">
                 Gift One 🎁
             </div>
 
+
             <div class="gift-message-title">
                 Family ❤️
             </div>
+
 
             <div class="gift-message-text">
 
@@ -3632,6 +4181,7 @@ p {
                 </strong>
 
             </div>
+
 
         </div>
 
@@ -3664,13 +4214,16 @@ p {
 
 <div class="content">
 
+
     <div class="small">
         There's someone special... ❤️
     </div>
 
+
     <h2 class="dad-heading">
         Your First Hero.
     </h2>
+
 
     <p class="dad-intro">
 
@@ -3684,8 +4237,6 @@ p {
 
 
     <div class="dad-photo-frame">
-
-        <!-- ACTUAL FILE FROM YOUR GITHUB -->
 
         <img
             class="dad-photo"
@@ -3806,6 +4357,7 @@ p {
 
         </div>
 
+
     </div>
 
 
@@ -3871,6 +4423,7 @@ p {
 
         <div class="gift-reveal">
 
+
             <div class="small">
                 Gift Three ❤️
             </div>
@@ -3892,6 +4445,7 @@ p {
                     Me. 😌❤️
 
                 </strong>
+
 
                 <br><br>
 
@@ -4095,36 +4649,42 @@ const lyrics = [
 
     {
         time: 0.00,
+
         text:
         "Meesa Vacha Thaaya Pola Pesukindra Deivam Neeye... ❤️🙏"
     },
 
     {
         time: 4.52,
+
         text:
         "Edhire Nirkum Imayam Neeyada... 🏔️❤️"
     },
 
     {
         time: 8.87,
+
         text:
         "Enai Naane Paathukolla Kedaithaaye Neeyum Ingae... 🫂💙"
     },
 
     {
         time: 13.67,
+
         text:
         "Adha Naale Dhaano Unmel Thani Paasam... ❤️✨"
     },
 
     {
         time: 18.43,
+
         text:
         "Unnakulle Ennai Neeyum Adai Kaakum Anbai Paarthu... 🫶❤️"
     },
 
     {
         time: 23.30,
+
         text:
         "Varumkaalam Natpum Kuda Namai Pesum... ♾️🤝❤️"
     }
@@ -4143,6 +4703,7 @@ function showScreen(id) {
         &&
         id !== "song"
     ) {
+
         stopSong();
     }
 
@@ -4166,48 +4727,61 @@ function showScreen(id) {
     );
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        document
-            .querySelectorAll(
-                ".screen"
-            )
-            .forEach(
-                screen =>
-                    screen.classList.remove(
-                        "active"
-                    )
-            );
+            document
+                .querySelectorAll(
+                    ".screen"
+                )
+                .forEach(
+                    screen => {
+
+                        screen.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
 
 
-        const target =
-            document.getElementById(id);
+            const target =
+                document.getElementById(
+                    id
+                );
 
 
-        if (target) {
+            if (target) {
 
-            target.classList.add(
+                target.classList.add(
+                    "active"
+                );
+
+                currentScreen =
+                    id;
+
+            }
+
+        },
+        160
+    );
+
+
+    setTimeout(
+        () => {
+
+            flash.classList.remove(
                 "active"
             );
 
-            currentScreen = id;
-        }
-
-    }, 160);
-
-
-    setTimeout(() => {
-
-        flash.classList.remove(
-            "active"
-        );
-
-    }, 650);
+        },
+        650
+    );
 }
 
 
 /* =========================================================
-   NO ANSWER
+   NO BUTTON
 ========================================================= */
 
 function noAnswer(
@@ -4269,7 +4843,7 @@ function noAnswer(
 
 
 /* =========================================================
-   TIME COUNTER
+   TIME SINCE BIRTH
 ========================================================= */
 
 const birthDate =
@@ -4288,19 +4862,22 @@ function updateAge() {
 
     const seconds =
         Math.floor(
-            elapsed / 1000
+            elapsed /
+            1000
         );
 
 
     const minutes =
         Math.floor(
-            seconds / 60
+            seconds /
+            60
         );
 
 
     const hours =
         Math.floor(
-            minutes / 60
+            minutes /
+            60
         );
 
 
@@ -4326,6 +4903,7 @@ function updateAge() {
         )
         .textContent =
         seconds.toLocaleString();
+
 }
 
 
@@ -4347,6 +4925,7 @@ function startCountdown() {
     if (
         countdownStarted
     ) {
+
         return;
     }
 
@@ -4372,7 +4951,8 @@ function startCountdown() {
         );
 
 
-    let count = 3;
+    let count =
+        3;
 
 
     number.textContent =
@@ -4448,6 +5028,7 @@ function startCountdown() {
                         },
                         1400
                     );
+
                 }
 
             },
@@ -4505,6 +5086,7 @@ function openMemory(
 
                     img.style.opacity =
                         "1";
+
                 };
 
         },
@@ -4522,6 +5104,7 @@ function blowCandles() {
     if (
         candlesBlown
     ) {
+
         return;
     }
 
@@ -4530,20 +5113,68 @@ function blowCandles() {
         true;
 
 
-    document
-        .getElementById(
+    const stage =
+        document.getElementById(
+            "cakeStage"
+        );
+
+
+    const blowButton =
+        document.getElementById(
             "blowButton"
-        )
-        .style.display =
+        );
+
+
+    const result =
+        document.getElementById(
+            "candleResult"
+        );
+
+
+    const cutButton =
+        document.getElementById(
+            "cutButton"
+        );
+
+
+    /*
+       IMPORTANT:
+       This is what actually removes the
+       interactive flames.
+    */
+
+    stage.classList.add(
+        "candles-blown"
+    );
+
+
+    /*
+       Show smoke immediately.
+    */
+
+    for (
+        let i = 1;
+        i <= 4;
+        i++
+    ) {
+
+        document
+            .getElementById(
+                "smoke" + i
+            )
+            .classList.add(
+                "show"
+            );
+
+    }
+
+
+    blowButton.style.display =
         "none";
 
 
-    document
-        .getElementById(
-            "candleResult"
-        )
-        .textContent =
-        "Wish made... ✨❤️";
+    result.textContent =
+        "💨 WHOOSH! The candles are out! 🎉";
 
 
     playBlowSound();
@@ -4552,23 +5183,15 @@ function blowCandles() {
     setTimeout(
         () => {
 
-            document
-                .getElementById(
-                    "candleResult"
-                )
-                .textContent =
-                "Perfect. Now cut your cake. 🍰";
+            result.textContent =
+                "Perfect! Now cut your cake. 🔪🍰";
 
 
-            document
-                .getElementById(
-                    "cutButton"
-                )
-                .style.display =
+            cutButton.style.display =
                 "inline-block";
 
         },
-        900
+        1100
     );
 }
 
@@ -4584,6 +5207,7 @@ function cutCakeByUser() {
         ||
         cakeCut
     ) {
+
         return;
     }
 
@@ -4685,6 +5309,7 @@ function popBalloon(
             "popping"
         )
     ) {
+
         return;
     }
 
@@ -4783,6 +5408,7 @@ function popBalloon(
             },
             1500
         );
+
     }
 }
 
@@ -4919,16 +5545,20 @@ function stopSong() {
     if (
         button
     ) {
+
         button.textContent =
             "▶ Start";
+
     }
 
 
     if (
         status
     ) {
+
         status.textContent =
             "Ready...";
+
     }
 }
 
@@ -4998,7 +5628,9 @@ function startLyrics() {
 
                 active =
                     lyrics[i];
+
             }
+
         }
 
 
@@ -5029,7 +5661,9 @@ function startLyrics() {
                 },
                 120
             );
+
         }
+
     }
 
 
@@ -5056,6 +5690,7 @@ function stopLyrics() {
 
         lyricTimer =
             null;
+
     }
 
 
@@ -5072,6 +5707,7 @@ function stopLyrics() {
         line.classList.remove(
             "show"
         );
+
     }
 }
 
@@ -5086,13 +5722,15 @@ function openGift(
 
     const card =
         document.getElementById(
-            "giftCard" + number
+            "giftCard" +
+            number
         );
 
 
     const next =
         document.getElementById(
-            "giftNext" + number
+            "giftNext" +
+            number
         );
 
 
@@ -5101,7 +5739,9 @@ function openGift(
             "gift-open"
         )
     ) {
+
         return;
+
     }
 
 
@@ -5191,8 +5831,7 @@ function createConfetti() {
                 2
                 +
                 Math.random()
-                *
-                3
+                * 3
             )
             +
             "s";
@@ -5218,6 +5857,7 @@ function createConfetti() {
             },
             5000
         );
+
     }
 }
 
@@ -5229,10 +5869,12 @@ function createConfetti() {
 function createMiniBurst() {
 
     const colors = [
+
         "#ff2e93",
         "#8c52ff",
         "#ffd700",
         "#00d4ff"
+
     ];
 
 
@@ -5267,7 +5909,8 @@ function createMiniBurst() {
             colors[
                 Math.floor(
                     Math.random()
-                    * 4
+                    *
+                    4
                 )
             ];
 
@@ -5296,12 +5939,13 @@ function createMiniBurst() {
             },
             2200
         );
+
     }
 }
 
 
 /* =========================================================
-   DECOR
+   FLOATING DECOR
 ========================================================= */
 
 function createDecor() {
@@ -5383,7 +6027,9 @@ function createDecor() {
         decor.appendChild(
             item
         );
+
     }
+
 }
 
 
@@ -5391,7 +6037,7 @@ createDecor();
 
 
 /* =========================================================
-   AUDIO EFFECTS
+   WEB AUDIO
 ========================================================= */
 
 let audioContext =
@@ -5406,11 +6052,12 @@ function getCtx() {
 
         audioContext =
             new (
-                window.AudioContext ||
+                window.AudioContext
+                ||
                 window.webkitAudioContext
             )();
-    }
 
+    }
 
     return audioContext;
 }
@@ -5453,7 +6100,8 @@ function playTone(
 
         gain.gain.exponentialRampToValueAtTime(
             .001,
-            ctx.currentTime + duration
+            ctx.currentTime +
+            duration
         );
 
 
@@ -5471,40 +6119,99 @@ function playTone(
 
 
         oscillator.stop(
-            ctx.currentTime + duration
+            ctx.currentTime +
+            duration
         );
 
     }
     catch (error) {
+
         console.error(error);
+
     }
 }
 
 
+/* =========================================================
+   BLOW SOUND
+========================================================= */
+
 function playBlowSound() {
 
-    playTone(
-        420,
-        .12,
-        "sine",
-        .035
-    );
+    try {
 
-    setTimeout(
-        () => {
+        const ctx =
+            getCtx();
 
-            playTone(
-                160,
-                .25,
-                "sine",
-                .025
-            );
 
-        },
-        100
-    );
+        const oscillator =
+            ctx.createOscillator();
+
+
+        const gain =
+            ctx.createGain();
+
+
+        oscillator.type =
+            "sine";
+
+
+        oscillator.frequency.setValueAtTime(
+            420,
+            ctx.currentTime
+        );
+
+
+        oscillator.frequency.exponentialRampToValueAtTime(
+            90,
+            ctx.currentTime +
+            .45
+        );
+
+
+        gain.gain.setValueAtTime(
+            .035,
+            ctx.currentTime
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            ctx.currentTime +
+            .45
+        );
+
+
+        oscillator.connect(
+            gain
+        );
+
+
+        gain.connect(
+            ctx.destination
+        );
+
+
+        oscillator.start();
+
+
+        oscillator.stop(
+            ctx.currentTime +
+            .45
+        );
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+    }
 }
 
+
+/* =========================================================
+   CUT SOUND
+========================================================= */
 
 function playCutSound() {
 
@@ -5532,6 +6239,10 @@ function playCutSound() {
 }
 
 
+/* =========================================================
+   POP SOUND
+========================================================= */
+
 function playPopSound() {
 
     playTone(
@@ -5558,6 +6269,10 @@ function playPopSound() {
 }
 
 
+/* =========================================================
+   GIFT SOUND
+========================================================= */
+
 function playGiftSound() {
 
     playTone(
@@ -5583,6 +6298,10 @@ function playGiftSound() {
     );
 }
 
+
+/* =========================================================
+   BIRTHDAY SOUND
+========================================================= */
 
 function birthdayBurst() {
 
